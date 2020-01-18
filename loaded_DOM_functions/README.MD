@@ -1,10 +1,10 @@
 # When should the browser start to load the script? 
-Data: 18-1-2020
+Date: 18-1-2020
 
 ## Solution 1: The window DOMContentLoaded event
 https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
 
-The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
+The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading
 
     window.addEventListener('DOMContentLoaded', (event) => {
         console.log('DOM fully loaded and parsed'); 
@@ -21,13 +21,11 @@ This is in contrast to DOMContentLoaded, which is fired as soon as the page DOM 
 
 The same, but using the onload event handler property:
 
-window.onload = (event) => {
-  console.log('page is fully loaded');
-};
-
+    window.onload = (event) => {
+        console.log('page is fully loaded');
+    };
 
 ## Solution 3: JQuery’s $.ready event
-
 According to [JQuery official documentation](https://api.jquery.com/ready/),
 
 The .ready() method offers a way to run JavaScript code as soon as the page's Document Object Model (DOM) becomes safe to manipulate.
