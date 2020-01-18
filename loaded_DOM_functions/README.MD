@@ -1,4 +1,4 @@
-## When should the browser start to load the script? 
+# When should the browser start to load the script? 
 Data: 18-1-2020
 
 ## Solution 1: The window DOMContentLoaded event
