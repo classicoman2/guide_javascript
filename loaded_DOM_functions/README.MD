@@ -40,4 +40,4 @@ According to this, it's the fastest way to start loading the script immediately 
 # Alors?
 I carried out an experiment in this code and the result is:
 
-![alt text](Captura.png "Logo Title Text 1")
+![alt text](Captura.PNG "Logo Title Text 1")
