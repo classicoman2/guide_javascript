@@ -36,3 +36,8 @@ More: https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloa
 ## Solution 4: Placing the <script> after the </body> tag
 https://stackoverflow.com/questions/9899372/pure-javascript-equivalent-of-jquerys-ready-how-to-call-a-function-when-t
 According to this, it's the fastest way to start loading the script immediately after the DOM is safe to be used (The loading of the elements of a webpage is then synchronous, I assume - should check this out).
+
+# Alors?
+I carried out an experiment in this code and the result is:
+
+![alt text](Captura.png "Logo Title Text 1")
