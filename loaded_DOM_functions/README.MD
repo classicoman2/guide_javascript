@@ -1,6 +1,4 @@
 # When should the browser start to load the script? 
-Date: 18-1-2020
-
 ## Solution 1: The window DOMContentLoaded event
 https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
 
@@ -38,6 +36,6 @@ https://stackoverflow.com/questions/9899372/pure-javascript-equivalent-of-jquery
 According to this, it's the fastest way to start loading the script immediately after the DOM is safe to be used (The loading of the elements of a webpage is then synchronous, I assume - should check this out).
 
 # Alors?
-I carried out an experiment in this code and the result is:
+I carried out an experiment in this code to find out which function loads faster and the result is:
 
 ![alt text](Captura.PNG "Logo Title Text 1")
