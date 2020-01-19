@@ -16,4 +16,4 @@ Variables and functions must respect _strict use_ convention inside a module.
 - [Modules in _Freecodecamp_]()
 
 ## Export default
-When we want a module to subminstrate only 1 function to the main script, we'll use `export default`.
+When we want a module to provide only one function to the main script, we'll use `export default`.
