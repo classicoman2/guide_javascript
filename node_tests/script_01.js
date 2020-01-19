@@ -1,40 +1,12 @@
 
-var cadena = new String();
-console.log(cadena)
+const str1 = "a string that has been given a value through an assignation";
+const str2 = new String("a string that has been created as String object");
 
-//Object with no constructor
-const myobj = {
-    prop1: 5,
-    prop2: false,
-    prop3: "this is a string",
-    get_prop1: function () {
-        return this.prop1;
-    },
-    set_prop1: function (value) {
-        this.prop1 = value
-    }
-}
-console.log(myobj);
+console.log("str1 is " + str1)
+console.log("-----------------------");
+console.log("str2 is " + str2)
+console.log("-----------------------");
 
-/* When we assign an object to another, they reference the same space in memory */
-myobj2 = myobj
-myobj2.prop1 = 13;
-console.log(myobj);
-
-/* Now let's use a constructor */
-//Object with no constructor
-myobj_constr = function (prop1, prop2, prop3) {
-    this.prop1 = prop1;
-    this.prop2 = prop2;
-    this.prop3 = prop3;
-    this.get_prop1 = function () {
-        return this.prop1;
-    },
-        this.set_prop1 = function (value) {
-            this.prop1 = value
-        }
-}
-
-myobj_c = new myobj_constr(10, true, "using constructor")
-
-console.log(myobj_c);
+console.log(Object.getPrototypeOf(str1))
+if (Object.getPrototypeOf(str1) == Object.getPrototypeOf(str1))
+    console.log("str1 and str2 have the same prototype, which is String")
