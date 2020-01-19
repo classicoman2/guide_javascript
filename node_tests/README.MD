@@ -1,10 +1,11 @@
 # Javascript Objects
 
+The goal of these scripts is to test some of the characteristics of Javascript's Objects.
+
 In order to execute these scripts, install Node and run:
 
     > node nameofthescript.js
 
-The goal of these scripts is to test some of the characteristics of Javascript's Objects.
 
 ## Different ways of creating an object
 
