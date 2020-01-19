@@ -6,9 +6,9 @@ About Modules,
 
     <script type="module" src="nameofthemodule.mjs"></script>
 
-(The extension .mjs is not mandatory, I think)
+(The extension .mjs is not mandatory)
 
-Variables and functions must respect _strict use_ convention inside a module _posar referencia aqui!!!!_
+Variables and functions must respect _strict use_ convention inside a module.
 
 - [MDN Tutorial](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [A basic example in MDN Github of how to use modules](https://github.com/mdn/js-examples/tree/master/modulhttps://www.freecodecamp.org/news/javascript-modules-a-beginner-s-guide-783f7d7a5fcc/es/basic-modules)
