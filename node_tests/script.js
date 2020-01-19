@@ -1,5 +1,3 @@
-console.log("this is a test")
-console.log("--------------");
 
 var cadena = new String();
 console.log(cadena)
