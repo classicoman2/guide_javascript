@@ -4,7 +4,7 @@ About Modules,
 
 - An script that uses modules and start with _import_ sentences must be inserted in the HTML using:
 
-<script type="module" src="nameofthemodule.mjs"></script>
+`<script type="module" src="nameofthemodule.mjs"></script>`
 
 (The extension .mjs is not mandatory)
 
