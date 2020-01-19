@@ -14,4 +14,5 @@ Variables and functions must respect _strict use_ convention inside a module _po
 - [A basic example in MDN Github of how to use modules](https://github.com/mdn/js-examples/tree/master/modulhttps://www.freecodecamp.org/news/javascript-modules-a-beginner-s-guide-783f7d7a5fcc/es/basic-modules)
 - [Modules in _Freecodecamp_]()
 
-
+## Export default
+When we want a module to subminstrate only 1 function to the main script, we'll use `export default`.
