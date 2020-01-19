@@ -8,6 +8,6 @@ The goal of these scripts is to test some of the characteristics of Javascript's
 
 ## Different ways of creating an object
 
-* In [script1.js](script.js)...
+* In [script_01.js](script.js)...
   * I create an **object literal** 
   * I create an **Object Constructor** and create an object from this Constructor
