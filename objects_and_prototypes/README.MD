@@ -12,3 +12,8 @@ You may execute the scripts using __Node__ if you don't want to use a browser:
 * In [script_02.js](script_02.js)...
   * I create an **object literal** that is assigned to another object variable, and both variables refer to the same object (because the assignation is _by reference_ and not _by value_ - as it happens with variables that are Numbers, Booleans or Strings)
   * I create an **Object Constructor** and create an object from this Constructor
+
+
+## More on Objects in Javascript
+
+* [3 Ways to Clone Objects in JavaScript](https://www.samanthaming.com/tidbits/70-3-ways-to-clone-objects)
