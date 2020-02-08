@@ -9,7 +9,6 @@
 </head>
 
 <body>
-    <img id="foto" src="" />
 </body>
 <script>
     //Torna un valor random entre 1 i 3
@@ -18,21 +17,18 @@
     }
 
     var myAPIurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/posts"
-    var postNumber = randomNumber(5);
 
-    fetch(myAPIurl + "/" + postNumber)
+    fetch(myAPIurl + "/1")
         .then(function (response) {
-            console.log(response.status)
-            if (response.status == "200")
-                return response.json()
-            else if (response.status == "404")
-                console.log("The post doesn't exist - id= " + postNumber)
+            return response.json()
         })
         .then(function (json) {
             //Ara he rebut el json, ja parsejat!  - no fa falta JSON.parse()
-            let imageSrc = json.img
-            document.getElementById("foto").src = imageSrc
+            console.log(json)
+            alert(json)      //mostra el missatge "Object" perquè el json ja ha estat parsejat
         })
+        //Si es produeix algun error durant el tractament de les promeses anteriors - 
+        // a dins de les {} de les funcions - llavors s'executarà la callback del .catch
         .catch(function (error) {
             console.log("Some error happened during the request")
         });
