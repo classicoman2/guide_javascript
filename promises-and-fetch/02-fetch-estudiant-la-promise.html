@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch - estudiant les promises</title>
+</head>
+
+<body>
+    <img id="foto" src="" />
+</body>
+<script>
+    //Torna un valor random entre 1 i 3
+    function randomNumber(max) {
+        return Math.ceil(Math.random(max))
+    }
+
+    let myAPIurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/posts"
+    let postNumber = randomNumber(5);
+
+    fetch(myAPIurl + "/" + postNumber)
+        .then(function (response) {
+            //          console.log(response)
+            console.log(response.json())
+            //            let post = JSON.parse(response)
+            //          document.getElementById("foto").src = JSON.parse(response).img
+        })
+        .catch(function (error) {
+            console.log("There's no post associated to id=" + postNumber)
+        });
+
+</script>
+
+</html>
