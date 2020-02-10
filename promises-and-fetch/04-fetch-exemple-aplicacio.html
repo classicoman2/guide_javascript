@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="data:;base64,=">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Fetch - Simple</title>
 </head>
 
 <body>
-    <p>An example of some of the advantages of working with <strong>fetch</strong></p>
+    <p>An example of some of the advantages of working with <strong>Fetch</strong></p>
     <img id="foto" src="" />
 </body>
 <script>
@@ -21,13 +22,16 @@
     var myAPIurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/posts"
     var postNumber = randomNumber(5);
 
+    console.log("POST = " + postNumber)
+
     fetch(myAPIurl + "/" + postNumber)
         .then(function (response) {
+            console.log(response)
             console.log(response.status)
             if (response.status == "200")
                 return response.json()
             else if (response.status == "404")
-                console.log("The post doesn't exist - id= " + postNumber)
+                console.log("The post with id=" + postNumber + " doesn't exist or the address of the API is wrong inside the server")
         })
         .then(function (json) {
             //Ara he rebut el json, ja parsejat!  - no fa falta JSON.parse()
@@ -35,7 +39,7 @@
             document.getElementById("foto").src = imageSrc
         })
         .catch(function (error) {
-            console.log("Some error happened during the request")
+            console.log("Some error happened during the request or the code inside the .then() blocks is wrong")
         });
 
 </script>

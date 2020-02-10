@@ -16,16 +16,16 @@
         return Math.ceil(Math.random() * max)
     }
 
-    var myAPIurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/posts"
+    var myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/posts/1"
 
-    fetch(myAPIurl + "/1")
+    fetch(myurl)
         .then(function (response) {
             return response.json()
         })
         .then(function (json) {
-            //Ara he rebut el json, ja parsejat!  - no fa falta JSON.parse()
+            console.log("la variable json conté un " + typeof json)
+            console.log("El contingut de la variable json és: ");
             console.log(json)
-            alert(json)      //mostra el missatge "Object" perquè el json ja ha estat parsejat
         })
         //Si es produeix algun error durant el tractament de les promeses anteriors - 
         // a dins de les {} de les funcions - llavors s'executarà la callback del .catch
