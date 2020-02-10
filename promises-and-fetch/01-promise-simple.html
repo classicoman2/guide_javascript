@@ -22,8 +22,8 @@
         /* En aquest exemple, empram setTimeout(...) per simular un codi
         asíncron. En la realitat, fariem normalment una consulta a una API */
         setTimeout(() => {
-            //resolve("La promesa s'ha resolt OK")
-            reject("La promesa ha fallat")
+            resolve("La promesa s'ha resolt OK")
+            //reject("La promesa ha fallat")
         }, 1000);
     });
 
