@@ -21,11 +21,11 @@
 
     //Random server
     let myAPIurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/posts"
-    if (Math.random() > 0.5)
-        myAPIurl = "http://this_server_does_not_exist.com"
 
+    /*   if (Math.random() > 0.5)
+           myAPIurl = "http://this_server_does_not_exist.com" */
 
-    let postNumber = randomNumber(4);
+    let postNumber = randomNumber(6);
 
     fetch(myAPIurl + "/" + postNumber)
         .then(function (response) {
@@ -38,20 +38,11 @@
 
             //response.json() és una Promise, que està pendent de ser resolta
             //console.log(response.json())
-
-            //Si resolem la Promise amb .then i passant-li una funció callback, obtenim les dades
-            //de la resposta
-            response.json().then(function (data) {
-                console.log(data)
-                console.log("title=" + data.title + " contents=" + data.contents)
-            });
-
-
         })
         //Fixar-se en què la Promise no es resol en error si se produeix un status=404, sino que
         //només quan el nom del servidor és incorrecte.
         .catch(function (error) {
-            console.log(error.message + " - Probably the server is not correct")
+            console.log("ERROR: " + error.message)
         });
 
 </script>

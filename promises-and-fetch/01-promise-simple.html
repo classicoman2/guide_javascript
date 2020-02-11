@@ -14,6 +14,13 @@
 <script>
     // Declarar la Promesa
     let laMevaPromesa = new Promise(function (resolve, reject) {
+
+        //Accept
+        //resolve("******OK*****");
+
+        //Reject
+        //reject("There was an error")
+
         /* Cridam resolve(...) quan el que estavem fent
         de forma asincrona s'ha resolt satisfactoriament
            Cridam reject(...) quan ha fallat
@@ -24,21 +31,21 @@
         setTimeout(() => {
             resolve("La promesa s'ha resolt OK")
             //reject("La promesa ha fallat")
-        }, 1000);
+        }, 3000);
+
     });
 
     console.log("---Abans de cridar la promesa---");
 
     //Emprar la Promesa
     laMevaPromesa
-        .then(function (missatge) {
-            console.log(missatge)
+        .then(function (message) {
+            console.log(message)
         })
         .catch(function (error) {
             console.log(error)
         });
 
-    console.log("---Després de cridar la promesa---");
 </script>
 
 </html>
