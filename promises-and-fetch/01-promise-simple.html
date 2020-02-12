@@ -16,7 +16,7 @@
     let laMevaPromesa = new Promise(function (resolve, reject) {
 
         //Accept
-        //resolve("******OK*****");
+        resolve("******OK*****");
 
         //Reject
         //reject("There was an error")
@@ -28,10 +28,10 @@
 
         /* En aquest exemple, empram setTimeout(...) per simular un codi
         asíncron. En la realitat, fariem normalment una consulta a una API */
-        setTimeout(() => {
+        /*setTimeout(() => {
             resolve("La promesa s'ha resolt OK")
             //reject("La promesa ha fallat")
-        }, 3000);
+        }, 3000); */
 
     });
 
@@ -45,6 +45,9 @@
         .catch(function (error) {
             console.log(error)
         });
+
+    console.log("---Despres de cridar la promesa---");
+
 
 </script>
 
