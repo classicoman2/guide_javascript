@@ -1,4 +1,3 @@
-## Javascript tests Repository
-Learning Javascript inner workings. 
-Some codes and examples.
-To reinforce my knowledge of Javascript and related ecosystems and APIs
+## Javascript examples & exercises Repository
+Learning Javascript.
+This repository contains the contents of the module "Desenvolupament Web en Entorn Client" as well as some more extra material. 
