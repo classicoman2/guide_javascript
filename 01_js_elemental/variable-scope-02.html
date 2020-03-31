@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable Scope</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var global1 = "i am global1"
+    global2 = "i am global too"
+
+    document.write(global1+"<br>")
+
+    //All global variables belong to the object 'window'
+    document.write(window.global1+"<br>")
+    
+    function myFunction01 () {
+        var local1 = "i am local1"
+        document.write(global1+"<br>")
+        document.write(global2+"<br>")
+    }
+
+    function myFunction02 () {
+        var local2 = "i am local2"
+        document.write(local2+"<br>")
+
+        //variable-scope-02.html:60 Uncaught ReferenceError: local1 is not defined
+        document.write(local1+"<br>")
+    }
+
+    myFunction01()
+    
+    myFunction02()
+</script>
+</html>

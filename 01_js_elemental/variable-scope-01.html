@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variable Scope</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var global1 = "i am global"
+    global2 = "i am global too"
+    var global3
+
+    console.log(global1)
+    console.log(global2)
+
+    //Value:  undefined
+    console.log(global3)
+
+    // variable-scope.html:53 Uncaught ReferenceError: global4 is not defined
+    console.log(global4)
+</script>
+</html>
