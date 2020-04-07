@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>typeof</title>
+</head>
+<body>
+    
+</body>
+<script>
+    console.log(125 + " --> " + typeof 125)
+    console.log('undefined' + " --> " + typeof undefined)
+    console.log('null' + " --> " + typeof null)
+    console.log('NaN' + " --> " + typeof NaN)
+    console.log('"un text"' + " --> " + typeof "un text")
+    console.log(true + " --> " + typeof true)
+    console.log("{id: 5, name: 'John Smith'}" + " --> " + typeof {id: 5, name: 'John Smith'})
+    console.log([1,2,3,5,7,11,13,17] + " --> " + typeof [1,2,3,5,7,11,13,17])
+    console.log('myFunction' + " --> " + typeof myFunction)
+    console.log('myFunction()' + " --> " + typeof myFunction())
+
+function myFunction () {
+    return "foo"
+}
+
+</script>
+</html>
