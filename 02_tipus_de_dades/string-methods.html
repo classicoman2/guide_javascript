@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String Methods</title>
+    <style>
+        span {
+            display:inline-block;
+            border: 1px solid black;
+            width:24px;
+            text-align: center;
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+<body>
+    <p id="indexes"></p>
+    <p id="text"> </p>
+    <p id="indexes2"></p>
+    <p id="text2"> </p>
+</body>
+<script>
+
+var pIndexes = document.getElementById("indexes")
+var pText = document.getElementById("text")
+var pIndexes2 = document.getElementById("indexes2")
+var pText2 = document.getElementById("text2")
+
+var str1 = "This is it"
+
+pIndexes.innerHTML = createIndexesGrid(str1.length)
+pText.innerHTML = createTextGrid(str1)
+
+
+//.length
+console.log("Length of str1 is = " + str1.length)
+
+//.indexOf()
+console.log("The text \"is\" starts in position " + str1.indexOf("is") )
+var initial = 3
+console.log(".indexOf() - From position "+initial+", the text \"is\" starts in position " + str1.indexOf("is",initial) )
+
+
+//.lastIndexOf()
+console.log("lastIndexOf() - From position "+10+", the text \"is\" starts in position " + str1.lastIndexOf("is",15) )
+
+
+
+var str2 = "Apple, Banana, Kiwi";
+pIndexes2.innerHTML = createIndexesGrid(str2.length)
+pText2.innerHTML = createTextGrid(str2)
+
+
+
+//slice
+var start=7, end=13;
+console.log( "slice() - " + "The slice from "+start+" to "+end+" is: " + str2.slice(start, end))
+start=-12; end=-6;
+console.log( "slice() - " + "The slice from "+start+" to "+end+" is: " + str2.slice(start, end))
+
+
+
+function createIndexesGrid(length) {
+    let str = ""
+    for(let i=0; i<length; i++) {
+        str += "<span>"+i+"</span>"
+    }
+    return str
+}
+function createTextGrid(s) {
+    str = ""
+    for(let i=0; i<s.length; i++) {
+        str += "<span>"+s[i]+"</span>"
+    }
+    return str
+}
+</script>
+</html>
