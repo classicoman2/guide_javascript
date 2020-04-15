@@ -11,11 +11,18 @@
             text-align: center;
             font-size: 1.4em;
         }
+
+        #indexes>span, #indexes2>span {
+            background-color:lightgray;
+            font-size:1.2em !important;
+            color: blue;
+        }
     </style>
 </head>
 <body>
     <p id="indexes"></p>
     <p id="text"> </p>
+    <br>
     <p id="indexes2"></p>
     <p id="text2"> </p>
 </body>
@@ -52,14 +59,38 @@ pText2.innerHTML = createTextGrid(str2)
 
 
 
-//slice
+//slice()
 var start=7, end=13;
 console.log( "slice() - " + "The slice from "+start+" to "+end+" is: " + str2.slice(start, end))
 start=-12; end=-6;
 console.log( "slice() - " + "The slice from "+start+" to "+end+" is: " + str2.slice(start, end))
 
 
+//substr()
+start=7;
+var strLength = 6;
+console.log( "substr() - " + "The string from "+start+" with a length of "+strLength+" is: " + str2.substr(start, strLength))
+start=-12;
+console.log( "substr() - " + "The string from "+start+" with a length if "+strLength+" is: " + str2.substr(start, strLength))
 
+
+//replace
+newText = "www"
+console.log("replace() - replacing \"is\" by \"www\", \""+str1+ "\" becomes \""+ str1.replace("is","www") + "\""  )
+console.log("replace() amb /g - replacing \"is\" by \"www\", \""+str1+ "\" becomes \""+ str1.replace(/is/g,"www") + "\""  )
+
+
+//split
+var str3 = "1-2-3-4-5"
+var array3 = str3.split("-")
+var str4 = "This is a sentence"
+var array4 = str4.split(" ")
+console.log ("The string  \""+str3+"\" is split into the array "+typeof array3 +" = "+array3 )
+console.log ("The string  \""+str4+"\" is split into the array "+typeof array4 +" = "+array4 )
+
+/*
+This functions are used by the interface of this code. You don't need to know how they work at this moment.
+*/
 function createIndexesGrid(length) {
     let str = ""
     for(let i=0; i<length; i++) {
