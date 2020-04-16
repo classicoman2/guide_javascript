@@ -8,30 +8,47 @@
     
 </body>
 <script>
-    var global1 = "i am global1"
-    global2 = "i am global too"
+    var global1 = "accessible"
+    global2 = "accessible"
 
-    document.write(global1+"<br>")
+    console.log( "global1 is '"+global1+ "' in global scope" )
 
     //All global variables belong to the object 'window'
-    document.write(window.global1+"<br>")
+    console.log( "global1 is '"+window.global1+ "' in global scope using 'window.global1'" )
     
     function myFunction01 () {
-        var local1 = "i am local1"
-        document.write(global1+"<br>")
-        document.write(global2+"<br>")
+        //local variable declared with  'var' -> belongs to the local scope
+        var local1 = "accessible"
+
+        //I can access to global variables
+        console.log( "global1 is '"+global1+ "' in a local scope" )
+        console.log( "global2 is '"+global2+ "' in a local scope" )
     }
 
     function myFunction02 () {
-        var local2 = "i am local2"
-        document.write(local2+"<br>")
+        //local variable not declared -> is hoisted in the global scope
+        local2 = "accessible"
 
-        //variable-scope-02.html:60 Uncaught ReferenceError: local1 is not defined
-        document.write(local1+"<br>")
+        //can not access a variable declared locally in another function
+        try {
+          //variable-scope-02.html:60 Uncaught ReferenceError: local1 is not defined
+          console.log( "local1, declared in another local scope, is '"+local1+ "' in another function" )
+        } catch(e) {
+          console.log("local1, declared in another local scope, is 'not accessible' in another function" )
+        }
     }
 
     myFunction01()
     
     myFunction02()
+
+    try {
+      console.log( "local1 is '"+local1+ "' in global scope" )
+    } catch(e) {
+      console.log("local1 is not accessible in global scope" )
+    }
+
+    console.log( "local2 is '"+local2+ "' in global scope" )
+    
 </script>
 </html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays introduction</title>
+    <style>
+        span {
+            display:inline-block;
+            border: 1px solid black;
+            width:60px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        #indexes>span, #indexes2>span {
+            background-color:lightgray;
+            font-size:1.2em !important;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p id="indexes"></p>
+    <p id="text"> </p>
+    <br>
+    <p id="indexes2"></p>
+    <p id="text2"> </p>
+</body>
+<script>
+
+//Interface
+var pIndexes = document.getElementById("indexes")
+var pText = document.getElementById("text")
+var pIndexes2 = document.getElementById("indexes2")
+var pText2 = document.getElementById("text2")
+
+
+var array1 = ["Apple", "Banana", "Kiwi"]
+var array2 = [10, 5, 2.3, -2, 0, 100000, -32.5]
+
+
+//Show in the interface
+pIndexes.innerHTML = createIndexesGrid(array1.length)
+pText.innerHTML = createTextGrid(array1)
+pIndexes2.innerHTML = createIndexesGrid(array2.length)
+pText2.innerHTML = createTextGrid(array2)
+
+
+
+//Using the constructor  new Array()
+var array11 = new Array("Apple", "Banana", "Kiwi")
+
+
+//both variables are Array objects
+console.log( "array1 is an " + typeof array1 + " - " + array1.constructor)
+console.log( "array11 is an " + typeof array11 + " - " + array11.constructor)
+
+
+//Read and write an element in an array
+console.log( "The element 1 of array1 contains = " + array1[1])
+array1[1] = "Mango"
+console.log( "The element 1 of array1 contains = " + array1[1])
+
+//Outside the limits of the array
+console.log( "The element 50 of array1 contains = " + array1[50] + "(type: " + typeof array1[50] + ")")
+console.log( "The element -2 of array1 contains = " + array1[-2])
+
+
+//Show all the contents of the array
+console.log(" array1 contains: "+array1)
+console.log(" array2 contains: "+array2)
+
+
+//Multidimensional arrays
+var arrayDouble = [array1, array2]
+
+console.log("arrayDouble[0][2] contains: " + arrayDouble[0][2] )
+console.log("arrayDouble[1][3] contains: " + arrayDouble[1][3] )
+
+
+
+//Lenght
+console.log("The length of array1 is: " + array1.length)
+console.log("The length of array2 is: " + array2.length)
+console.log("The length of arrayDouble is: " + arrayDouble.length)
+
+//Last element
+console.log("The last element of array2 is " + array2[ array2.length-1 ])
+
+
+
+
+
+
+/*
+These functions are used by the interface of this code. You don't need to know how they work at this moment.
+*/
+function createIndexesGrid(length) {
+    let str = ""
+    for(let i=0; i<length; i++) {
+        str += "<span>"+i+"</span>"
+    }
+    return str
+}
+function createTextGrid(s) {
+    str = ""
+    for(let i=0; i<s.length; i++) {
+        str += "<span>"+s[i]+"</span>"
+    }
+    return str
+}
+
+</script>
+</html>
