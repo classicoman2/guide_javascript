@@ -37,7 +37,7 @@ var pText2 = document.getElementById("text2")
 
 
 var array1 = ["Apple", "Banana", "Kiwi"]
-var array2 = [10, 5, 2.3]
+var array2 = [100, 50, 25, 5, 1, 0.5]
 
 
 //Show in the interface
@@ -77,6 +77,32 @@ pText2.innerHTML = createTextGrid(array2)
 }
 
 
+//SPLICE
+{
+    // splice() to add 2 elements from position 1
+    array1 = ["Apple", "Banana", "Kiwi"]
+    array1.splice(1,0, "Strawberry", "Cramberry")
+    console.log ("executing splice in position 1 results in: " + array1 )
+
+    //splice() to delete 1st element
+    array1.splice(0, 1)
+    console.log("Deleting first 2 elements results in: " + array1)
+
+    //splice() to delete last 2 elements
+    array1.splice(2, 2)
+    console.log("Deleting first 2 elements results in: " + array1)
+
+    //splice() to add a simple element at the end using splice (push is preferable)
+    array1.splice(2, 0, "Blueberry")
+    console.log("Adding 1 element in the end: " + array1)
+}
+
+
+// SLICE
+{
+  let subArray = array2.slice(2,4)
+  console.log("If we slice 2 elements form position 2, the result we obtain this: " + subArray )
+}
 
 
 
