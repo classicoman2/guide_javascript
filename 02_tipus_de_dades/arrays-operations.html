@@ -10,7 +10,7 @@
             border: 1px solid black;
             width:60px;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 0.9em;
         }
 
         #indexes>span, #indexes2>span {
@@ -48,7 +48,6 @@ pText2.innerHTML = createTextGrid(array2)
 
 
 
-
 //Loop array1 using for
 {
   let str = ""
@@ -58,39 +57,41 @@ pText2.innerHTML = createTextGrid(array2)
   console.log("The contents of array1 through a loop: " + str)
 }
 
+
 //Loop array2 using for
 {
   let str = ""
   for (let i=0; i<array2.length; i++) {
-    str += array2[i] + " / "
+    str += array2[i] + " ** "
   }
-  console.log("The contents of array2 through a loop: " + str)
+
+  console.log("The contents of array2 through a loop, using for: " + str)
 }
+
 
 {
-  console.log("fdas"+str)
   //Loop arra11 using .forEach()
   function addElement(value) {
-    return value
+    str = str + value + " || "
   }
 
-
-
+  let str = ""
+  //forEach()
+  array2.forEach( addElement )
+  console.log("The contents of array2 through a loop, using forEach(): " + str)
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+//Associative Arrays -> "Javascript style"
+{
+  let arrayAssoc = []
+  arrayAssoc['name'] = "Peter Green"
+  arrayAssoc['age'] = 35;
+  console.log("arrayAssoc is an " + arrayAssoc.constructor + 
+              "and its contents is: ["+ arrayAssoc.name +", " + arrayAssoc.age +"]")
+  console.log(arrayAssoc)
+  
+}
 
 
 

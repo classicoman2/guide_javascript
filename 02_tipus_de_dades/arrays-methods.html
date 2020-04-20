@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrays - Characteristics</title>
+    <title>Arrays - Methods</title>
     <style>
         span {
             display:inline-block;
             border: 1px solid black;
             width:60px;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 0.9em;
         }
 
         #indexes>span, #indexes2>span {
@@ -37,7 +37,7 @@ var pText2 = document.getElementById("text2")
 
 
 var array1 = ["Apple", "Banana", "Kiwi"]
-var array2 = [10, 5, 2.3, -2, 0, 100000, -32.5]
+var array2 = [10, 5, 2.3]
 
 
 //Show in the interface
@@ -47,55 +47,47 @@ pIndexes2.innerHTML = createIndexesGrid(array2.length)
 pText2.innerHTML = createTextGrid(array2)
 
 
+// POP, PUSH
+{
+  // pop()
+  console.log("The contents of array1 after popping the element 0 '"+ array1.pop() +"' is: " + array1)
 
-//Using the constructor  new Array()
-var array11 = new Array("Apple", "Banana", "Kiwi")
+  // push()
+  console.log("The contents of array1 after pushing an element is : " + array1 + " and its length is: " + array1.push("Mango"))
 
+  // adding an element using an index
+  array1[6] = "Grape"
+  console.log("The contents of array1 after adding in position 6: " + array1 + " and its length is: " + array1.length)
+  
+  //Show in the interface
+  /*
+  pIndexes.innerHTML = createIndexesGrid(array1.length)
+  pText.innerHTML = createTextGrid(array1) 
+  */
+}
 
-//both variables are Array objects
-console.log( "array1 is an " + typeof array1 + " - " + array1.constructor)
-console.log( "array11 is an " + typeof array11 + " - " + array11.constructor)
+// SHIFT, UNSHIFT
+{
+  // pop()
+  console.log("The contents of array2 after SHIFTING the element 0 '"+ array2.shift() +"' is:  [" + array2 + "]")
 
-
-//Read and write an element in an array
-console.log( "The element 1 of array1 contains = " + array1[1])
-array1[1] = "Mango"
-console.log( "The element 1 of array1 contains = " + array1[1])
-
-//Outside the limits of the array
-console.log( "The element 50 of array1 contains = " + array1[50] + "(type: " + typeof array1[50] + ")")
-console.log( "The element -2 of array1 contains = " + array1[-2])
-
-
-//Show all the contents of the array
-console.log(" array1 contains: "+array1)
-console.log(" array2 contains: "+array2)
-
-
-//Multidimensional arrays
-var arrayDouble = [array1, array2]
-
-console.log("arrayDouble[0][2] contains: " + arrayDouble[0][2] )
-console.log("arrayDouble[1][3] contains: " + arrayDouble[1][3] )
-
-
-
-//Lenght
-console.log("The length of array1 is: " + array1.length)
-console.log("The length of array2 is: " + array2.length)
-console.log("The length of arrayDouble is: " + arrayDouble.length)
-
-//Last element
-console.log("The last element of array2 is " + array2[ array2.length-1 ])
+  // push()
+  array2.unshift("99999")
+  console.log("The contents of array2 after UNSHIFTING an element is:  [" + array2 + "]")
+}
 
 
 
 
 
 
-/*
+
+
+
+/******
 These functions are used by the interface of this code. You don't need to know how they work at this moment.
-*/
+******/
+
 function createIndexesGrid(length) {
     let str = ""
     for(let i=0; i<length; i++) {
