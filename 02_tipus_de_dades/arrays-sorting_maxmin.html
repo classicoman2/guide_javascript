@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrays - Sorting</title>
+    <title>Arrays - Sorting and Max-min values</title>
     <style>
         span {
             display:inline-block;
@@ -54,39 +54,74 @@ pText2.innerHTML = createTextGrid(array2)
   console.log("After sorting array3, the result is: '"+ array3.sort())
 }
 
-// REVERSE
-{
-  console.log("After reversing array2, the result is: '"+ array2.reverse())
-}
+
 
 // SORT WITH COMPARING FUNCTION
 {
-    //Sorts numbers increasingly
-    var sortIncrease = function(a, b) {
-      return a-b;
-    }
+  //Sorts numbers increasingly
+  let sortIncrease = function(a, b) {
+    return a-b;
+  }
 
-    //sorts numbers decreasingly
-    var sortDecrease = function(a, b) {
-      return b-a;
-    }
+  //sorts numbers decreasingly
+  let sortDecrease = function(a, b) {
+    return b-a;
+  }
 
-    //Sorts by length of the string
-    var sortByLength = function(a, b) {
-        return (a.length - b.length)
-    }
+  //Sorts by length of the string
+  let sortByLength = function(a, b) {
+    return (a.length - b.length)
+  }
 
-   /*
-     function sortIncrease(a, b) {
-       if (a>b) return true;
-       else return false;
-     }
-   */
-   console.log("After sorting array2 with 'sortIncrease()', the result is: '"+ array2.sort( sortIncrease ) )
-   console.log("After sorting array2 with 'sortDecrease()', the result is: '"+ array2.sort( sortDecrease ) )
+  console.log("After sorting array2 with 'sortIncrease()', the result is: '"+ array2.sort( sortIncrease ) )
+  console.log("After sorting array2 with 'sortDecrease()', the result is: '"+ array2.sort( sortDecrease ) )
+  console.log("After sorting array1 with 'sortByLength()', the result is: '"+ array1.sort( sortByLength ) )
+}
 
-   console.log("After sorting array1 with 'sortByLength()', the result is: '"+ array1.sort( sortByLength ) )
 
+
+// SORTING ARRAYS OF OBJECTS
+{
+  let arrayObjects = [
+    { type:"Volvo", year:1970},
+    { type:"Seat", year:1950},
+    { type:"Fiat", year:2010},
+    { type:"Wolkswagen", year:1960},
+    { type:"Saab", year:2000},
+    { type:"BMW", year:1980}
+  ]; 
+
+  //Sorts Objects increasingly
+  let sortIncrease = function(a, b) {
+    return a.year - b.year
+  }
+
+  //sorts Objects decreasingly
+  let sortDecrease = function(a, b) {
+    return b.year - a.year
+  }
+
+  //Alerta!! Necessitam clonar els arrays d'objectes.
+  let arrayObjects_inc = JSON.parse(JSON.stringify ( arrayObjects ))
+  let arrayObjects_dec = JSON.parse(JSON.stringify ( arrayObjects ))
+   
+
+  arrayObjects_inc.sort( sortIncrease )
+  arrayObjects_dec.sort( sortDecrease )
+  console.log("")    //Set a Breakpoint to see the result in the debugger.
+}
+
+
+// MAX and min (only numerical values)
+{
+    console.log( "The maximum value inside array1 is: ", Math.max.apply(null, array2) )
+    console.log( "The minimum value inside array2 is: ", Math.min.apply(null, array2) )
+}
+
+
+// REVERSE
+{
+  console.log("After reversing array2, the result is: '"+ array2.reverse())
 }
 
 
