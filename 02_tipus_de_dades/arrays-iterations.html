@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays - Iteracions</title>
+    <style>
+        span {
+            display:inline-block;
+            border: 1px solid black;
+            width:60px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        #indexes>span, #indexes2>span {
+            background-color:lightgray;
+            font-size:1.2em !important;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p id="indexes"></p>
+    <p id="text"> </p>
+    <br>
+    <p id="indexes2"></p>
+    <p id="text2"> </p>
+</body>
+<script>
+
+//Interface
+var pIndexes = document.getElementById("indexes")
+var pText = document.getElementById("text")
+var pIndexes2 = document.getElementById("indexes2")
+var pText2 = document.getElementById("text2")
+
+
+var array1 = ["Apple", "Banana", "Kiwi"]
+var array2 = [10, 5, 2.3, -2, 0, 100000, -32.5]
+
+
+//Show in the interface
+pIndexes.innerHTML = createIndexesGrid(array1.length)
+pText.innerHTML = createTextGrid(array1)
+pIndexes2.innerHTML = createIndexesGrid(array2.length)
+pText2.innerHTML = createTextGrid(array2)
+
+
+// FOREACH
+{
+  function concatenateElement(value, index, array) {
+    result += value+ separator
+  }
+
+  //1st definition of a function
+  let result = ""
+  array1.forEach( function concatenateElement1(value, index, array) {
+    result += value + " | "
+  });
+  console.log("Foreach 1 result: " + result)
+
+  
+  //2nd definition of a function - FUNCTION AS A VARIABLE
+  result = ""
+  let concatenateElement2 = function(value, index, array) {
+    result += value + " | "
+  };
+  array1.forEach( concatenateElement2 )
+  console.log("Foreach 2 result: " + result)
+
+  //3rd definition of a function --> ARROW FUNCTION
+  result = ""
+  array1.forEach( (value, index, array) => result += value + " | " );
+  console.log("Foreach 3 result: " + result)
+
+  //Modified version of the previous function --> ARROW FUNCTION
+  result = ""
+  array1.forEach( (value, index, array) => result += "("+index+")"+value + " | " );
+  console.log("Foreach 4 result: " + result)
+
+  //Modified version of 2n definition  FUNCTION AS A VARIABLE
+  result = ""
+  let concatenateElement5 = function(value, index, array) {
+    result += value
+    //Avoid adding the separator in the last element of the array
+    if (index != array.length-1)
+      result += " | "
+  };
+  array1.forEach( concatenateElement5 )
+  console.log("Foreach 5 result: " + result)
+}
+
+
+
+//MAP
+{
+  let nouArray2 = array2.map( (value) => value = (value>0) ? value : -value )
+  console.log("array2 = " + array2)
+  console.log("nouArray2 = " + nouArray2)
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+These functions are used by the interface of this code. You don't need to know how they work at this moment.
+*/
+function createIndexesGrid(length) {
+    let str = ""
+    for(let i=0; i<length; i++) {
+        str += "<span>"+i+"</span>"
+    }
+    return str
+}
+function createTextGrid(s) {
+    let str = ""
+    for(let i=0; i<s.length; i++) {
+        str += "<span>"+s[i]+"</span>"
+    }
+    return str
+}
+
+</script>
+</html>
