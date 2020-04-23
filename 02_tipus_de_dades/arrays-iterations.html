@@ -92,9 +92,11 @@ pText2.innerHTML = createTextGrid(array2)
 }
 
 
-
 //MAP
 {
+  //Converts the negative values into positive values
+  //array2 remains unmodified
+  //We can do it using the TRIADIC 
   let nouArray2 = array2.map( (value) => value = (value>0) ? value : -value )
   console.log("array2 = " + array2)
   console.log("nouArray2 = " + nouArray2)
