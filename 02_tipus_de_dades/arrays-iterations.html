@@ -112,6 +112,14 @@ pText2.innerHTML = createTextGrid(array2)
 }
 
 
+//FILTER
+{
+  let arrayAmbUnaA = array1.filter( (value) => { return value.indexOf("a") != -1 })
+  console.log( "les paraules que tenen almanco una a minúscula són:" + arrayAmbUnaA)
+
+  let arrayMajorsQue2 = array2.filter( (value) => { return value > 2 } )
+  console.log("Els nombres majors que 2 en array2 són: " + arrayMajorsQue2 )
+}
 
 
 
