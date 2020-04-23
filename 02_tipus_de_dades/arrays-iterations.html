@@ -47,13 +47,14 @@ pIndexes2.innerHTML = createIndexesGrid(array2.length)
 pText2.innerHTML = createTextGrid(array2)
 
 
+
 // FOREACH
 {
   function concatenateElement(value, index, array) {
     result += value+ separator
   }
 
-  //1st definition of a function
+  // 1st definition of a function
   let result = ""
   array1.forEach( function concatenateElement1(value, index, array) {
     result += value + " | "
@@ -61,7 +62,7 @@ pText2.innerHTML = createTextGrid(array2)
   console.log("Foreach 1 result: " + result)
 
   
-  //2nd definition of a function - FUNCTION AS A VARIABLE
+  // 2nd definition of a function - FUNCTION AS A VARIABLE
   result = ""
   let concatenateElement2 = function(value, index, array) {
     result += value + " | "
@@ -69,27 +70,35 @@ pText2.innerHTML = createTextGrid(array2)
   array1.forEach( concatenateElement2 )
   console.log("Foreach 2 result: " + result)
 
-  //3rd definition of a function --> ARROW FUNCTION
+  // 3rd definition of a function --> ARROW FUNCTION
   result = ""
   array1.forEach( (value, index, array) => result += value + " | " );
   console.log("Foreach 3 result: " + result)
 
-  //Modified version of the previous function --> ARROW FUNCTION
+  // Modified version of the previous function --> ARROW FUNCTION
   result = ""
   array1.forEach( (value, index, array) => result += "("+index+")"+value + " | " );
   console.log("Foreach 4 result: " + result)
 
-  //Modified version of 2n definition  FUNCTION AS A VARIABLE
+  // Modified version of 2n definition  FUNCTION AS A VARIABLE
   result = ""
   let concatenateElement5 = function(value, index, array) {
     result += value
-    //Avoid adding the separator in the last element of the array
+    // Avoid adding the separator in the last element of the array
     if (index != array.length-1)
       result += " | "
   };
   array1.forEach( concatenateElement5 )
   console.log("Foreach 5 result: " + result)
+
+  // Modified version of 3rd definition 
+  // --> ARROW FUNCTION and TRIADIC OPERATOR to avoid adding the separator in the last element
+  
+  result = ""
+  array1.forEach( (value, index, array) => result += (index<array.length-1) ? value + " | " : value );
+  console.log("Foreach 6 result: " + result)
 }
+
 
 
 //MAP
