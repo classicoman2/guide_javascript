@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tractament errors amb try-catch</title>
+</head>
+<body>
+  <p id="error" style="color:red"></p>
+  <input id="inputText" type="text">
+  <button type="button" onclick="validate()">Test the Input</button>
+  <p>
+    <label>Result:</label><span id="result"></span>
+  </p>
+</body>
+  <script>
+
+    //try/catch  basic example
+    {
+      try {
+        // a is neither declared nor assigned
+        let result = a + 2
+      }
+      catch(err) {
+        //name:    ReferenceError
+        //message: a is not defined
+        console.log("Exception - name: "+ err.name, " ; message: " + err.message)
+
+        // Set a breakpoint here to explore the object   err
+        console.log( typeof err )
+      }
+    }
+
+
+
+    validate = function() {
+      //try-catch + throw, finally
+      try {
+        inputText = document.getElementById("inputText").value;
+
+        if (inputText.length == 0) throw "input is empty";
+        if (inputText.length < 8) throw "input is too short";
+        if (inputText.length > 8) throw "input is too long";
+
+      } catch(err) {
+          document.getElementById("error").innerHTML = err
+      } finally {
+          document.getElementById("result").innerHTML = document.getElementById("inputText").value
+      }
+    }
+  
+  </script>
+</html>
