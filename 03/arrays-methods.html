@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays - Methods</title>
+    <style>
+        span {
+            display:inline-block;
+            border: 1px solid black;
+            width:60px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        #indexes>span, #indexes2>span {
+            background-color:lightgray;
+            font-size:1.2em !important;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p id="indexes"></p>
+    <p id="text"> </p>
+    <br>
+    <p id="indexes2"></p>
+    <p id="text2"> </p>
+</body>
+<script>
+
+//Interface
+var pIndexes = document.getElementById("indexes")
+var pText = document.getElementById("text")
+var pIndexes2 = document.getElementById("indexes2")
+var pText2 = document.getElementById("text2")
+
+
+var array1 = ["Apple", "Banana", "Kiwi"]
+var array2 = [100, 50, 25, 5, 1, 0.5]
+
+
+//Show in the interface
+pIndexes.innerHTML = createIndexesGrid(array1.length)
+pText.innerHTML = createTextGrid(array1)
+pIndexes2.innerHTML = createIndexesGrid(array2.length)
+pText2.innerHTML = createTextGrid(array2)
+
+
+// POP, PUSH
+{
+  // pop()
+  console.log("The contents of array1 after popping the element 0 '"+ array1.pop() +"' is: " + array1)
+
+  // push()
+  console.log("The contents of array1 after pushing an element is : " + array1 + " and its length is: " + array1.push("Mango"))
+
+  // adding an element using an index
+  array1[6] = "Grape"
+  console.log("The contents of array1 after adding in position 6: " + array1 + " and its length is: " + array1.length)
+  
+  //Show in the interface
+  /*
+  pIndexes.innerHTML = createIndexesGrid(array1.length)
+  pText.innerHTML = createTextGrid(array1) 
+  */
+}
+
+// SHIFT, UNSHIFT
+{
+  // pop()
+  console.log("The contents of array2 after SHIFTING the element 0 '"+ array2.shift() +"' is:  [" + array2 + "]")
+
+  // push()
+  array2.unshift("99999")
+  console.log("The contents of array2 after UNSHIFTING an element is:  [" + array2 + "]")
+}
+
+
+//SPLICE
+{
+    // splice() to add 2 elements from position 1
+    array1 = ["Apple", "Banana", "Kiwi"]
+    array1.splice(1,0, "Strawberry", "Cramberry")
+    console.log ("executing splice in position 1 results in: " + array1 )
+
+    //splice() to delete 1st element
+    array1.splice(0, 1)
+    console.log("Deleting first 2 elements results in: " + array1)
+
+    //splice() to delete last 2 elements
+    array1.splice(2, 2)
+    console.log("Deleting first 2 elements results in: " + array1)
+
+    //splice() to add a simple element at the end using splice (push is preferable)
+    array1.splice(2, 0, "Blueberry")
+    console.log("Adding 1 element in the end: " + array1)
+}
+
+
+// SLICE
+{
+  let subArray = array2.slice(2,4)
+  console.log("If we slice 2 elements form position 2, the result we obtain this: " + subArray )
+}
+
+
+
+
+
+
+
+/******
+These functions are used by the interface of this code. You don't need to know how they work at this moment.
+******/
+
+function createIndexesGrid(length) {
+    let str = ""
+    for(let i=0; i<length; i++) {
+        str += "<span>"+i+"</span>"
+    }
+    return str
+}
+function createTextGrid(s) {
+    let str = ""
+    for(let i=0; i<s.length; i++) {
+        str += "<span>"+s[i]+"</span>"
+    }
+    return str
+}
+
+</script>
+</html>

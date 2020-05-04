@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String Methods</title>
+    <style>
+        span {
+            display:inline-block;
+            border: 1px solid black;
+            width:24px;
+            text-align: center;
+            font-size: 1.4em;
+        }
+
+        #indexes>span, #indexes2>span {
+            background-color:lightgray;
+            font-size:1.2em !important;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p id="indexes"></p>
+    <p id="text"> </p>
+    <br>
+    <p id="indexes2"></p>
+    <p id="text2"> </p>
+</body>
+<script>
+
+//Interface
+var pIndexes = document.getElementById("indexes")
+var pText = document.getElementById("text")
+var pIndexes2 = document.getElementById("indexes2")
+var pText2 = document.getElementById("text2")
+
+
+var str1 = "This is it"
+
+pIndexes.innerHTML = createIndexesGrid(str1.length)
+pText.innerHTML = createTextGrid(str1)
+
+
+//.length
+console.log("Length of str1 is = " + str1.length)
+
+//.indexOf()
+console.log("The text \"is\" starts in position " + str1.indexOf("is") )
+var initial = 3
+console.log(".indexOf() - From position "+initial+", the text \"is\" starts in position " + str1.indexOf("is",initial) )
+
+
+//.lastIndexOf()
+console.log("lastIndexOf() - From position "+10+", the text \"is\" starts in position " + str1.lastIndexOf("is",15) )
+
+
+
+var str2 = "Apple, Banana, Kiwi";
+pIndexes2.innerHTML = createIndexesGrid(str2.length)
+pText2.innerHTML = createTextGrid(str2)
+
+
+
+//slice()
+var start=7, end=13;
+console.log( "slice() - " + "The slice from "+start+" to "+end+" is: " + str2.slice(start, end))
+start=-12; end=-6;
+console.log( "slice() - " + "The slice from "+start+" to "+end+" is: " + str2.slice(start, end))
+
+
+//substr()
+start=7;
+var strLength = 6;
+console.log( "substr() - " + "The string from "+start+" with a length of "+strLength+" is: " + str2.substr(start, strLength))
+start=-12;
+console.log( "substr() - " + "The string from "+start+" with a length if "+strLength+" is: " + str2.substr(start, strLength))
+
+
+//replace
+newText = "www"
+console.log("replace() - replacing \"is\" by \"www\", \""+str1+ "\" becomes \""+ str1.replace("is","www") + "\""  )
+console.log("replace() amb /g - replacing \"is\" by \"www\", \""+str1+ "\" becomes \""+ str1.replace(/is/g,"www") + "\""  )
+
+
+//split
+var str3 = "1-2-3-4-5"
+var array3 = str3.split("-")
+var str4 = "This is a sentence"
+var array4 = str4.split(" ")
+console.log ("The string  \""+str3+"\" is split into the array "+typeof array3 +" = "+array3 )
+console.log ("The string  \""+str4+"\" is split into the array "+typeof array4 +" = "+array4 )
+
+/*
+These functions are used by the interface of this code. You don't need to know how they work at this moment.
+*/
+function createIndexesGrid(length) {
+    let str = ""
+    for(let i=0; i<length; i++) {
+        str += "<span>"+i+"</span>"
+    }
+    return str
+}
+function createTextGrid(s) {
+    str = ""
+    for(let i=0; i<s.length; i++) {
+        str += "<span>"+s[i]+"</span>"
+    }
+    return str
+}
+</script>
+</html>

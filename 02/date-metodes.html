@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date - Get methods</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+  var mesos = ["Gen", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Des"]
+  var diesSetmana = ["diumenge","dilluns","dimarts","dimecres","dijous","divendres","dissabte"]
+
+  var d = new Date()
+
+  //Una altra manera d'aconseguir la data d'avui
+  console.log(Date.now())
+
+  // Obté l’any en 4 xifres (yyyy)
+  console.log(" Year: " + d.getFullYear())
+
+  // Obté el mes - entre 0-11
+  console.log(" Mes: " + mesos[ d.getMonth() ] )
+
+  // Obté el dia entre 1-31
+  console.log(" Dia: " + d.getDate())
+
+  // Dia de la setmana
+  console.log(" Dia de la setmana: " + diesSetmana[ d.getDay() ])
+
+  //Hora
+  console.log(" Hora exacta: " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() + "." + d.getMilliseconds())
+
+  //Milisegons
+  console.log(" Han passat " + d.getTime() + " ms. des del 1/1/1970")
+
+</script>
+
+</html>

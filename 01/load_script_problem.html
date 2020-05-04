@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Load script problem</title>
+    <style>
+        #container {
+            background-color: bisque;
+        }
+        span {
+            display: block;
+            margin: 2px;
+            border: 1px solid brown;
+            font-size: 1.5em;
+        }
+    </style>
+    <script>
+        document.getElementById("text1").innerHTML = "Loaded the script in the header"
+    </script>
+</head>
+<body>
+    <div id="container">
+        <span id="text1">..........</span>
+        <span id="text2">..........</span>
+    </div>
+</body>
+<script>
+    document.getElementById("text2").innerHTML = "Loaded the script after the body"
+</script>
+</html>

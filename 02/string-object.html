@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String Object</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+str1 = "i'm a string"
+str2 = new String("i'm a string")
+str3 = new String("i'm a string")
+
+//value
+console.log(str1)
+console.log(str2)
+
+//length property
+console.log(str1.length)
+console.log(str2.length)
+
+//comparison
+
+//same value -> true
+console.log( str1 == str2 )
+//different type -> false
+console.log( str1 === str2 )
+//same value and type, but different objects -> false
+console.log( str2 === str3 )
+
+</script>
+</html>
