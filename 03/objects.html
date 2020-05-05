@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+  //Basic usage of objects
+  {
+    let obj = { name: "Isaac", surname: "Newton", age: 57, married: false }
+
+    console.log("My name is " + obj.name + " " + obj.surname)
+    console.log("I'm " + obj.age + " and I'm " + ((!obj.married) ? "not " : "") + "married")
+  }
+  console.log("")
+
+  // Array d'objectes
+  // Podem crear arrays d'objectes
+  {
+    let persones = [{ name: "Maria", surname: "Saal" }, { name: "Peter", surname: "Greenway" }]
+    for (p of persones) {
+      console.log(p.name + " " + p.surname)
+    }
+  }
+
+
+
+  //Un objecte contenir un array que pot contenir propietats i fins i tot un altre array, etc.
+  {
+    let grup = {
+      estudis: "DAW",
+      aula: "A208",
+      curs: 2021,
+      alumnes: [
+        { name: "Maria", surname: "Saal" },
+        { name: "Peter", surname: "Greenway" }
+      ]
+    }
+
+    console.log("")
+    console.log("El grup de " + grup.estudis + " en el curs " + grup.curs +
+      " ocupa l'aula " + grup.aula + " i els seus alumnes son " + grup.alumnes[0].name + " i " + grup.alumnes[1].name);
+  }
+
+
+
+  // Mètodes d'un objecte  +  emprar  'this'  correctament
+  {
+    let grup = {
+
+      //PROPIETATS
+      estudis: "DAW",
+      aula: "A208",
+      curs: 2021,
+      alumnes: [
+        { name: "Maria", surname: "Saal" },
+        { name: "Peter", surname: "Greenway" }
+      ],
+
+      //MÈTODES
+      recompteAlumnes: function () {
+        return this.alumnes.length
+      },
+
+      getAlumnName: function (index) {
+        return this.alumnes[index].name
+      },
+
+      getAlumnSurname: function (index) {
+        return this.alumnes[index].surname
+      }
+    }
+
+    console.log("")
+    console.log("En la nostra aula, hi ha " + grup.recompteAlumnes() + " alumnes.")
+    let id = 0
+    console.log("L'alumne/a número " + id + " és: " + grup.getAlumnName(id) + " " + grup.getAlumnSurname(id))
+  }
+
+</script>
+
+</html>
