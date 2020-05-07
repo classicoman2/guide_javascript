@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM - Modify Elements</title>
+</head>
+
+<body>
+
+  <p id="paragraf">
+  </p>
+
+  <img id="imatge" src="assets/mountain.webp" alt="imatge d'una muntanya">
+</body>
+<script>
+
+  var element = document.getElementById("paragraf")
+  var imatge = document.getElementById("imatge")
+
+  // element.innerHTML -> Canvia el contingut
+  {
+    element.innerHTML = "Contingut del text"
+  }
+
+
+  // element.nomAtribut -> canvia l'atribut
+  {
+    imatge.src = "assets/valley.webp"
+    imatge.alt = "Imatge d'una vall"
+  }
+
+
+  // element.style.nomPropietat -> canvia les propietats CSS de l'element
+  {
+    element.style.fontSize = "2em"
+    element.style.color = "red"
+    element.style.textDecoration = "underline"
+    element.style.textAlign = "center"
+  }
+
+
+  // element.setAttribute() -> permet canviar un atribut
+  // En aquest exemple: l'atribut 'id'
+  {
+    element.setAttribute("id", "paragraf2")
+
+    try {
+      document.getElementById("paragraf").innerHTML = "foo"
+    }
+    catch {
+      console.log("Error: L'element 'paragraf' no existeix!")
+    }
+    finally {
+      document.getElementById("paragraf2").innerHTML = "doo"
+    }
+  }
+
+</script>
+
+</html>
