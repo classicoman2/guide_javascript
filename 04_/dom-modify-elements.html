@@ -5,12 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM - Modify Elements</title>
+  <style>
+    .marcNou {
+      border: 5px solid blueviolet;
+      background-color: cornflowerblue;
+    }
+
+    .textNou {
+      font-size: 1.2em !important;
+      color: blue !important;
+      text-decoration: none !important;
+    }
+  </style>
 </head>
 
 <body>
 
-  <p id="paragraf">
-  </p>
+  <p id="paragraf"></p>
 
   <img id="imatge" src="assets/mountain.webp" alt="imatge d'una muntanya">
 </body>
@@ -32,13 +43,32 @@
   }
 
 
+
   // element.style.nomPropietat -> canvia les propietats CSS de l'element
   {
     element.style.fontSize = "2em"
     element.style.color = "red"
     element.style.textDecoration = "underline"
-    element.style.textAlign = "center"
+    element.style.border = "1px solid grey"
+    element.style.height = "50px"
   }
+
+
+
+
+
+
+  // element.className  -> indica la classe d'un element
+  {
+    document.getElementById("paragraf").onclick = function () {
+      //this es refereix a l'element clicat
+      this.className = "marcNou textNou"
+      //  this.className = "marcNou"
+      //  this.className = "textNou"
+    }
+
+  }
+
 
 
   // element.setAttribute() -> permet canviar un atribut
