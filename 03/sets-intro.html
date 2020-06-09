@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays - Iteracions</title>
+  <style>
+    span {
+      display: inline-block;
+      border: 1px solid black;
+      width: 60px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    #indexes>span,
+    #indexes2>span {
+      background-color: lightgray;
+      font-size: 1.2em !important;
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="indexes"></p>
+  <p id="text"> </p>
+  <br>
+  <p id="indexes2"></p>
+  <p id="text2"> </p>
+</body>
+<script>
+
+  //Interface
+  var pIndexes = document.getElementById("indexes")
+  var pText = document.getElementById("text")
+  var pIndexes2 = document.getElementById("indexes2")
+  var pText2 = document.getElementById("text2")
+
+
+  //Create a Set
+  var set1 = new Set(["Apple", "Banana", "Kiwi"])
+
+
+  //Add elements
+  {
+    set1.add(3.14)
+    set1.add(false)
+    set1.add(['one', 'two'])
+
+    //Show in the interface
+    pIndexes.innerHTML = createIndexesGrid(set1.size)
+    pText.innerHTML = createTextGrid(set1)
+  }
+
+  //Has or doesn't have elements
+  {
+    console.log("Does set1 have the element 3.14?: " + set1.has(3.14))
+    console.log("Does set1 have the element 3?: " + set1.has(3))
+    console.log("Does set1 have the element 'Apple'?: " + set1.has("Apple"))
+    console.log("Does set1 have the element 'Pear'?: " + set1.has("Pear"))
+
+    // Using Template Strings
+    console.log(`set1 has ${!set1.has(3.14) ? 'not ' : '' }the element 3.14`)
+  }
+
+  //Size
+  console.log(`The size of set1 is: ${set1.size}`)
+
+  //Delete 
+  set1.delete(3.14)
+
+  //Size
+  console.log(`The size of set1 after deleting the element 3.14 is: ${set1.size}`)
+
+  
+  /*
+    pIndexes2.innerHTML = createIndexesGrid(set2.length)
+    pText2.innerHTML = createTextGrid(set2)
+  */
+
+
+
+  /*
+  These functions are used by the interface of this code. You don't need to know how they work at this moment.
+  */
+  function createIndexesGrid(length) {
+    let str = ""
+    for (let i = 0; i < length; i++) {
+      str += "<span>" + i + "</span>"
+    }
+    return str
+  }
+  function createTextGrid(set) {
+    let str = ""
+    for (let elem of set) {
+      str += `<span>${elem}</span>`
+    }
+    return str
+  }
+
+  /**
+    List the contents of a set
+  **/
+  function listSet(set) {
+    let str = "("
+    for (let elem of set) {
+      str += `'${elem}',`
+    }
+    //remove last , add ')' and return
+    return str.substr(0, str.length-1) + ")"
+  }
+
+
+  //Set Operations
+  {
+    let set1 = new Set([1, 10, 100])
+    let set2 = new Set([1, 5, 10, 20])
+
+    console.log(`\nset1 = ${listSet(set1)}`)
+    console.log(`set2 = ${listSet(set2)}`)
+
+    console.log("set1 U set2 = " + listSet (union(set1, set2)) )
+    console.log("set1 X set2 = " + listSet (intersection(set1, set2)) )
+    console.log("set1 - set2 = " + listSet (difference(set1, set2)) )
+    console.log("set2 - set1 = " + listSet (difference(set2, set1)) )
+
+  }
+
+
+  /**
+    This basic set functions have been copied from 
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+  **/
+
+  function isSuperset(set, subset) {
+    for (let elem of subset) {
+        if (!set.has(elem)) {
+            return false
+        }
+    }
+    return true
+}
+
+function union(setA, setB) {
+    let _union = new Set(setA)
+    for (let elem of setB) {
+        _union.add(elem)
+    }
+    return _union
+}
+
+function intersection(setA, setB) {
+    let _intersection = new Set()
+    for (let elem of setB) {
+        if (setA.has(elem)) {
+            _intersection.add(elem)
+        }
+    }
+    return _intersection
+}
+
+function symmetricDifference(setA, setB) {
+    let _difference = new Set(setA)
+    for (let elem of setB) {
+        if (_difference.has(elem)) {
+            _difference.delete(elem)
+        } else {
+            _difference.add(elem)
+        }
+    }
+    return _difference
+}
+
+function difference(setA, setB) {
+    let _difference = new Set(setA)
+    for (let elem of setB) {
+        _difference.delete(elem)
+    }
+    return _difference
+}
+
+
+
+
+</script>
+
+</html>

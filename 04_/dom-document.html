@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document properties and methods</title>
+</head>
+
+<body>
+  <div>
+    <label>Name:</label><input id="name" placeholder="Insert your name here">
+  </div>
+  <div>
+    <label>Age:</label><input id="age" placeholder="18">
+
+  </div>
+</body>
+<script>
+
+  //activeElement
+  {
+    setInterval(() => {
+      console.log("L'element enfocat és: " + document.activeElement.id)
+    }, 3000);
+  }
+  
+  //baseURI
+  {
+    console.log( "baseURI: " + document.baseURI )
+  }
+
+    //URL
+    {
+    console.log( "URL: " + document.URL )
+  }
+
+  //body
+  {
+    console.log( document.body )
+    console.log( document.body.childNodes[1] )
+    console.log( "Placeholder of the input 'name' is: " + document.body.childNodes[1].childNodes[2].placeholder )
+  }
+
+  //head 
+  {
+    console.log( document.head.childNodes[1] )
+  }
+
+  //title 
+  {
+    console.log ( "The title of this page is: " + document.title )
+  }
+
+</script>
+
+</html>
