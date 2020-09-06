@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pintar imatge</title>
+    <script>
+
+        window.onload = function () {
+            console.log("2- The window load event")
+
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+
+            x = 400;
+            y = 382;
+            var img = new Image();   // Create new img element
+            img.src = './assets/edifici.jpg'; // Set source path
+
+            //funció "Hook"
+            img.addEventListener('load', function () {
+                // execute drawImage statements here
+                ctx.drawImage(img, 0, 0)
+            }, false);
+        }
+
+    </script>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+</body>
+
+</html>
