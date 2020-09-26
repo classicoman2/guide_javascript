@@ -1,6 +1,6 @@
 ## Javascript examples & exercises Repository
 
-[!../logo-classicoman-optim.png]
+![logo](./logo-classicoman-optim.png)
 
 Learning Javascript.
 
