@@ -10,20 +10,34 @@
 
 </body>
 <script>
+
+ //global1, global2, accessibility
+
+  console.log("global1 is '" + global1 + "' in global scope BEFORE its declaration")
+
+  try {
+    console.log("global2 is '" + global2)
+  } catch (e) {
+    console.log("global2 is not accessible in global scope BEFORE its declaration")
+  }
+
+  //Declaration and initialitzation
   var global1 = "accessible"
   global2 = "accessible"
 
-  console.log("global1 is '" + global1 + "' in global scope")
+  //global1
+  console.log("global1 is '" + global1 + "' in global scope after its declaration")
 
-  //All global variables belong to the object 'window'
+  //global1 - All global variables belong to the object 'window'
   console.log("global1 is '" + window.global1 + "' in global scope using 'window.global1'")
+
 
 
   function myFunction01() {
     //local variable declared with  'var' -> belongs to the local scope
     var local1 = "accessible"
 
-    //I can access to global variables
+    //global1, global2, global3, global4
     console.log("global1 is '" + global1 + "' in a local scope because it has been DECLARED before the function declaration")
     console.log("global2 is '" + global2 + "' in a local scope before it has been INITIALIZED and HOISTED before the function declaration")
     console.log("global3 is '" + global3 + "' although it is initialized AFTER the declaration of the function")
@@ -35,7 +49,7 @@
     }
   }
 
-
+  //local2
   try {
     console.log("local2 is '" + local2 + "' globally BEFORE it is declared in the funcion")
   } catch (e) {
@@ -43,7 +57,7 @@
   }
 
 
-
+ 
   function myFunction02() {
     //local variable not declared -> is hoisted in the global scope
     local2 = "accessible"
@@ -57,24 +71,29 @@
     }
   }
 
+
+
   myFunction01()
 
   myFunction02()
 
+
+
+  //local1
   try {
     console.log("local1 is '" + local1 + "' in global scope")
   } catch (e) {
     console.log("local1 is not accessible in global scope")
   }
 
-
+  //local2
   try {
     console.log("local2 is '" + local2 + "' globally AFTER it is declared in the funcion")
   } catch (e) {
     console.log("local2 is not accessible globally AFTER it is declared in the funcion")
   }
 
-
+  //global3, global4
   var global3 = "accessible"
   global4 = "accessible"
 
