@@ -1,11 +1,16 @@
 /**
+ * STRINGS MULTILÍNIA
  */
+
+console.log();
 console.log(`(1) Multi-line Strings
 -----------------`);
 console.log(`This is a 
     multi-line string`);
 
+
 /**
+ * INTERPOLACIÓ D'EXPRESSIONS
  */
 console.log(`\n(2) Expression Interpolation
 -----------------`);
@@ -16,8 +21,11 @@ not ${2 * a + b}.`);
 // "Fifteen is 15 and
 // not 20."
 
+
 /**
+ * OPERADOR TERNARI
  */
+
 console.log(`\n(3) Using the Ternary Operator
 -----------------`);
 let text_a = "Bon dia";
@@ -25,8 +33,11 @@ let text_b = "Bona nit";
 console.log(`Si a és major que b, llavors 
 et saludo amb ${a > b ? text_a : text_b}`);
 
+
 /**
+ * TAGGED TEMPLATES
  */
+
 console.log(`\n(4) TAGGED TEMPLATES
 -----------------`);
 let person = "Toni Amengual";
