@@ -36,22 +36,3 @@ console.log("The value of var1 is " + var1);
 // var2 was declared inside a block  {  }  and it is accessible but not its value
 console.log("The value of var2 is " + var2);
 
-
-/**
- * HOISTING
- */
-
-console.log("The value of varDeclared is " + varDeclared);
-
-try {
-  console.log("The value of varInitialized is " + varInitialized);
-} catch (e) {
-  console.log("   Error: varNotHoisted is not accessible because it was declared & initialized AFTER it was read");
-}
-
-
-//GLOBAL SCOPE variable initialized with 'var'
-varInitialized = 10;
-
-//GLOBAL SCOPE variable declared & initialized with 'var'
-var varDeclared = 10;
