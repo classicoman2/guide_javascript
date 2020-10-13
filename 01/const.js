@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>const</title>
-</head>
-<body>
-    
-</body>
-<script>
     
 // correct
 const PI = 3.1415927
@@ -36,5 +26,3 @@ console.log("PI val = " + PI)
 // Error: "Uncaught ReferenceError: NUMERO is not defined"
 console.log("NUMERO val = " + NUMERO)
 
-</script>
-</html>
