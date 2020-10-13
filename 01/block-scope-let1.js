@@ -1,14 +1,5 @@
-/**
- * Execute this code using Nodejs with:
- * 
- *    $ node nameofthefile
- */
 
 
-
-/**
- * 
- */
 function myFunction() {
   // LOCAL SCOPE variable using 'var'
   let var0 = 30;
