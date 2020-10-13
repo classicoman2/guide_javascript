@@ -4,7 +4,7 @@
  * @param {number} a 
  */
 function suma(a) {
-  let b = 5;
+  let b = 5;c
   return a+b;
 }
 
