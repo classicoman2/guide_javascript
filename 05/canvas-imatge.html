@@ -8,20 +8,24 @@
     <script>
 
         window.onload = function () {
-            console.log("2- The window load event")
 
+            // Create the Canvas
             var canvas = document.getElementById("myCanvas");
             var ctx = canvas.getContext("2d");
 
-            x = 400;
-            y = 382;
-            var img = new Image();   // Create new img element
+            // Dimensions of the image
+            x = 200;
+            y = 191;
+            // Path to the Image (could be a URI)
+            var img = new Image();   
             img.src = './assets/edifici.jpg'; // Set source path
 
-            //funció "Hook"
+            // If you try to call drawImage() before the image has finished loading, 
+            // it won't do anything (or, in older browsers, may even throw an exception). 
+            // So you need to be sure to use the load event so you don't try this before the image has loaded:
             img.addEventListener('load', function () {
                 // execute drawImage statements here
-                ctx.drawImage(img, 0, 0)
+                ctx.drawImage(img, 20, 20, x, y)
             }, false);
         }
 

@@ -1,0 +1,30 @@
+
+----
+HTML:  
+----
+
+id="buttonSayHello"
+
+
+
+---
+JS:
+--
+
+window.onload = function () {
+  /*
+  Versio 1
+  */
+  document
+    .getElementById("buttonSayHello")
+    .addEventListener("click", sayHello());
+
+  /*
+  Versio 2
+  */
+  /*
+  document.getElementById("buttonSayHello").addEventListener("click", function() {
+    sayHello();
+  })
+*/
+};
