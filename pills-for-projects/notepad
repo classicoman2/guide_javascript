@@ -17,7 +17,7 @@ window.onload = function () {
   */
   document
     .getElementById("buttonSayHello")
-    .addEventListener("click", sayHello());
+    .addEventListener("click", sayHello;
 
   /*
   Versio 2

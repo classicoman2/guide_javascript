@@ -1,3 +1,6 @@
+/**
+ * Obtenir hora actual
+ */
 function getHoraActual() {
   let data = new Date();
   return (
@@ -5,8 +8,13 @@ function getHoraActual() {
   );
 }
 
-function sayHello() {
-  let msg = "Hello Class, it's " + getHoraActual();
-  console.log(msg);
-  document.getElementById("message").innerHTML = msg;
-}
+
+window.onload = function () {
+  document
+    .getElementById("buttonSayHello")
+    .addEventListener("click", function () {
+      let msg = "Hello Class, it's " + getHoraActual();
+      console.log(msg);
+      document.getElementById("message").innerHTML = msg;
+    });
+};
