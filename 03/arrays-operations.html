@@ -1,120 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arrays introduction</title>
     <style>
-        span {
-            display:inline-block;
-            border: 1px solid black;
-            width:60px;
-            text-align: center;
-            font-size: 0.9em;
-        }
+      span {
+        display: inline-block;
+        border: 1px solid black;
+        width: 60px;
+        text-align: center;
+        font-size: 0.9em;
+      }
 
-        #indexes>span, #indexes2>span {
-            background-color:lightgray;
-            font-size:1.2em !important;
-            color: blue;
-        }
+      #indexes > span,
+      #indexes2 > span {
+        background-color: lightgray;
+        font-size: 1.2em !important;
+        color: blue;
+      }
     </style>
-</head>
-<body>
+    <script src="arrays-operations.js" type="module"></script>
+  </head>
+  <body>
     <p id="indexes"></p>
-    <p id="text"> </p>
-    <br>
+    <p id="text"></p>
+    <br />
     <p id="indexes2"></p>
-    <p id="text2"> </p>
-</body>
-<script>
-
-//Interface
-var pIndexes = document.getElementById("indexes")
-var pText = document.getElementById("text")
-var pIndexes2 = document.getElementById("indexes2")
-var pText2 = document.getElementById("text2")
-
-
-var array1 = ["Apple", "Banana", "Kiwi"]
-var array2 = [10, 5, 2.3, -2, 0, 100000, -32.5]
-
-
-//Show in the interface
-pIndexes.innerHTML = createIndexesGrid(array1.length)
-pText.innerHTML = createTextGrid(array1)
-pIndexes2.innerHTML = createIndexesGrid(array2.length)
-pText2.innerHTML = createTextGrid(array2)
-
-
-
-//Loop array1 using for
-{
-  let str = ""
-  for (let i=0; i<array1.length; i++) {
-    str += array1[i] + " / "
-  }
-  console.log("The contents of array1 through a loop: " + str)
-}
-
-
-//Loop array2 using for
-{
-  let str = ""
-  for (let i=0; i<array2.length; i++) {
-    str += array2[i] + " ** "
-  }
-
-  console.log("The contents of array2 through a loop, using for: " + str)
-}
-
-
-{
-  //Loop arra11 using .forEach()
-  function addElement(value) {
-    str = str + value + " || "
-  }
-
-  let str = ""
-  //forEach()
-  array2.forEach( addElement )
-  console.log("The contents of array2 through a loop, using forEach(): " + str)
-}
-
-
-//Associative Arrays -> "Javascript style"
-{
-  let arrayAssoc = []
-  arrayAssoc['name'] = "Peter Green"
-  arrayAssoc['age'] = 35;
-  console.log("arrayAssoc is an " + arrayAssoc.constructor + 
-              "and its contents is: ["+ arrayAssoc.name +", " + arrayAssoc.age +"]")
-  console.log(arrayAssoc)
-  
-}
-
-
-
-
-
-
-/*
-These functions are used by the interface of this code. You don't need to know how they work at this moment.
-*/
-function createIndexesGrid(length) {
-    let str = ""
-    for(let i=0; i<length; i++) {
-        str += "<span>"+i+"</span>"
-    }
-    return str
-}
-function createTextGrid(s) {
-    let str = ""
-    for(let i=0; i<s.length; i++) {
-        str += "<span>"+s[i]+"</span>"
-    }
-    return str
-}
-
-</script>
+    <p id="text2"></p>
+  </body>
 </html>
