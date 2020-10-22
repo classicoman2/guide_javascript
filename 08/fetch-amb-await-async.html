@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fetch - Simple</title>
+  </head>
+  <body></body>
+  <script>
+    var myurl =
+      "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/posts/1";
+
+    async function getData(url) {
+      const response = await fetch(url);
+      const promesa = response.json();
+      return promesa;
+    }
+
+    getData(myurl).then( dades => console.log(dades) );
+
+  </script>
+</html>
