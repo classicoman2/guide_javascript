@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fetch - estudiant les promises</title>
+  </head>
+
+  <body>
+    <img id="foto" src="" />
+  </body>
+  <script>
+    //Torna un valor random entre 1 i max
+    function randomNumber(max) {
+      return Math.ceil(Math.random() * max);
+    }
+
+    //Random server
+    let myAPIurl =
+      "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/posts";
+
+    let postNumber = randomNumber(6);
+
+    fetch(myAPIurl + "/" + postNumber)
+      .then(function (response) {
+        //response és un objecte de tipus Response que conté les dades d'una Response de HTTP
+        // type: cors
+        // url: la url requerida
+        // ok: true o false
+        // status: 200 o 404 (si el recurs sol·licitat no existeix en el servidor)
+        console.log(response);
+
+        //response.json() és una Promise, que està pendent de ser resolta
+        //console.log(response.json())
+      })
+      //Fixar-se en què la Promise no es resol en error si se produeix un status=404, sino que
+      //només quan el nom del servidor és incorrecte.
+      .catch(function (error) {
+        console.log("ERROR: " + error.message);
+      });
+  </script>
+</html>

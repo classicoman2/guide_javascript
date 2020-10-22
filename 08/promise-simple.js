@@ -1,15 +1,14 @@
 // Declarar la Promesa
 let laMevaPromesa = new Promise(function (resolve, reject) {
   //Accept
-  resolve("******OK*****");
+  //resolve("******OK*****");
 
   //Reject
-  //reject("There was an error")
+  reject("There was an error")
 
-  /* Cridam resolve(...) quan el que estavem fent
-        de forma asincrona s'ha resolt satisfactoriament
-           Cridam reject(...) quan ha fallat
-        */
+  /* Cridam resolve(...) quan el que estavem fent de forma asincrona s'ha resolt satisfactoriament. 
+     Cridam reject(...) quan ha fallat
+   */
 
   /* En aquest exemple, empram setTimeout(...) per simular un codi
         asíncron. En la realitat, fariem normalment una consulta a una API */
