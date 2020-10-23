@@ -13,11 +13,18 @@
 
     async function getData(url) {
       const response = await fetch(url);
+      console.log("Resposta:");
+      console.log(response);
+
       const promesa = response.json();
+      console.log(
+        `Promesa: Quan s'executa el console.log, està 'pending'. Clica fletxa i passa per sobre de l'etiqueta 'i' on s'explica que les dades s'han obtingut a posteriori`
+      );
+      console.log(promesa);
       return promesa;
     }
 
-    getData(myurl).then( dades => console.log(dades) );
-
+    // Resolem la promesa amb then
+    getData(myurl).then((dades) => console.log(dades));
   </script>
 </html>
