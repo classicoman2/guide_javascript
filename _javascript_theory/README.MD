@@ -109,6 +109,7 @@ En tens una mostra en el codi `function-constructor-object.js`.
 
 ## Webgrafia
 
+- [Object Prototypes - MDN Tutorial](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
 - [Understanding Prototypes and Inheritance in JavaScript - Tania Rascia](https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript)
 - [Understanding Classes in Javascript - Tania Rascia](https://www.digitalocean.com/community/tutorials/understanding-classes-in-javascript)
 - MDN Web Docs
