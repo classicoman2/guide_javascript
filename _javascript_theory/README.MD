@@ -76,6 +76,7 @@ Per tant, ara `y.__proto__.__proto__` no és `null` sinó `Object.Prototype`.
 Per testar això, me bastaria amb executar aquest codi:
 
 `y.__proto__ === Array.prototype;            // true`
+
 `y.__proto__.__proto__ === Object.prototype; // true`
 
 
