@@ -69,7 +69,18 @@ En el cas de `x`, com que hereda directament de `Object` - que correctament s'an
 
 ### Tornant als arrays
 
-Si tornam als arrays, 
+Tornem als arrays. Creem un nou array amb  `let y = []` o bé amb `let y = new Array()` que és el mateix. Si miram a la seva propietat [[prototype]] - o sigui, a __proto__ - en el debugger, veurem que té més cosa que la propietat [[Prototype]] de x. El motiu és que hereda de l'objecte `Array.Prototype` enlloc del més bàsic `Object.Prototype`. I `Array.Prototype` deriva de `Object.Prototype`. Aixi que y -> Array -> Object.
+
+Per tant, ara `y.__proto__.__proto__` no és `null` sinó `Object.Prototype`.
+
+Per testar això, me bastaria amb executar aquest codi:
+
+`y.__proto__ === Array.prototype;            // true`
+`y.__proto__.__proto__ === Object.prototype; // true`
+
+
+
+
 
 ## Webgrafia
 
