@@ -25,7 +25,7 @@ Vaja, que les funcions deriven totes d'un objecte.
 
 De fet, si executam aquest codi, donarà com a resultat `true`.
 
-`console.log ( (function(){}).constructor === Function )`
+    console.log ( (function(){}).constructor === Function )
 
 Perquè en realitat, **cada funció és, a JS, un objecte de tipus Function** i de fet, podríem crear funcions mitjançant [el constructor Function()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/Function).
 
@@ -47,11 +47,11 @@ Javascrit es diferencia, per exemple, de Java, en que a diferència d'aquest, qu
 
 Per això, ens hem de centrar en els objectes de Javascript. Comencem per l'objecte més bàsic.
 
-`let x = {}`
+    let x = {}
 
 també podria haver escrit,
 
-`let x = new Object()`
+    let x = new Object()
 
 Doncs bé, **tot objecte té un prototip**, una propietat interna [[Prototype]] que no se pot accedir directament sinó només amb el mètode `.getPropertyOf` de `Object` - `Object és **l'objecte arrel a partir del qual surten tots els altres**.
 
@@ -75,9 +75,11 @@ Per tant, ara `y.__proto__.__proto__` no és `null` sinó `Object.Prototype`.
 
 Per testar això, me bastaria amb executar aquest codi:
 
-`y.__proto__ === Array.prototype;            // true`
+    y.__proto__ === Array.prototype;            // true
+    y.__proto__.__proto__ === Object.prototype; // true
+    y instanceof Array; // true
 
-`y.__proto__.__proto__ === Object.prototype; // true`
+
 
 
 
@@ -86,3 +88,4 @@ Per testar això, me bastaria amb executar aquest codi:
 ## Webgrafia
 
 - MDN Web Docs
+- https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript
