@@ -90,7 +90,22 @@ Això té conseqüències pràctiques, com que qualsevol funció pot esdevenir u
         // Initialize a constructor from a function
         const constructorFromFunction = new x();
 
-Pots trobar més informació sobre classes al punt de la webgrafia _Understanding Classes in JavaScript - Tania Rascia_.
+Pots trobar més informació sobre classes al punt de la webgrafia _Understanding Classes in JavaScript - Tania Rascia_. Ara m'interessa seguir amb l'anterior afirmació. Que qualsevol funció pot esdevenir un constructor? Doncs sí, sempre i quan emprem la paraula clau `new`.
+
+I no només això! Donat que, com hem demostrat abans, les funcions són objectes, puc definir propietats i mètodes en les funcions que m'hagin de servir posteriorment de constructors, exemple:
+
+    // Initialize a constructor function for a new Hero
+    function Hero(name, level) {
+        this.name = name;
+        this.level = level;
+    }
+
+I podem crear una nova instància amb `new`:
+
+    let hero1 = new Hero('Bjorn', 1);
+
+En tens una mostra en el codi `function-constructor-object.js`.
+
 
 ## Webgrafia
 
