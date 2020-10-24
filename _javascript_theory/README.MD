@@ -1,4 +1,6 @@
-# Com està fet Javascript?
+# Un Cop d'ull a l'arquitectura de Javascript
+
+En aquest article, intento mostrar una sèrie de curiositats del llenguatge, com les funcions de primera classe, que les funcions són objectes, que les classes són funcions i que tot plegat remet al disseny de JS com un llenguatge basat en **herència de prototipus**.
 
 ## Conceptes bàsics
 
@@ -15,9 +17,9 @@
 
 Vol dir que a JS les funcions poden ser variables, poden ser passades per paràmetre en una altra funció - com `forEach()`, `map()`, etc - o retornades per una altra funció ([link](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function)).
 
-I no només això: **les funcions són objectes** a Javascript. Això ho pots investigar al codi: `functions-are-objects.js`.
+## 2) Les funcions són objectes
 
-En realitat, **cada funció és, a JS, un objecte de tipus Function** i de fet, podríem crear funcions mitjançant [el constructor Function()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/Function).
+Seguint amb les funcions: a Javascript, les funcions són objectes. En realitat, **cada funció és, a JS, un objecte de tipus Function** i de fet, podríem crear funcions mitjançant [el constructor Function()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/Function).
 
 De fet, si executam aquest codi, donarà com a resultat `true`.
 
@@ -25,7 +27,7 @@ De fet, si executam aquest codi, donarà com a resultat `true`.
 
 Per entendre això, primer hem de comprendre què ès això de que Javascript està **basat en Prototipus**
 
-## 2) Un llenguatge basat en Prototipus
+## 3) Un llenguatge basat en Prototipus
 
 Javascrit es diferencia, per exemple, de Java, en que a diferència d'aquest, que és un llenguatge basat en **herència de classes**, se basa en **herència de prototips** (següent subapartat).
 
@@ -64,12 +66,34 @@ Per testar això, me bastaria amb executar aquest codi:
     y instanceof Array; // true
 
 
-## 3) Les classes són funcions
+## 4) Les classes són funcions
 
+Provem aixó:
 
+    // Initializing a function with a function expression
+    const x = function() {}
+    // Initializing a class with a class expression
+    const y = class {}
 
+Si mostram els valor d'aquestes instruccions, el resultat serà:
+
+    Object.getPrototypeOf(x);
+    // Sortida:  ƒ () { [native code] }
+
+    Object.getPrototypeOf(y);
+    // Sortida:  ƒ () { [native code] }
+
+Això té conseqüències pràctiques, com que qualsevol funció pot esdevenir un constructor emprant `new`,
+
+        const x = function() {}
+
+        // Initialize a constructor from a function
+        const constructorFromFunction = new x();
+
+Pots trobar més informació sobre classes al punt de la webgrafia _Understanding Classes in JavaScript - Tania Rascia_.
 
 ## Webgrafia
 
 - [Understanding Prototypes and Inheritance in JavaScript - Tania Rascia](https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript)
+- [Understanding Classes in Javascript - Tania Rascia](https://www.digitalocean.com/community/tutorials/understanding-classes-in-javascript)
 - MDN Web Docs
