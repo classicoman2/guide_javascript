@@ -27,7 +27,7 @@ De fet, si executam aquest codi, donarà com a resultat `true`.
 
 `console.log ( (function(){}).constructor === Function )`
 
-Perquè en realitat, **cada funció és, a JS, un objecte de tipus Function**.
+Perquè en realitat, **cada funció és, a JS, un objecte de tipus Function** i de fet, podríem crear funcions mitjançant [el constructor Function()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/Function).
 
 
 ## Els arrays també son objectes
