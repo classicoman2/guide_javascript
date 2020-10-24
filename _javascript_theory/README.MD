@@ -35,8 +35,41 @@ Perquè en realitat, **cada funció és, a JS, un objecte de tipus Function** i 
 De forma similar al que hem fet per les funcions, estudiem els arrays a `arrays-are-functions.js`.
 
 
-## Què vol dir que 'les classes són Funcions'?
+## 'Les classes són Funcions'?
 
+Anem a embullar-ho tot una mica més. 
+...
+...
+
+## Comencem pel principi
+
+Javascrit es diferencia, per exemple, de Java, en que a diferència d'aquest, que és un llenguatge basat en **herència de classes**, se basa en **herència de prototips** (següent subapartat).
+
+Per això, ens hem de centrar en els objectes de Javascript. Comencem per l'objecte més bàsic.
+
+`let x = {}`
+
+també podria haver escrit,
+
+`let x = new Object()`
+
+Doncs bé, **tot objecte té un prototip**, una propietat interna [[Prototype]] que no se pot accedir directament sinó només amb el mètode `.getPropertyOf` de `Object` - `Object és **l'objecte arrel a partir del qual surten tots els altres**.
+
+`Object.getPrototypeOf(x)`
+
+També [es podria emprar la propietat __proto__ però no és recomanable](https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-inheritance-in-javascript).
+
+### Herència de Prototip
+
+Herència de P. significa que quan empram una propietat o mètode d'un objecte, JS primer buscarà en aquell objecte i si no ho troba, mirarà en el seu [[Prototype]].
+
+Hi ha una **cadena de prototip** que acaba sempre en `Object`. Més enllà no hi ha res. 
+
+En el cas de `x`, com que hereda directament de `Object` - que correctament s'anomenaria `Object.Prototype` -  llavors `x.__proto__.__proto__` serà `null`.
+
+### Tornant als arrays
+
+Si tornam als arrays, 
 
 ## Webgrafia
 
