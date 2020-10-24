@@ -7,8 +7,8 @@ En aquest article, intento mostrar una sèrie de curiositats del llenguatge, com
 - JavaScript és un llenguatge interpretat (o compilat _just-in-time_)
 - Empra **Funcions de Primera Classe**
 - Encara que la seva funció bàsica és la de ser un llenguatge de _scripting_ per navegadors web, pot ser emprat en altres entorns, com Node.js
-- JavaScript està **basat en prototips** (Següent apartat)
-- És multiparadigma (¿¿)
+- JavaScript està **basat en prototips**
+- És multiparadigma
 - És _single-threaded_ - o sigui que no permet múltiples fils d'execució
 - És dinàmic
 - Permet crear classes, encara que no és basat en herència de classes - com Java - sinó en herència de prototipus. A Javascript, de fet, **les classes són funcions**, com veurem més endavant.
