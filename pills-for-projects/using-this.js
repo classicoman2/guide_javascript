@@ -19,9 +19,9 @@ function pushButton2() {
     "\n Dins de la funció cridada per gestor d'event addEventListener, this ="
   );
   console.log(this);
-  console.log(this.id);
+  console.log("The id property of this element has the value = " + this.id);
 }
-
+  
 window.onload = function () {
   console.log("\n Inside onload property function this =");
   console.log(this);
