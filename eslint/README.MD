@@ -8,7 +8,7 @@ Install the extension **eslint** in Vscode. Basta amb buscar-la i instal·lar-la
 
 ## Instal·la ESLINT en el teu projecte
 
-1. Instal·la ESLINT en la carpeta arrel del teu projecte amb 
+Instal·la ESLINT en la carpeta arrel del teu projecte amb 
 
     npm install eslint
 
