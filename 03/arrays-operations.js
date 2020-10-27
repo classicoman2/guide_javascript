@@ -18,7 +18,7 @@ window.onload = () => {
   );
   document.getElementById("text2").innerHTML = createTextGrid(array2);
 
-  //Loop array1 using for
+  // Fa un bucle en l'array i guarda els elements en un string 'str'
   {
     let str = "";
     for (let i = 0; i < array1.length; i++) {
@@ -28,16 +28,17 @@ window.onload = () => {
   }
 
   {
+    let resultat = 0;
+    //forEach()
+
     //Loop array1 using .forEach()
-    function addElement(value) {
-      str = str + value + " || ";
+    function sumaElement(value) {
+      resultat += value;
     }
 
-    let str = "";
-    //forEach()
-    array2.forEach(addElement);
+    array2.forEach(sumaElement);
     console.log(
-      "The contents of array2 through a loop, using forEach(): " + str
+      "LA SUMA DELS ELEMENTS DE L'ARRAY = " + resultat
     );
   }
 
