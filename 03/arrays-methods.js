@@ -18,7 +18,7 @@ document.getElementById("text2").innerHTML = createTextGrid(array2);
 {
   // pop()
   console.log(
-    `Contents of array1 after popping element 0 '${array1.pop()}' is ${array1}`
+    `Contents of array1 after popping element '${array1.pop()}' is ${array1}`
   );
   // push()
   console.log(
