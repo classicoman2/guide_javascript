@@ -83,8 +83,8 @@ window.onload = () => {
   // (1 sola instruccio dins la funcio)
   {
     let suma = 0;
+    array2.forEach((value) => (suma += value));
 
-    array2.forEach(value => suma += value);
     console.log("5. La suma dels elements de array2 = " + suma);
   }
 };
