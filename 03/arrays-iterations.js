@@ -17,52 +17,7 @@ window.onload = () => {
   );
   document.getElementById("text2").innerHTML = createTextGrid(array2);
 
-  /**
-   * forEach
-   */
-
-  {
-    function concatenateElement(value, index, array) {
-      result += value + separator;
-    }
-
-    // 1) VERSIÓ STANDARD
-    let result = "";
-    array1.forEach(function concatenateElement1(value, index, array) {
-      result += "(" + index + ") " + value + " ";
-    });
-    console.log(`Resultat del Foreach 1 = ${result}`);
-
-    // 2) EMPRANT UNA FUNCIÓ DEFINIDA COM A VARIABLE
-    result = "";
-
-    //Tambe podria definir-ho aixi:
-    function concatenateElement2(value, index, array) {
-      result += value + " | ";
-    }
-    /*
-    let concatenateElement2 = function (value, index, array) {
-      result += value + " | ";
-    };
-    */
-    array1.forEach(concatenateElement2);
-    console.log(`Resultat del Foreach 2 = ${result}`);
-
-    // 3) MÉS COMPACTE: EMPRANT UNA ARROW FUNCTION
-    result = "";
-    array1.forEach((value, index, array) => {
-      result += value + " | ";
-    });
-    console.log(`Resultat del Foreach 3 = ${result}`);
-
-    // 4) VERSIÓ AMB ARROW FUNCTION PER EVITAR QUE HI HAGI UN SEPARADOR '|' AL FINAL DE TOT
-    result = "";
-    array1.forEach(
-      (value, index, array) =>
-        (result += index < array.length - 1 ? value + " | " : value)
-    );
-    console.log(`Resultat del Foreach 4 = ${result}`);
-  }
+ 
 
   /**
    *  map()
