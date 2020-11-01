@@ -36,11 +36,12 @@ window.onload = () => {
   }
 
   // 1. La mateixa operació amb .forEach() - definint una funció de forma clàssica.
+  // La funció que pas x parametre té 3 parametres, pero podria bastar amb 'value'
   {
     let suma = 0;
 
     //funció que passam per paràmetre
-    function sumaElement(value) {
+    function sumaElement(value, index, array) {
       suma += value;
     }
     array2.forEach(sumaElement);
@@ -86,5 +87,14 @@ window.onload = () => {
     array2.forEach((value) => (suma += value));
 
     console.log("5. La suma dels elements de array2 = " + suma);
+  }
+
+  // 6. La mateixa operació amb .forEach() - emprant una FUNCIO ARROW EN FORMAT COMPRIMIT
+  // (1 sol parametre i 1 sola instruccio)
+  {
+    let suma = 0;
+    array2.forEach( value => suma += value );
+
+    console.log("6. La suma dels elements de array2 = " + suma);
   }
 };
