@@ -8,7 +8,7 @@ const getTodos = async () => {
 
     const todos = res.data;
 
-    console.log(`GET: Here's the list of todos`, todos);
+    mostraPersonatgesPerConsola( todos );
 
     return todos;
   } catch (e) {
@@ -16,4 +16,16 @@ const getTodos = async () => {
   }
 };
 
+/**
+ * Mostra per consola les dades dels personatges
+ * 
+ * @param {Array} personatges 
+ */
+function mostraPersonatgesPerConsola(personatges) {
+  console.log ( personatges ); 
+}
+
+
+// Crida la funció asíncrona
 getTodos();
+
