@@ -1,4 +1,6 @@
-// 1)- Definir un objecte  bàsic (només propietats)
+/**
+ *  1)- Definir un objecte  bàsic (només propietats)
+ */
 {
   let obj = { name: "Isaac", surname: "Newton", age: 57, married: false };
 
@@ -7,7 +9,9 @@
 }
 console.log("");
 
-// 2)- Array d'objectes
+/**
+ *  2)- Array d'objectes
+ */
 {
   let persones = [
     { name: "Maria", surname: "Saal" },
@@ -20,7 +24,10 @@ console.log("");
   }
 }
 
-// 3)- Objectes compostos
+/**
+ *  3)- Objectes compostos
+ */
+
 {
   let grup = {
     estudis: "DAW",
@@ -40,9 +47,10 @@ console.log("");
   );
 }
 
-// 4)- Mètodes d'un objecte
-// Cal emprar 'this' per accedir a propietats i mètodes des de dins dels mètodes.
-
+/**
+ *  4)- Mètodes d'un objecte
+ *  Cal emprar 'this' per accedir a propietats i mètodes des de dins dels mètodes.
+ */
 let grup = {
   //PROPIETATS
   estudis: "DAW",
@@ -73,21 +81,36 @@ let grup = {
 console.log(`\nEn l'aula hi ha ${grup.recompteAlumnes()} alumnes`);
 console.log(`L'alumne número 1 es ${grup.getAlumnNomComplet(1)}`);
 
-// 5)- Afegir propietats i mètodes a posteriori
+/**
+ *  5)- Afegir propietats i mètodes a posteriori
+ */
 
 //Afegeix propietat
-grup.pis = "1er"
+grup.pis = "1er";
 
 //Afegeix mètodes
-grup.CanviaNomAlumne = function(i, nom) {
+grup.CanviaNomAlumne = function (i, nom) {
   grup.alumnes[i].name = nom;
-}
+};
 
-grup.CanviaLlinatgeAlumne = function(i, llinatge) {
+grup.CanviaLlinatgeAlumne = function (i, llinatge) {
   grup.alumnes[i].surname = llinatge;
-}
+};
 
 grup.CanviaNomAlumne(1, "Ernest");
 grup.CanviaLlinatgeAlumne(1, "Stanton");
 console.log(`L'aula del grup és la ${grup.aula} en el ${grup.pis} pis`);
 console.log(`\nL'alumne número 1 es ${grup.getAlumnNomComplet(1)}`);
+
+/**
+ *  6)- Els objectes son mutables
+ */
+var x = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
+
+var y = x;
+y.firstName = "Marlon"
+y.age = 10;           // This will change both x.age and person.age
+
+console.log("");
+console.log(x)
+console.log(y);
