@@ -41,7 +41,7 @@ console.log("");
   };
 
   console.log(
-    `El grup de ${grup.estudis} en el curs ${grup.curs} ocupa l'aula ${grup.aula} 
+    `\nEl grup de ${grup.estudis} en el curs ${grup.curs} ocupa l'aula ${grup.aula} 
     i els seus alumnes
      son ${grup.alumnes[0].name}, ${grup.alumnes[1].name} i ${grup.alumnes[2].name}`
   );
@@ -82,7 +82,7 @@ console.log(`\nEn l'aula hi ha ${grup.recompteAlumnes()} alumnes`);
 console.log(`L'alumne número 1 es ${grup.getAlumnNomComplet(1)}`);
 
 /**
- *  5)- Afegir propietats i mètodes a posteriori
+ *  5)- Afegir propietats i mètodes després de crear un objecte
  */
 
 //Afegeix propietat
