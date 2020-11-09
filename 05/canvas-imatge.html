@@ -13,18 +13,19 @@
             var canvas = document.getElementById("myCanvas");
             var ctx = canvas.getContext("2d");
 
-            // Dimensions of the image
-            x = 200;
-            y = 191;
+
             // Path to the Image (could be a URI)
             var img = new Image();   
             img.src = './assets/edifici.jpg'; // Set source path
 
             // If you try to call drawImage() before the image has finished loading, 
             // it won't do anything (or, in older browsers, may even throw an exception). 
-            // So you need to be sure to use the load event so you don't try this before the image has loaded:
+            // You need to be sure to use the load event so you don't try this before the image has loaded:
             img.addEventListener('load', function () {
-                // execute drawImage statements here
+                
+                // Dimensions of the image
+                let x = 200, y = 191;
+                // execute drawImage
                 ctx.drawImage(img, 20, 20, x, y)
             }, false);
         }
