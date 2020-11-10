@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pintar imatge</title>
+    <script>
+
+        window.onload = function () {
+
+            // Create the Canvas
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+
+            // Compte imatges carregades
+            let loadedImages = 0;
+            // Array d'images
+            let imagesArray = [];
+            
+            //Cronòmetre (no del tot exacte)
+            let crono = 0;
+
+            ['edifici.jpg', 'hotel.jpeg', 'shack.png'].forEach(image => {
+                var img = new Image(); 
+                img.src = './assets/' + image; // Set source path
+
+                img.addEventListener('load', function () {
+                    loadedImages++;
+            }, false);
+
+            // add to images array
+            imagesArray.push( img );
+
+            });
+
+            //Controlam la càrrega de les imatges amb un setInterval()
+            let myInterval = setInterval(() => {
+                if (loadedImages == 3) {
+                    console.log("carregada en " + crono/1000 + "segons")
+
+                    // Pinta imatges
+                    let x = 20, y=20;
+
+                    imagesArray.forEach(image => {
+                        // execute drawImage statements here
+                        ctx.drawImage(image, x, y, 200, 200);
+                        x += 50;
+                        y += 50;
+                    });
+
+                    // Cancela setInterval
+                    clearTimeout( myInterval );
+                }
+                else crono += 10;
+            }, 100);            
+        }
+
+    </script>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+</body>
+
+</html>
