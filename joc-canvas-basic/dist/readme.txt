@@ -1,0 +1,1 @@
+En aquest directori es volcarà la versió de producció, resultat de compilar el src amb GULP.
