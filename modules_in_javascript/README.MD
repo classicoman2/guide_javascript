@@ -6,7 +6,7 @@ About Modules,
 
 `<script type="module" src="nameofthemodule.mjs"></script>`
 
-(The extension .mjs is not mandatory)
+(L'extensió .mjs no és obligatòria, podeu emprar .js)
 
 Variables and functions must respect _strict use_ convention inside a module.
 
