@@ -6,7 +6,7 @@ window.onload = function () {
   setInterval(() => {
     const d = new Date();
     console.log(`Son les ${d.getHours()}:${d.getMinutes()}'${d.getSeconds()}`);
-  }, 2000);
+  }, 1000);
 
   /**
    * setTimeOut
@@ -15,6 +15,6 @@ window.onload = function () {
    */
 
   setTimeout(() => {
-    window.alert("+++++HAN PASSAT 5 SEGONS!!!!!");
+    console.log("+++++HAN PASSAT 11 SEGONS!!!!!");
   }, 5000);
 };
