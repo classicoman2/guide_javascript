@@ -14,9 +14,11 @@ const array1 = [
  */
 
 let array2 = array1.map((value) => {
-  return value.age + 100;
+  value.age += 100;
+  return value
 });
 
+console.log(" map() ")
 console.log(array2);
 
 /**
