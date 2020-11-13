@@ -1,8 +1,9 @@
 /**
  *  1)- Definir un objecte  bàsic (només propietats)
  */
+
 {
-  let obj = { name: "Isaac", surname: "Newton", age: 57, married: false };
+  let obj = { name: "Isaac", surname: "Newton", age: 57, married: true };
 
   console.log(`My name is ${obj.name} ${obj.surname}`);
   console.log(`I'm ${obj.age} and I'm ${!obj.married ? "not" : ""} married`);
@@ -37,8 +38,8 @@ console.log("");
     alumnes: [
       { name: "Samantha", surname: "Garcia" },
       { name: "Peter", surname: "Greenway" },
-      { name: "Andrea", surname: "Tarkovsky" }
-    ]
+      { name: "Andrea", surname: "Tarkovsky" },
+    ],
   };
 
   console.log(
@@ -79,7 +80,7 @@ let grup = {
   },
 };
 
-console.log(`\nEn l'aula hi ha ${ grup.recompteAlumnes() } alumnes`);
+console.log(`\nEn l'aula hi ha ${grup.recompteAlumnes()} alumnes`);
 console.log(`L'alumne número 1 es ${grup.getAlumnNomComplet(1)}`);
 
 /**
@@ -100,8 +101,8 @@ grup.CanviaLlinatgeAlumne = function (i, llinatge) {
 
 grup.CanviaNomAlumne(1, "Ernest");
 grup.CanviaLlinatgeAlumne(1, "Stanton");
-console.log(`L'aula del grup és la ${ grup.aula } en el ${ grup.pis } pis`);
-console.log(`\nL'alumne número 1 es ${ grup.getAlumnNomComplet(1) }`);
+console.log(`L'aula del grup és la ${grup.aula} en el ${grup.pis} pis`);
+console.log(`\nL'alumne número 1 es ${grup.getAlumnNomComplet(1)}`);
 
 /**
  *  6)- Els objectes son mutables
@@ -113,5 +114,7 @@ y.firstName = "Marlon";
 y.age = 10; // This will change both x.age and person.age
 
 console.log("");
+console.log("x = ");
 console.log(x);
+console.log("y = ");
 console.log(y);

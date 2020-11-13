@@ -2,14 +2,14 @@
 var Joc = new Object();
 
 // Constant de configuració
-const INTERVAL_REFRESC = 50;
+const INTERVAL_REFRESC = 1000;
 
 //Declarar variables del joc
 Joc.rellotge = 0;
 // ...
 
 
-Joc.inicialitzar = function () {
+Joc.inicialitza = function () {
   // Inicialitzo les variables del joc
   this.rellotge = 1;
 };
@@ -29,8 +29,9 @@ Joc.itera = function () {
   document.getElementById("missatge").innerHTML = Joc.rellotge;
 };
 
+
 window.onload = function () {
-  Joc.inicialitzar();
+  Joc.inicialitza();
   // Cada INTERVAL_REFRESC s'executa el métode indicat
   setInterval(Joc.itera, INTERVAL_REFRESC);
 };
