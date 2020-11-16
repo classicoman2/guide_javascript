@@ -16,5 +16,5 @@ window.onload = function () {
 
   setTimeout(() => {
     console.log("+++++HAN PASSAT 11 SEGONS!!!!!");
-  }, 5000);
+  }, 11000);
 };
