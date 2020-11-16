@@ -5,6 +5,6 @@ window.onload = function () {
       var x = event.offsetX;
       var y = event.offsetY;
 
-      console.log(`Has clicat a la posicio (${x}, ${y}) del viewport`);
+      console.log(`(${x}, ${y})`);
     });
 };
