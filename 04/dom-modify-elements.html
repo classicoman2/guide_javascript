@@ -1,92 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM - Modify Elements</title>
+    <style>
+      .marcNou {
+        border: 5px solid blueviolet;
+        background-color: cornflowerblue;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DOM - Modify Elements</title>
-  <style>
-    .marcNou {
-      border: 5px solid blueviolet;
-      background-color: cornflowerblue;
+      .textNou {
+        font-size: 1.2em !important;
+        color: blue !important;
+        text-decoration: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p id="paragraf"></p>
+
+    <img id="imatge" src="assets/mountain.webp" alt="imatge d'una muntanya" />
+  </body>
+  <script>
+    var element = document.getElementById("paragraf");
+    var imatge = document.getElementById("imatge");
+
+    // element.innerHTML -> Canvia el contingut
+    {
+      element.innerHTML = "Contingut del text";
     }
 
-    .textNou {
-      font-size: 1.2em !important;
-      color: blue !important;
-      text-decoration: none !important;
-    }
-  </style>
-</head>
-
-<body>
-
-  <p id="paragraf"></p>
-
-  <img id="imatge" src="assets/mountain.webp" alt="imatge d'una muntanya">
-</body>
-<script>
-
-  var element = document.getElementById("paragraf")
-  var imatge = document.getElementById("imatge")
-
-  // element.innerHTML -> Canvia el contingut
-  {
-    element.innerHTML = "Contingut del text"
-  }
-
-
-  // element.nomAtribut -> canvia l'atribut
-  {
-    imatge.src = "assets/valley.webp"
-    imatge.alt = "Imatge d'una vall"
-  }
-
-
-
-  // element.style.nomPropietat -> canvia les propietats CSS de l'element
-  {
-    element.style.fontSize = "2em"
-    element.style.color = "red"
-    element.style.textDecoration = "underline"
-    element.style.border = "1px solid grey"
-    element.style.height = "50px"
-  }
-
-
-
-
-
-
-  // element.className  -> indica la classe d'un element
-  {
-    document.getElementById("paragraf").onclick = function () {
-      //this es refereix a l'element clicat
-      this.className = "marcNou textNou"
-      //  this.className = "marcNou"
-      //  this.className = "textNou"
+    // element.nomAtribut -> canvia l'atribut
+    {
+      imatge.src = "assets/valley.webp";
+      imatge.alt = "Imatge d'una vall";
     }
 
-  }
-
-
-
-  // element.setAttribute() -> permet canviar un atribut
-  // En aquest exemple: l'atribut 'id'
-  {
-    element.setAttribute("id", "paragraf2")
-
-    try {
-      document.getElementById("paragraf").innerHTML = "foo"
+    // element.style.nomPropietat -> canvia les propietats CSS de l'element
+    {
+      element.style.fontSize = "2em";
+      element.style.color = "red";
+      element.style.textDecoration = "underline";
+      element.style.border = "1px solid grey";
+      element.style.height = "50px";
     }
-    catch {
-      console.log("Error: L'element 'paragraf' no existeix!")
-    }
-    finally {
-      document.getElementById("paragraf2").innerHTML = "doo"
-    }
-  }
 
-</script>
+    // element.className  -> indica la classe d'un element
+    {
+      document.getElementById("paragraf").onclick = function () {
+        //this es refereix a l'element clicat
+        this.className = "marcNou textNou";
+        //  this.className = "marcNou"
+        //  this.className = "textNou"
+      };
+    }
 
+    // element.setAttribute() -> permet canviar un atribut
+    // En aquest exemple: l'atribut 'id'
+    {
+      element.setAttribute("id", "paragraf2");
+
+      try {
+        document.getElementById("paragraf").innerHTML = "foo";
+      } catch {
+        console.log("Error: L'element 'paragraf' no existeix!");
+      } finally {
+        document.getElementById("paragraf2").innerHTML = "doo";
+      }
+    }
+  </script>
 </html>

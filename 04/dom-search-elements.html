@@ -1,101 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM - Search Elements</title>
+    <style>
+      .box {
+        display: flex;
+        flex-direction: column;
+        background-color: burlywood;
+        border: 1px solid black;
+        margin: 5px;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DOM - Search Elements</title>
-  <style>
-    .box {
-      display: flex;
-      flex-direction: column;
-      background-color: burlywood;
-      border: 1px solid black;
-      margin: 5px;
-    }
-  </style>
-</head>
+  <body>
+    <div id="wrapper1" class="box">
+      WRAPPER 1
+      <p>Hi</p>
+      <p>This is a test</p>
+    </div>
 
-<body>
-  <div id="wrapper1" class="box">
-    WRAPPER 1
-    <p>Hi</p>
-    <p>This is a test</p>
-  </div>
+    <div id="wrapper2" class="box">
+      WRAPPER 2
+      <p>Hi again,</p>
+      <p>This is another test</p>
+      <p>And the last one</p>
+    </div>
 
+    <br />
+    <button id="button1">
+      Canvia el color de tots els elements &lt;p&gt; de la pàgina
+    </button>
+    <br />
+    <button id="button2">
+      Canvia la mida de font dels &lt;p&gt; de 'wrapper1'
+    </button>
+    <br />
+    <button id="button3">
+      Canvia el color de fons dels elements amb classe 'box'
+    </button>
+    <br />
+    <button id="button4">
+      Canvia la font del primer &lt;p&gt; de 'wrapper2'
+    </button>
 
-
-  <div id="wrapper2" class="box">
-    WRAPPER 2
-    <p>Hi again,</p>
-    <p>This is another test</p>
-    <p>And the last one</p>
-  </div>
-
-  <br>
-  <button id="button1">Canvia el color de tots els elements &lt;p&gt; de la pàgina</button>
-  <br>
-  <button id="button2">Canvia la mida de font dels &lt;p&gt; de 'wrapper1'</button>
-  <br>
-  <button id="button3">Canvia el color de fons dels elements amb classe 'box'</button>
-  <br>
-  <button id="button4">Canvia la font del primer &lt;p&gt; de 'wrapper2'</button>
-
-  <p>T. Amengual 2020</p>
-
-</body>
-<script>
-  /**
+    <p>T. Amengual 2020</p>
+  </body>
+  <script>
+    /**
   document.getElementsByTagName(name):   Retorna un objecte HTMLCollection
  **/
-  {
-    // En clicar el botó, tots els p de la página canvien de color
-    document.getElementById("button1").onclick = function () {
-      let pElements = document.getElementsByTagName('p')
-      for (p of pElements) {
-        p.style.color = "red";
-      }
+    {
+      // En clicar el botó, tots els p de la página canvien de color
+      document.getElementById("button1").onclick = function () {
+        let pElements = document.getElementsByTagName("p");
+        for (p of pElements) {
+          p.style.color = "red";
+        }
+      };
+
+      // En clicar el botó, tots els p de la página canvien de color
+      document.getElementById("button2").onclick = function () {
+        let pElements = document
+          .getElementById("wrapper1")
+          .getElementsByTagName("p");
+        for (p of pElements) {
+          p.style.fontSize = "2em";
+        }
+      };
     }
 
-    // En clicar el botó, tots els p de la página canvien de color
-    document.getElementById("button2").onclick = function () {
-      let pElements = document.getElementById("wrapper1").getElementsByTagName('p')
-      for (p of pElements) {
-        p.style.fontSize = "2em";
-      }
-    }
-
-  }
-
-  /**
+    /**
    document.getElementsByClassName(name): Retorna un objecte HTMLCollection 
  **/
-  {
-    document.getElementById("button3").onclick = function () {
-      let boxElements = document.getElementsByClassName("box")
-      for (box of boxElements) {
-        box.style.border = "5px solid green"
-      }
+    {
+      document.getElementById("button3").onclick = function () {
+        let boxElements = document.getElementsByClassName("box");
+        for (box of boxElements) {
+          box.style.border = "5px solid green";
+        }
+      };
     }
 
-
-  }
-
-  /**
+    /**
     document.querySelectorAll("selectorCSS")
     Retorna un NodeList amb tots els elements que compleixen un selector CSS (simple o compost)
     **/
-  {
-    document.getElementById("button4").onclick = function () {
-      let list = document.querySelectorAll("#wrapper2 > p:first-child")
-      for (l of list) {
-        l.style.color = "blue"
-      }
+    {
+      document.getElementById("button4").onclick = function () {
+        let list = document.querySelectorAll("#wrapper2 > p:first-child");
+        for (l of list) {
+          l.style.color = "blue";
+        }
+      };
     }
-
-  }
-
-
-</script>
-
+  </script>
 </html>
