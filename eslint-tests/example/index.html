@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Juego de memoria</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- JQuery CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="main">
+		<div id="menu">
+			<h3>Elige un nivel de dificultad</h3>
+			<input type="radio" name="dificultad" id="facil"><b>Facil
+				<input type="radio" name="dificultad" id="normal">Normal
+				<input type="radio" name="dificultad" id="dificil">Dificil</b>
+			<br><br>
+			<b>Nickname</b>
+			<input type="text" autofocus id="nickname"></input>
+			<br><br>
+			<button type="button" id="empezar">Empezar</button>
+		</div>
+		<div id="tiempo">
+		</div>
+		<div id="juego">
+		</div>
+		<div id="ranking">
+			<h3>Juego Finalizado</h3>
+			<div id="resultado"></div>
+			<br>
+			<button type="button" id="reiniciar">Volver a Jugar</button>
+		</div>
+		<div>
+</body>
+<script type="text/javascript" src="const.json"></script>
+<script src="script.js"></script>
+
+
+</html>

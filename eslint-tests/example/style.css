@@ -1,0 +1,47 @@
+
+.carta{
+	width: 150px;
+	max-height: 250px;
+	border: 4px black solid;
+	margin: 2px;
+}
+
+#menu{
+	text-align: center;
+	margin-top: 50px;
+	
+}
+
+#main{
+	margin: auto;	
+}
+
+#juego{
+	display: flex;
+	width: 60%;
+	height: 500px;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	position: absolute;
+	top: 50px;
+	left: 20%;
+	visibility: hidden;
+}
+
+#tiempo{
+	position: absolute;
+	top: 10px;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+#ranking{
+	visibility: hidden;
+	position: absolute;
+	top: 50px;
+	width: 60%;
+	left: 20%;
+	text-align: center;
+	border: 1px solid black;
+	padding: 20px;
+}
