@@ -1,78 +1,76 @@
-<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create elements with DOM functions</title>
+    <style>
+      .class1 {
+        color: grey;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-weight: bold;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create elements with DOM functions</title>
-  <style>
-    .class1 {
-      color: grey;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      font-weight: bold;
-    }
-  </style>
-</head>
+  <body>
+    <main id="wrapper">
+      <p id="replace_p">Aquest p serà substituit</p>
+      <p id="remove_p">Aquest p serà eliminat</p>
+    </main>
+    <button id="button">Canvia els paràgrafs anteriors</button>
+  </body>
+  <script>
+    var wrapper = document.getElementById("wrapper");
 
-<body>
-  <main id="wrapper">
+    document.getElementById("button").onclick = function () {
+      /**
+       * Crear un nou node amb createElement() i appendChild()
+       *
+       **/
+      {
+        //Crea un nou element
+        let p = document.createElement("p");
 
-  </main>
+        // Canvia les propietats de l'element
+        p.innerText = "He creat aquest <p>";
+        p.classList.add("class1");
 
-  <button id="button">Substitueix el text del paragraf</button>
-</body>
-<script>
-  var wrapper = document.getElementById("wrapper");
+        // Afegeix al pare
+        document.getElementById("wrapper").appendChild(p);
+      }
 
-  {
-    //Create an element
-    var p = document.createElement("p")
+      /**
+       * Substituir un node existent amb createElement() i replaceChild()
+       *
+       **/
+      {
+        //Crea un nou element
+        let p = document.createElement("p");
 
-    //Give it some properties or classes
-    p.innerHTML = "The new player is called "
-    p.classList.add("class1")
+        // Canvia les propietats de l'element
+        p.innerText = "Aquest p substitueix un p anterior";
+        p.classList.add("class1");
+        // Canvio el color del text
+        p.style.color = "red";
+        p.style.textDecoration = "underline";
 
-    // append it to an existing element (wrapper, for instance)
-    wrapper.appendChild(p)
+        // Afegeix al pare
+        document
+          .getElementById("wrapper")
+          .replaceChild(p, document.getElementById("replace_p"));
+      }
 
-
-    // Add a second element
-    var span = document.createElement("span");
-
-    // Give it some properties
-    span.innerHTML = "Michael Jordan"
-    span.setAttribute("id", "myspan")
-    span.style.color = "red"
-    span.style.fontSize = "1.8em"
-    span.style.fontDecoration = "italic"
-
-    // append it to the p
-    p.appendChild(span)
-  }
-
-
-  // removeChild()
-  {
-    document.getElementById("myspan").onclick = function () {
-      // Obtenir el pare d'un element
-      let parent = this.parentNode;
-      parent.removeChild(this)
-    }
-  }
-
-  // replaceChild()
-
-  {
-    document.getElementById("button").onclick = function() {
-      //Crea un nom element
-      let p2 = document.createElement("p")
-      p2.innerText = "End of the Game"
-
-      //substitueix l'element
-      wrapper.replaceChild(p2, p)
-    }
-  }
-
-</script>
-
+      /**
+       * Eliminar un node existent amb removeElement()
+       *
+       **/
+      {
+        // Obtenir el pare d'un element
+        const eliminar = document.getElementById("remove_p");
+        const parent = eliminar.parentNode;
+        parent.removeChild(eliminar);
+      }
+    };
+  </script>
 </html>

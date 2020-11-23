@@ -30,20 +30,21 @@
     </div>
 
     <br />
-    <button id="button1">
-      Canvia el color de tots els elements &lt;p&gt; de la pàgina
+    <button id="buttonGetElementsByTagName">
+      getElementsByTagName() -> Passa el text dels &lt;p&gt; a vermell
     </button>
     <br />
-    <button id="button2">
-      Canvia la mida de font dels &lt;p&gt; de 'wrapper1'
+    <button id="buttonGetElementsByTagName2">
+      getElementsByTagName() -> Redueix la font size dels &lt;p&gt; de #wrapper1
     </button>
     <br />
     <button id="button3">
-      Canvia el color de fons dels elements amb classe 'box'
+      getElementsByClassName() -> Canvia el background color dels elements de
+      classe .box
     </button>
     <br />
     <button id="button4">
-      Canvia la font del primer &lt;p&gt; de 'wrapper2'
+      querySelectorAll() -> Passa el text del primer &lt;p&gt; de 'wrapper2' a blau
     </button>
 
     <p>T. Amengual 2020</p>
@@ -53,29 +54,43 @@
   document.getElementsByTagName(name):   Retorna un objecte HTMLCollection
  **/
     {
-      // En clicar el botó, tots els p de la página canvien de color
-      document.getElementById("button1").onclick = function () {
+      /**
+       *  getElementByTagName()
+       *
+       *  En clicar, tots els p de la página canvien de color
+       **/
+      document.getElementById(
+        "buttonGetElementsByTagName"
+      ).onclick = function () {
         let pElements = document.getElementsByTagName("p");
         for (p of pElements) {
           p.style.color = "red";
         }
       };
 
-      // En clicar el botó, tots els p de la página canvien de color
-      document.getElementById("button2").onclick = function () {
+      /**
+       *  getElementByTagName()
+       *
+       *  En clicar, canvia la mida de tots els p de #wrapper
+       **/
+      document.getElementById(
+        "buttonGetElementsByTagName2"
+      ).onclick = function () {
         let pElements = document
           .getElementById("wrapper1")
           .getElementsByTagName("p");
         for (p of pElements) {
-          p.style.fontSize = "2em";
+          p.style.fontSize = "0.5em";
         }
       };
     }
 
-    /**
-   document.getElementsByClassName(name): Retorna un objecte HTMLCollection 
- **/
     {
+      /**
+       *  getElementsByClassName()
+       *
+       *  En clicar, canvia el border de tots els elements de classe .box
+       **/
       document.getElementById("button3").onclick = function () {
         let boxElements = document.getElementsByClassName("box");
         for (box of boxElements) {
@@ -89,6 +104,11 @@
     Retorna un NodeList amb tots els elements que compleixen un selector CSS (simple o compost)
     **/
     {
+      /**
+       *  querySelectorAll()
+       *
+       *  En clicar, canvia el color del text del primer <p> de #wrapper
+       **/
       document.getElementById("button4").onclick = function () {
         let list = document.querySelectorAll("#wrapper2 > p:first-child");
         for (l of list) {
