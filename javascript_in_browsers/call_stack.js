@@ -1,8 +1,7 @@
 /**
  *  The call stack
- *    Simulam un error en línia 9 
+ *    Simulam un error en línia 9
  */
-
 
 function foo(z) {
   //Error

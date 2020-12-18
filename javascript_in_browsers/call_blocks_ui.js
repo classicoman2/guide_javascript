@@ -1,7 +1,6 @@
 /**
  * A dumb code that blocks the User Interface
  * 
- * @param {*} n 
  */
 
 function bloca(n) {
@@ -16,7 +15,7 @@ window.onload = function () {
 
   let before = Date.now();
 
-  bloca(1110000000);
+  bloca(1210000000);
 
   let after = Date.now();
 
