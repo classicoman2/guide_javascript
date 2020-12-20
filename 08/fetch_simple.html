@@ -8,20 +8,38 @@
   </head>
   <body></body>
   <script>
+    //Url existeix
     var myurl =
-      "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/posts/1";
+      "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/11";
 
+    //recurs no existeix en servidor - provocar error 404
+    var myurl =
+      "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/11";
+
+    //url no existeix - provocar error 404
+    var myurl =
+      "https://my-json-server.typicodeeeeeeeeeee.com/classicoman2/fakeRESTserver/characters/1";
+
+    // fetch retorna una promesa
+    // .then retorna sempre promeses
+    // Si la promesa resol bé en cada cas, la capturam amb .then
+    //                         si no, la capturam amb .catch
     fetch(myurl)
       .then(function (response) {
-        return response.json();
+        //Comprovar si ha anat bé
+        // Si response.ok==false, no hem obtingut les dades --> throw error
+        //https://stackoverflow.com/questions/38235715/fetch-reject-promise-and-catch-the-error-if-status-is-not-ok
+        if (response.ok) return response.json();
+        else 
+        throw new Error(response.status);
       })
       .then(function (json) {
-        console.log(json);
+        console.log("El json retornat:", json);
       })
       //Si es produeix algun error durant el tractament de les promeses anteriors -
       // a dins de les {} de les funcions - llavors s'executarà la callback del .catch
       .catch(function (error) {
-        console.log("This error happened: " + error.message);
+        console.log("This error happened: ", error.message);
       });
   </script>
 </html>
