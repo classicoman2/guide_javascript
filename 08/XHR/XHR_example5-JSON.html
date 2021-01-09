@@ -6,8 +6,8 @@
     <title>XHR-examples</title>
   </head>
   <body>
-    <h1>Exemple 3</h1>
-    <p>Captura dades d'una API en format JSON</p>
+    <h1>Exemple 5</h1>
+    <p>Manipulació de JSON provinent de una Rest API</p>
   </body>
   <script>
 
@@ -20,8 +20,17 @@ const url = 'https://my-json-server.typicode.com/classicoman2/fakeRESTserver/per
     // Callback en canviar l'estat
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        console.info(this.responseText);
-      }
+        let JSONdata = this.responseText;
+
+        // Aquesta variable conté dades de tipus string --> és "stringifyed JSON"
+        console.log(typeof JSONdata)
+
+        // Convertir el JSON a Objecte
+        let data = JSON.parse(JSONdata);
+        console.log(typeof data);
+     
+        console.info(`El meu nom és "${data.name}" i el meu motto és "${data.motto}"`)
+    }
     };
     xhr.open("GET", url, true);
     xhr.send();

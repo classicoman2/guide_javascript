@@ -6,23 +6,24 @@
     <title>XHR-examples</title>
   </head>
   <body>
-    <h1>Exemple 3</h1>
-    <p>Captura dades d'una API en format JSON</p>
+    <h1>Exemple 4</h1>
+    <p>Captura d'un fitxer en format XML</p>
   </body>
   <script>
     //uri del fitxer xml
     const url = "http://www.aemet.es/xml/municipios/localidad_07036.xml";
 
     // Crea objecte XHR
-    var xhttp = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
 
     // Callback en canviar l'estat
-    xhttp.onreadystatechange = function () {
+    xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         console.info(this.responseText);
       }
     };
-    xhttp.open("GET", url, true);
-    xhttp.send();
+    xhr.open("GET", url, false);
+
+    xhr.send();
   </script>
 </html>

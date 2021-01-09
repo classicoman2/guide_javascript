@@ -6,14 +6,15 @@
     <title>XHR-examples</title>
   </head>
   <body>
-    <h1>Els 4 estats pels que passa una petició XHR</h1>
+    <h1>Exemple 1</h1>
+    <p>Els 4 estats pels que passa una petició XHR</p>
   </body>
   <script>
     // Crea objecte XHR
-    var xhttp = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
 
     // Callback en canviar l'estat
-    xhttp.onreadystatechange = function () {
+    xhr.onreadystatechange = function () {
       //Anem a imprimir les propietats de la Response
       let properties = "";
 
@@ -23,7 +24,7 @@
       }
       console.info(properties);
     };
-    xhttp.open("GET", "fitxer.txt", true);
-    xhttp.send();
+    xhr.open("GET", "fitxer.txt", true);
+    xhr.send();
   </script>
 </html>

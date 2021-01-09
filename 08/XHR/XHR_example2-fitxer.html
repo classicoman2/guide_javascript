@@ -6,19 +6,20 @@
     <title>XHR-examples</title>
   </head>
   <body>
-    <h1>Exemple: captura dades d'un fitxer</h1>
+    <h1>Exemple 2</h1>
+    <p>captura dades d'un fitxer de text</p>
   </body>
   <script>
     // Crea objecte XHR
-    var xhttp = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
 
     // Callback en canviar l'estat
-    xhttp.onreadystatechange = function () {
+    xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         console.info(this.responseText);
       }
     };
-    xhttp.open("GET", "fitxer.txt", true);
-    xhttp.send();
+    xhr.open("GET", "fitxer.txt", true);
+    xhr.send();
   </script>
 </html>
