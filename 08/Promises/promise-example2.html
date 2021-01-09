@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemple 2: Promesa amb setTimeOut</title>
+  </head>
+  <body>
+    <h1>Exemple 2</h1>
+    <p>
+      Promesa amb setTimeOut per simular un codi asíncron - exemple: consulta a
+      una API
+    </p>
+  </body>
+  <script>
+    var promesaComplida = true;
+//    var promesaComplida = false;
+
+    let promesa = new Promise(function (resolve, reject) {
+      setTimeout(() => {
+        if (promesaComplida) {
+          resolve("Promise Resolved!");
+        } else {
+          reject("Promise Rejected!");
+        }
+      }, 3000);
+    });
+
+    console.log("Before Promise\n");
+
+    //Emprar la Promesa
+    promesa
+      .then(function (message) {
+        console.info(message);
+      })
+      .catch(function (error) {
+        console.info(error);
+      });
+
+    console.log("After Promise\n");
+
+    console.log(promesa);
+  </script>
+</html>

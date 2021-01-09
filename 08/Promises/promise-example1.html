@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemple 1: Promesa simple</title>
+  </head>
+  <body>
+    <h1>Exemple 1</h1>
+    <p>Promesa Simple</p>
+  </body>
+  <script>
+    var promesaComplida = true;
+//    var promesaComplida = false;
+
+    let promesa = new Promise(function (resolve, reject) {
+      if (promesaComplida) {
+        resolve("Promise Resolved!");
+      } else {
+        reject("Promise Rejected!");
+      }
+    });
+
+    console.log("Before Promise\n");
+
+    //Emprar la Promesa
+    promesa
+      .then(function (message) {
+        console.info(message);
+      })
+      .catch(function (error) {
+        console.info(error);
+      });
+
+    console.log("After Promise\n");
+
+    console.log(promesa);
+  </script>
+</html>
