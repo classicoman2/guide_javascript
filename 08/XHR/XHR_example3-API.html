@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XHR-examples</title>
+  </head>
+  <body>
+    <h1>Exemple 3</h1>
+    <p>Captura dades d'una API en format JSON</p>
+  </body>
+  <script>
+
+//url de la API
+const url = 'https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/1';
+
+    // Crea objecte XHR
+    var xhttp = new XMLHttpRequest();
+
+    // Callback en canviar l'estat
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        console.info(this.responseText);
+      }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+  </script>
+</html>

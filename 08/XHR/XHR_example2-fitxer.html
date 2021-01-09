@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XHR-examples</title>
+  </head>
+  <body>
+    <h1>Exemple: captura dades d'un fitxer</h1>
+  </body>
+  <script>
+    // Crea objecte XHR
+    var xhttp = new XMLHttpRequest();
+
+    // Callback en canviar l'estat
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        console.info(this.responseText);
+      }
+    };
+    xhttp.open("GET", "fitxer.txt", true);
+    xhttp.send();
+  </script>
+</html>

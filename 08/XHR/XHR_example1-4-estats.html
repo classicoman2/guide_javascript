@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XHR-examples</title>
+  </head>
+  <body>
+    <h1>Els 4 estats pels que passa una petició XHR</h1>
+  </body>
+  <script>
+    // Crea objecte XHR
+    var xhttp = new XMLHttpRequest();
+
+    // Callback en canviar l'estat
+    xhttp.onreadystatechange = function () {
+      //Anem a imprimir les propietats de la Response
+      let properties = "";
+
+      for (const property in this) {
+        if (property != "onreadystatechange")
+          properties += `${property}: ${this[property]}\n`;
+      }
+      console.info(properties);
+    };
+    xhttp.open("GET", "fitxer.txt", true);
+    xhttp.send();
+  </script>
+</html>
