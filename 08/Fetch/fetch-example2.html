@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Example 2</title>
+  </head>
+  <body>
+    <h1>Example 2</h1>
+    <p>fetch d'un fitxer de text</p>
+  </body>
+  <script> 
+    fetch( './fitxer.txt' )
+      .then(function (response) {
+        console.log("Response.status =",response.status)
+        console.log("Response.type =",response.type)
+        console.log("Response.ok =",response.ok)
+        // Si response.ok==false, no hem obtingut les dades --> throw error
+        if (response.ok) {
+            // Aquest codi donarà error
+            //return response.json();
+            return response.text();
+        } else {
+          throw new Error(response.status);
+        }
+      })
+      
+      .then(function (text) {
+        console.log("El text retornat:", text);
+        console.log(typeof text);
+      })
+
+      .catch(function (error) {
+        console.log("Error en el fetch: ", error.message);
+      });
+  </script>
+</html>

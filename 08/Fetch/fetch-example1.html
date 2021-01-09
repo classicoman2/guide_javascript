@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Example 1</title>
+  </head>
+  <body>
+    <h1>Example 1</h1>
+    <p>Estudiant com funciona fetch</p>
+  </body>
+  <script> 
+    //Url existeix
+    var myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/1";
+    //recurs no existeix en servidor - error 404
+//    var myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/999";
+    //url no existeix - provocar error 404
+//    var myurl = "https://my-json-server.typicodeezzz.com/classicoman2/fakeRESTserver/characters/1";
+
+    // fetch retorna una promesa
+    // .then retorna sempre promeses
+    // Si la promesa resol bé en cada cas, la capturam amb .then
+    //                         si no, la capturam amb .catch
+    fetch(myurl)
+      .then(function (response) {
+        console.log("Response.status =",response.status)
+        console.log("Response.type =",response.type)
+        console.log("Response.ok =",response.ok)
+        // Si response.ok==false, no hem obtingut les dades --> throw error
+        if (response.ok) {
+            // Obtenim el que hem sol·licitat
+          return response.json();
+        } else {
+          throw new Error(response.status);
+        }
+      })
+      .then(function (json) {
+        console.log("El json retornat:", json);
+        console.log(typeof json);
+      })
+      .catch(function (error) {
+        console.log("Error en el fetch: ", error.message);
+      });
+  </script>
+</html>
