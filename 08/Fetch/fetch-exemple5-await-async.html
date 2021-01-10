@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Example 5</title>
+  </head>
+  <body>
+    <h1>Example 5</h1>
+    <p>Fetch amb async - await</p>
+  </body>
+  <script>
+    var myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/1";
+
+    async function getData(url) {
+      const response = await fetch(url);
+      const json = await response.json();
+      return json;
+    }
+
+    console.log("---abans---")
+
+    // Resolem la promesa amb then
+    getData(myurl)
+    .then( (json) => console.info("Dades obtingudes:", json))
+    .catch( (error) => console.error("Ha passat aquest error:", error))
+
+    console.log("---després---")
+
+  </script>
+</html>
