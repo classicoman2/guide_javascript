@@ -15,6 +15,9 @@
 
     // Callback en canviar l'estat
     xhr.onreadystatechange = function () {
+      
+      console.log(this);
+
       //Anem a imprimir les propietats de la Response
       let properties = "";
 
@@ -23,6 +26,7 @@
           properties += `${property}: ${this[property]}\n`;
       }
       console.info(properties);
+      
     };
     xhr.open("GET", "fitxer.txt", true);
     xhr.send();

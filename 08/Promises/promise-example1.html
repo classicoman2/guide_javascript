@@ -6,12 +6,13 @@
     <title>Exemple 1: Promesa simple</title>
   </head>
   <body>
-    <h1>Exemple 1</h1>
-    <p>Promesa Simple</p>
+    <h1>Promesa Simple</h1>
   </body>
   <script>
+
+
     var promesaComplida = true;
-//    var promesaComplida = false;
+    //var promesaComplida = false;
 
     let promesa = new Promise(function (resolve, reject) {
       if (promesaComplida) {
@@ -23,7 +24,7 @@
 
     console.log("Before Promise\n");
 
-    //Emprar la Promesa
+    // Resoldre la promesa
     promesa
       .then(function (message) {
         console.info(message);
@@ -35,5 +36,6 @@
     console.log("After Promise\n");
 
     console.log(promesa);
+
   </script>
 </html>

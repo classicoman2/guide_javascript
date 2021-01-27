@@ -6,15 +6,14 @@
     <title>Exemple 2: Promesa amb setTimeOut</title>
   </head>
   <body>
-    <h1>Exemple 2</h1>
+    <h1>Promesa amb SetTimeOut</h1>
     <p>
-      Promesa amb setTimeOut per simular un codi asíncron - exemple: consulta a
-      una API
+      Promesa amb setTimeOut per simular un codi asíncron real.
     </p>
   </body>
   <script>
-    var promesaComplida = true;
-//    var promesaComplida = false;
+//    var promesaComplida = true;
+    var promesaComplida = false;
 
     let promesa = new Promise(function (resolve, reject) {
       setTimeout(() => {
@@ -39,6 +38,5 @@
 
     console.log("After Promise\n");
 
-    console.log(promesa);
   </script>
 </html>

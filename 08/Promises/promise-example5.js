@@ -1,52 +1,44 @@
 /*
- * Exemple basat en: https://www.digitalocean.com/community/tutorials/javascript-promises-for-dummies
+ * Encadenament de promeses
  *
- * Continua amb:   promise-example5.js
  */
 
-//var isMomHappy = true;
-var isMomHappy = false;
+var isDadHappy = true;
+//var isDadHappy = false;
 
 // Promesa nº 1
 var willIGetNewPhone = new Promise(function (resolve, reject) {
-  if (isMomHappy) {
+  if (isDadHappy) {
     var phone = {
       brand: "Samsung",
       color: "black",
     };
-    resolve(phone); // fulfilled
+    resolve(phone);
   } else {
-    reject("mom is not happy"); // reject
+    reject("Daddy is not happy");
   }
 });
 
-
-// Promesa nº 2
-// Es una funció que retorna una Promesa.
-// Aquesta funció la passarem com a "callback" en el .then de la 1a promesa
+// Promesa nº 2: Es una funció que retorna una Promesa i que passarem com a
+// "callback" en el .then de la 1a promesa
 var showOff = function (phone) {
-    return new Promise(
-        function (resolve, reject) {
-            var message = 'Hey friend, I have a new ' +
-                phone.color + ' ' + phone.brand + ' phone';
+  return new Promise(function (resolve, reject) {
+    var message = "Hey friend, I have a new " + phone.color + " " + phone.brand + " phone";
 
-            resolve(message);
-        }
-    );
+    resolve(message);
+    //reject("no friend");
+  });
 };
 
-/*
- * Anem a encadenar la Promesa 'showOff' aqui
- */
+
 
 willIGetNewPhone
-  .then(showOff) // <-- Aqui va la 2a promesa !
+  .then(showOff) // <-- Aqui va encadenada la 2a promesa !
   .then(function (fulfilled) {
     console.log(fulfilled);
     // output: 'Hey friend, I have a new black Samsung phone.'
   })
   .catch(function (error) {
-    // oops, mom don't buy it
     console.log(error);
-    // output: 'mom is not happy'
+    // output: 'Daddy is not happy'
   });

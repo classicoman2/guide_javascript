@@ -10,9 +10,9 @@
     <p>Manipulació de JSON provinent de una Rest API</p>
   </body>
   <script>
-
-//url de la API
-const url = 'https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/1';
+    //url de la API
+    const url =
+      "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/1";
 
     // Crea objecte XHR
     var xhr = new XMLHttpRequest();
@@ -23,14 +23,16 @@ const url = 'https://my-json-server.typicode.com/classicoman2/fakeRESTserver/per
         let JSONdata = this.responseText;
 
         // Aquesta variable conté dades de tipus string --> és "stringifyed JSON"
-        console.log(typeof JSONdata)
+        console.log(typeof JSONdata);
 
         // Convertir el JSON a Objecte
         let data = JSON.parse(JSONdata);
         console.log(typeof data);
-     
-        console.info(`El meu nom és "${data.name}" i el meu motto és "${data.motto}"`)
-    }
+
+        console.info(
+          `El meu nom és "${data.name}" i el meu motto és "${data.motto}"`
+        );
+      }
     };
     xhr.open("GET", url, true);
     xhr.send();

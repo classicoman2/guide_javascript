@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch simple</title>
+  </head>
+
+  <body>
+    <h1>Example 0</h1>
+    <p>Fetch simple</p>
+  </body>
+  <script>
+    
+    var myAPIurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges";
+
+    fetch(myAPIurl + "/1")
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch(function (err) {
+        console.log("Fetch Error :", err)
+      });
+
+  </script>
+</html>

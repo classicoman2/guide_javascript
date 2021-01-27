@@ -7,14 +7,12 @@
   </head>
 
   <body>
-    <a
-      href="https://developers.google.com/web/updates/2015/03/introduction-to-fetch"
+    <a href="https://developers.google.com/web/updates/2015/03/introduction-to-fetch"
       >This example is available in this url</a
     >
   </body>
   <script>
-    var myAPIurl =
-      "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters";
+    var myAPIurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters";
 
     fetch(myAPIurl + "/1")
       .then(function (response) {
@@ -22,7 +20,6 @@
           console.warn("Hi ha un problema amb el fetch");
           return;
         }
-
         // En lloc d'encadenar then(), puc resoldre la promesa aqui
         response.json().then(function (data) {
           //console.log(data);
