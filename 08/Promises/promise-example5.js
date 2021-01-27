@@ -34,8 +34,8 @@ var showOff = function (phone) {
 
 willIGetNewPhone
   .then(showOff) // <-- Aqui va encadenada la 2a promesa !
-  .then(function (fulfilled) {
-    console.log(fulfilled);
+  .then(function (message) {
+    console.log(message);
     // output: 'Hey friend, I have a new black Samsung phone.'
   })
   .catch(function (error) {

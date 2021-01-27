@@ -19,14 +19,13 @@
       return json;
     }
 
-    console.log("---abans---")
+    console.log("---abans---");
 
     // Resolem la promesa amb then
     getData(myurl)
-    .then( (json) => console.info("Dades obtingudes:", json))
-    .catch( (error) => console.error("Ha passat aquest error:", error))
+      .then((json) => console.info("Dades obtingudes:", json))
+      .catch((error) => console.error("Ha passat aquest error:", error));
 
-    console.log("---després---")
-
+    console.log("---després---");
   </script>
 </html>

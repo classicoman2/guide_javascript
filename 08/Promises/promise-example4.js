@@ -21,8 +21,8 @@ var willIGetNewPhone = new Promise(function (resolve, reject) {
 });
 
 willIGetNewPhone
-  .then(function (fulfilled) {
-    console.log(fulfilled);
+  .then(function (message) {
+    console.log(message);
     // output: { brand: 'Samsung', color: 'black' }
   })
   .catch(function (error) {

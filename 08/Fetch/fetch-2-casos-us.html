@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Example 1</title>
+  </head>
+  <body>
+    <h1>Example 1</h1>
+    <p>Capturant els errors i situacions que se puguin donar amb fetch</p>
+  </body>
+  <script> 
+    // La url és correcta. Petició tipus CORS
+    var url = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/1"
+   
+    // La petició és correcta però no és json
+    //   => Error en el fetch:  Unexpected token L in JSON at position 0
+    var url = "./fitxer.txt"
+
+    // El recurs no existeix en el servidor
+    //var url = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/999";
+       //   => "Error en el fetch, 404"
+
+    // El nom del servidor és incorrecte
+    //   => "Error en el fetch, Failed to Fetch"
+    //var url = "https://ZZZZZZZZZZmy-json-server.typicode.com/classicoman2"
+
+    // El servidor és incorrecte i CORS ERROR -=> "Error en el fetch, Failed to Fetch"
+    //   => "Error en el fetch, Failed to Fetch"
+    //var url = "https://cifpfbmoll.eu"
+
+    fetch(url)
+      .then(function (response) {
+        console.log("Response.status =",response.status)
+        console.log("Response.type =",response.type)
+        console.log("Response.ok =",response.ok)
+        // Si response.ok==false, no hem obtingut les dades --> throw error
+        if (response.ok) {
+            // Obtenim el que hem sol·licitat
+          return response.json();
+        } else {
+          throw new Error(response.status);
+        }
+      })
+      .then(function (json) {
+        console.log("El json retornat:", json);
+      })
+      .catch(function (error) {
+        console.warn("Error en el fetch: ", error.message);
+      });
+  </script>
+</html>
