@@ -7,20 +7,24 @@
     <title>Example 2</title>
   </head>
   <body>
-    <h1>Example 2</h1>
-    <p>fetch d'un fitxer de text</p>
+    <h1>Fetch an Image</h1>
+    <p>Get an image and embed it in the DOM</p>
+    <img id="myImage" src="" alt="Aqui anirà una imatge" />
   </body>
   <script>
-    fetch("./assets/fitxer.txt")
+    fetch("./assets/logo.png")
       .then(function (response) {
         if (response.ok) {
-          return response.text();
+          // Aquest codi donaria error
+          //return response.json();
+          return response.blob();
         } else {
           throw new Error(response.status);
         }
       })
-      .then(function (data) {
-        console.log("El text retornat:", data);
+      .then(function (blob) {
+        var objectURL = URL.createObjectURL(blob);
+        document.getElementById("myImage").src = objectURL;
       })
       .catch(function (error) {
         console.log("Error en el fetch: ", error.message);
