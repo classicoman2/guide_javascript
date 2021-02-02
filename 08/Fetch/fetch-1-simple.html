@@ -15,10 +15,10 @@
     var myAPIurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges";
 
     fetch(myAPIurl + "/1")
-      .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then( response => response.json() )
+      .then( data => { console.log(data) })
       .catch(function (error) {
-        console.log("Fetch Error :", error)
+        console.log("Error en el Fetch:", error)
       });
 
   </script>

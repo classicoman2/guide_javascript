@@ -4,26 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Example 2</title>
+    <title>Example 4 - Fetch an image</title>
   </head>
   <body>
-    <h1>Fetch an Image</h1>
+    <h1>Example 4 - Fetch an image</h1>
     <p>Get an image and embed it in the DOM</p>
     <img id="myImage" src="" alt="Aqui anirà una imatge" />
   </body>
   <script>
+    //fetch("https://media.timeout.com/images/105744005/630/472/image.jpg")  //ERROR CORS
+    //fetch("https://raw.githubusercontent.com/classicoman2/fakeRESTserver/master/assets/personatge1.png")
     fetch("./assets/logo.png")
       .then(function (response) {
         if (response.ok) {
-          // Aquest codi donaria error
-          //return response.json();
           return response.blob();
         } else {
-          throw new Error(response.status);
+          throw new Error("En fer fetch de la imatge, error: " + response.status);
         }
       })
-      .then(function (blob) {
-        var objectURL = URL.createObjectURL(blob);
+      .then(function (imatge) {
+        var objectURL = URL.createObjectURL(imatge);
         document.getElementById("myImage").src = objectURL;
       })
       .catch(function (error) {
