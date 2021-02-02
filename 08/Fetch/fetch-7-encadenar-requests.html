@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Example 7: CAllback HEll amb Fetch!</title>
+  </head>
+  <body>
+    <h1>Callback Hell</h1>
+    <p>Encadenar 2 cridades fetch pot crear codi dificil de mantenir</p>
+    <img id="myImage">
+  </body>
+  <script>
+
+  /*
+   1er Fetch: Descarrego JSON del personatge
+   2on Fetch: Descarrego BLOB de la imatge
+  */
+
+  const url = 'https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/2'
+
+  // Fetch número 1
+  fetch(url)
+  .then(response => response.json())
+  .then(json => {
+      //url de la imatge
+      const urlImatge = json.img
+      // Fetch número 2
+      fetch(urlImatge)
+      .then(response => response.blob())
+      .then(imatge => {
+        var objectURL = URL.createObjectURL(imatge);
+        document.getElementById("myImage").src = objectURL;
+      })
+      .catch(error => console.log("Error en codi asíncron", error))
+  })
+  </script>

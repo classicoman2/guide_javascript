@@ -12,23 +12,28 @@
   </body>
   <script>
     // Identificador no existeix en la Rest API
-//    var myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/111111";
+    //    const myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/111111";
     // Servidor incorrecte
-//    var myurl = "https://mmmmmmy-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/1";
+    //    const myurl = "https://mmmmmmy-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/1";
     // Url correcta
-    var myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/1";
+    const myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/1";
 
+    // Funció asíncrona on se concentra el codi asíncron
+    // no necessit més emprar .then()
     async function getData(url) {
       const response = await fetch(url);
+      /*** CONTROL ERRORS  ***/
       if (response.status != 200) {
         return new Error("Fetch ha fallat");
       }
+
       const json = await response.json();
+      console.info("Dades obtingudes:", json);
       return json;
     }
-    // Resolem la promesa amb then
+
+    // Només necessito .catch per tractar errors
     getData(myurl)
-    .then( (json) => console.info("Dades obtingudes:", json))
-    .catch( (error) => console.error("Ha passat aquest error:", error))
+    .catch((error) => console.error("Error en Fetch:", error));
   </script>
 </html>
