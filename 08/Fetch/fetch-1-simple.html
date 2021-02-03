@@ -12,9 +12,9 @@
   </body>
   <script>
     
-    var myAPIurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges";
+    var myAPIurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/1";
 
-    fetch(myAPIurl + "/1")
+    fetch(myAPIurl)
       .then( response => response.json() )
       .then( data => { console.log(data) })
       .catch(function (error) {
