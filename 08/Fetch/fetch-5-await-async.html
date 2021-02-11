@@ -11,7 +11,8 @@
     <p>Fetch amb async - await</p>
   </body>
   <script>
-    const myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/1";
+    //const myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/1";
+    const myurl = "http://localhost:3000/posts/1";
 
     // Funció asíncrona on se concentra el codi asíncron
     // no necessit més emprar .then()
@@ -19,7 +20,6 @@
       const response = await fetch(url);
       const json = await response.json();
       console.info("Dades obtingudes:", json);
-      return json;
     }
 
     // Només necessito .catch per tractar errors

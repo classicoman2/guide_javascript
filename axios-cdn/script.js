@@ -4,11 +4,11 @@ const BASE_URL = 'https://my-json-server.typicode.com/classicoman2/fakeRESTserve
 
 const getTodos = async () => {
   try {
-    const res = await axios.get(`${BASE_URL}/personatges`);
+    const res = await axios.get(`${BASE_URL}/characters`);
 
     const todos = res.data;
 
-    mostraPersonatgesPerConsola( todos );
+    mostracharactersPerConsola( todos );
 
     return todos;
   } catch (e) {
@@ -17,12 +17,12 @@ const getTodos = async () => {
 };
 
 /**
- * Mostra per consola les dades dels personatges
+ * Mostra per consola les dades dels characters
  * 
- * @param {Array} personatges 
+ * @param {Array} characters 
  */
-function mostraPersonatgesPerConsola(personatges) {
-  console.log ( personatges ); 
+function mostracharactersPerConsola(characters) {
+  console.log ( characters ); 
 }
 
 

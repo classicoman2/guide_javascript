@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Example 7: CAllback HEll amb Fetch!</title>
+    <title>Example 8: 2 Fetch encadenats amb async/await</title>
   </head>
   <body>
     <h1>Callback Hell</h1>
@@ -29,7 +29,7 @@
       document.getElementById("myImage").src = objectURL;
     }
 
-    const myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/personatges/2";
+    const myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/2";
 
     getImage(myurl)
     .catch(error => console.log("Error en codi asíncron", error))

@@ -10,43 +10,42 @@
     <h1>Example 2 - Casos d'us</h1>
     <p>Capturant els errors i situacions que se puguin donar amb fetch</p>
   </body>
-  <script> 
-
+  <script>
     // TRIA EL CAS QUE VOLS PROVAR
-    const cas = 2
+    const cas = 1;
 
     // cas = 0 : La url de la Rest API és correcta. Petició tipus CORS
-    let url = []
-    url.push("https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/1")
-   
+    let url = [];
+    url.push("https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/1");
+
     // cas = 1 : La petició és correcta però no és json si no empro  response.json()
     //   => Error en el fetch:  Unexpected token L in JSON at position 0
-    url.push("./assets/fitxer.txt")
+    url.push("./assets/fitxer.txt");
 
     // cas = 2 : El recurs no existeix en el servidor
     //var url = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/999";
-    url.push("Error en el fetch, 404")
+    url.push("Error en el fetch, 404");
 
     // cas = 3 : El nom del servidor és incorrecte
     //   => "Error en el fetch, Failed to Fetch"
-    url.push("https://zzzzzzzzzzzmy-json-server.typicode.com/classicoman2")
+    url.push("https://zzzzzzzzzzzmy-json-server.typicode.com/classicoman2");
 
     // cas = 4 : El servidor és incorrecte i CORS ERROR -=> "Error en el fetch, Failed to Fetch"
     //   => "Error en el fetch, Failed to Fetch"
-    url.push("https://cifpfbmoll.eu")
+    url.push("https://cifpfbmoll.eu");
 
     fetch(url[cas])
       .then(function (response) {
-        console.log(response)
-        console.log("Response.status =",response.status)
-        console.log("Response.type =",response.type)
-        console.log("Response.ok =",response.ok)
+        console.log(response);
+        console.log("Response.status =", response.status);
+        console.log("Response.type =", response.type);
+        console.log("Response.ok =", response.ok);
         // Si response.ok==false, no hem obtingut les dades --> throw error
         if (response.ok) {
-//            return response.text();
-              return response.json();
+          //            return response.text();
+          return response.json();
         } else {
-          throw new Error("Ha ocorregut l'error "+ response.status);
+          throw new Error("Ha ocorregut l'error " + response.status);
         }
       })
       .then(function (data) {
