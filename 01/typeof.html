@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>typeof</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exemples amb typeof</title>
+  </head>
+  <body>
+    <h1>Exemples amb typeof</h1>
+    <p>Mirar la consola -></p>
+  </body>
+  <script>
+    console.warn("Numbers");
+    //Nombre simple
+    console.log(125 + " -> " + typeof 125);
+    //Nombre real
+    console.log(3.1415 + " -> " + typeof 3.1415);
+    //undefined
+    console.log("undefined" + " -> " + typeof undefined);
+    //null
+    console.log("null" + " -> " + typeof null);
+    //NaN
+    console.log("NaN" + " --> " + typeof NaN);
     
-</body>
-<script>
-    console.log(125 + " --> " + typeof 125)
-    console.log('undefined' + " --> " + typeof undefined)
-    console.log('null' + " --> " + typeof null)
-    console.log('NaN' + " --> " + typeof NaN)
-    console.log('"un text"' + " --> " + typeof "un text")
-    console.log(true + " --> " + typeof true)
-    console.log("{id: 5, name: 'John Smith'}" + " --> " + typeof {id: 5, name: 'John Smith'})
-    console.log([1,2,3,5,7,11,13,17] + " --> " + typeof [1,2,3,5,7,11,13,17])
-    console.log('myFunction' + " --> " + typeof myFunction)
-    console.log('myFunction()' + " --> " + typeof myFunction())
+    console.warn("Strings")
+    console.log('"un text"' + " --> " + typeof "un text");
+    
 
-function myFunction () {
-    return "foo"
-}
+    console.warn("Booleans")
+    console.log(true + " -> " + typeof true);
 
-</script>
+
+    console.warn("Objectes")
+    //object
+    console.log("{id: 5, name: 'John Smith'}" + " -> " + typeof { id: 5, name: "John Smith" });
+    //array
+    console.log([1, 2, 3, 5, 7, 11, 13, 17] + " -> " + typeof [1, 2, 3, 5, 7, 11, 13, 17]);
+
+
+    console.log("Funcions")
+    //function definida
+    console.log("myFunction" + " --> " + typeof myFunction);
+    //funció instanciada o cridada
+    console.log("myFunction()" + " --> " + typeof myFunction());
+
+
+
+    function myFunction() {
+      return "foo";
+    }
+  </script>
 </html>
