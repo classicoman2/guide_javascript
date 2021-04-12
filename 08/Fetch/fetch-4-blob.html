@@ -23,6 +23,9 @@
         }
       })
       .then(function (imatge) {
+
+        console.log( imatge )
+
         var objectURL = URL.createObjectURL(imatge);
         document.getElementById("myImage").src = objectURL;
       })
