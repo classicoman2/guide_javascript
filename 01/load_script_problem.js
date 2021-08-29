@@ -1,6 +1,7 @@
 
 window.onload = function () {
-    document.getElementById("text1").innerHTML = "Loaded the script in an external file - FUNCIONA!"
+  document.getElementById("text1").innerHTML = "FUNCIONA!"
+  console.log("Dins el fitxer js: ara s'ha carregat el DOM")
 };
 
-//document.getElementById("text1").innerHTML = "Loaded the script in an external file - FALLA"
+//document.getElementById("text1").innerHTML = "FUNCIONA!"
