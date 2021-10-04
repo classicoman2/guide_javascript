@@ -1,0 +1,35 @@
+main {
+    display:flex;
+}
+
+#result {
+    display:inline;
+    border: 1px solid black;
+    height: 50px;
+    width: 100px;
+    margin: 0px 3px;
+}
+
+span {
+    line-height: 52px;
+    font-size: 3rem;
+}
+
+span#operation {
+    cursor:pointer;
+}
+
+span#operation:hover {
+    background-color: azure;
+}
+
+span#operation:active {
+    background-color: burlywood;
+}
+
+input {
+    margin: 0px 5px;    
+    width: 40px;
+    padding: 3px 5px;
+    text-align: right;
+}
