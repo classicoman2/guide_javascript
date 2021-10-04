@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repte 2: Ambit de Variables</title>
+  </head>
+  <body>
+    <main>
+      <h1>Comportament de les variables</h1>
+      <p>var, let.   Hoisting.  </p>
+    </main>
+  </body>
+  <script>
+    y = "Yakaree";
+    var z;
+    var w = "Wanda";
+
+    // Això és una funcio arrow, les veurem més endavant!
+    foo = () => {
+      return y;
+    };
+
+    function goo() {
+      let y = "You";
+      return y;
+    }
+
+    function hoo() {
+      return w;
+    }
+
+    function koo() {
+      return z;
+    }
+
+    // Endivina quins valors tornaran aquestes variables?
+
+    console.log("y a dins de goo() val: ", goo());
+    console.log("y a dins de foo() val: ", foo());
+    console.log("z a dins de koo() val: ", koo());
+    console.log("w a dins de hoo() val: ", hoo());
+
+   
+    console.log("u val: ", u);
+ 
+    console.log("v val: ", v);
+    console.log("y val: ", y);
+    console.log("z val: ", z);
+    console.log("x val: ", x);
+
+    u = "Udol";
+    var v = "Valence";
+
+  </script>
+</html>

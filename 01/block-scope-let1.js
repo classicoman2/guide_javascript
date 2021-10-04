@@ -3,8 +3,8 @@
  * 
  * @param {number} a 
  */
-function suma(a) {
-  let b = 5;c
+function add(a) {
+  let b = 5;
   return a+b;
 }
 
@@ -12,6 +12,9 @@ function suma(a) {
 * Exemple 2: puc emplear let en un bucle
 */
 
+// Let no permet Hoisting!
+console.log("El valor de i abans del bucle és   ")
+
 for (let i=0; i<5; i++) {
-  console.log( suma(i) );
+  console.log( add(i) );
 }

@@ -1,6 +1,6 @@
 "use strict"
 
-// Si no escric "strict mode", provocarà el següent error:
-//                          Uncaught ReferenceError: x is not defined
+// Si x no és declarada amb var, se produeix una Excepció 
+//                         
 x = 10
 console.log(x)
