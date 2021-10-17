@@ -1,48 +1,41 @@
-/**
- * Obtenir hora actual
- */
-function getHoraActual() {
-  let data = new Date();
-  return (
-    data.getHours() + ":" + data.getMinutes() + "'" + data.getSeconds() + '"'
-  );
-}
-
 
 window.onload = function () {
 
-
   // Solució amb  addEventListener()
-
-  document.getElementById("buttonSayHello").addEventListener("click", function () {
-    let msg = "Hello Class, it's " + getHoraActual();
-    document.getElementById("message").innerHTML = msg;
-
-    //Puc extreure info de l'element afectat per l'event
-    console.log(this)
-  });
-
+  /* 
+    document.getElementById("buttonSayHello").addEventListener("click", function () {
+      document.getElementById("message").innerHTML = "Hola Classe!";
+    });
+   */
 
   // Solució més curta amb  onclick
 
 
-  /* 
-   document.getElementById("buttonSayHello").onclick = function () {
-     let msg = "Hello Classs, it's " + getHoraActual();
-     document.getElementById("message").innerHTML = msg;
-   };
-  */
+  function imprimirTecla(valor) {
+    document.getElementById("message").innerHTML += valor
+  }
+
+  document.getElementById("a").onclick = function () {
+
+    imprimirTecla(this.id)
+  };
+
+
+
+  document.getElementById("b").onclick = function () {
+    imprimirTecla(this.id)
+  };
 
 
   // Solució amb arrow function -- ALERTA: this  ja no val el mateix
 
-/* 
-  document.getElementById("buttonSayHello").onclick = () => {
-    let msg = "Hello Class, it's " + getHoraActual();
-    document.getElementById("message").innerHTML = msg;
-
-    //Puc extreure info de l'element afectat per l'event
-    console.log(this)
-  }
- */
+  /* 
+    document.getElementById("buttonSayHello").onclick = () => {
+    document.getElementById("message").innerHTML = "Hola Classe 2!";
+  
+      //Puc extreure info de l'element afectat per l'event
+      console.log(this)
+    }
+   */
 };
+

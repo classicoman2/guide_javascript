@@ -5,8 +5,8 @@ console.log("\nd1 = " + d1);
 console.log("d1 és de tipus: " + typeof d1);
 
 
-//Dia 11 de Setembre de 2011
-let d3 = new Date(2001, 8, 11);
+//Dia 20 d'Agost de 1986
+let d3 = new Date(1986, 8, 20);
 console.log("\nd3 = " + d3);
 
 
@@ -30,10 +30,10 @@ console.log("\nd2 = " + d2);
   console.log("");
 
   //ISO Date
-  var d = new Date("2015-03-25");
-  console.log(d);
+  var d = new Date("2023-01-10");
+  console.log(d.toDateString());
 
   //Short Date
-  var d = new Date("03/25/2015");
-  console.log(d);
+  var d = new Date("03/25/1973");
+  console.log(d.toDateString());
 }

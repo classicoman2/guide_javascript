@@ -6,3 +6,7 @@ window.onload = function () {
     document.getElementById("missatge").innerHTML = "BONES TARDES!"
 
 }
+
+function pintarAbc() {
+    
+}
