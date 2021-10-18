@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DWEC - exercici 01</title>
+
+    <link rel="stylesheet" href="ec01.css" />
+    <script src="ec01.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <!-- Caja para introducir datos -->
+      <div class="divContent">
+        Insert some data here:
+        <input id="myInput" />
+      </div>
+
+      <!-- Caja para seleccionar una acción a través de botones -->
+      <div class="divContent">
+        <div id="buttons">
+          <button class="indivButton" onclick="numSign()">numero signe</button>
+          <button class="indivButton" onclick="isNumber()">es numero</button>
+          <button class="indivButton" onclick="numberIntegerPart()">numero part entera</button>
+          <button class="indivButton" onclick="numberDecimalPart()">numero part decimals</button>
+          <button class="indivButton" onclick="divideWithDecimals()">amb 3 decimals</button>
+          <button class="indivButton" onclick="checkEmptyString()">string buit</button>
+          <button class="indivButton" onclick="invertString()">invertir string</button>
+          <button class="indivButton" onclick="countAs()">quantes 'a'</button>
+          <button class="indivButton" onclick="substringAbansA()">abans 'a'</button>
+          <button class="indivButton" onclick="findAs()">primera i darrera 'a'</button>
+          <button class="indivButton" onclick="deleteAs()">esborra substring</button>
+          <button class="indivButton" onclick="changeAs()">substitueix substring</button>
+          <button class="indivButton" onclick="reverseAndAdd()">cap i cua</button>
+          <button class="indivButton" onclick="noSpaces()">no espais</button>
+          <button class="indivButton" onclick="changeSpaces()">frase amb guions</button>
+          <button class="indivButton" onclick="getAcronym()">acronim</button>
+          <button class="indivButton" onclick="validateEmail()">email validation</button>
+          <button class="indivButton" onclick="validateEmail2()">email validation (alternate)</button>
+        </div>
+      </div>
+
+      <!-- Caja para lanzar los resultados -->
+      <div class="divContent">
+        <h3>RESULTS</h3>
+        <div id="divResults"></div>
+      </div>
+    </main>
+  </body>
+</html>

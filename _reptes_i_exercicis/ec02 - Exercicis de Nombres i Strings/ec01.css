@@ -1,0 +1,39 @@
+body{
+    background-color: white;
+}
+
+header{
+    text-align: center;
+    color: rgb(32, 46, 46);
+}
+
+.divContent{
+    background-color:antiquewhite;
+    margin: 0 auto;
+    width: 94%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+h3{
+    text-decoration: underline;
+}
+
+#divResults{
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 98%;
+    min-height: 40px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.indivButton{
+    border-radius: 6px;
+    margin-bottom: 6px;
+    padding: 6px;
+    border: 2px solid white;
+}

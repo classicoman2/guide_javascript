@@ -26,14 +26,29 @@ console.log("\nd2 = " + d2);
 
 
 //Formats d'Introducció de Dates'
-{
-  console.log("");
 
+console.log("");
+
+{
   //ISO Date
-  var d = new Date("2023-01-10");
-  console.log(d.toDateString());
+  var dd2 = new Date("2022-01-01");
+  console.log(dd2.toDateString());
 
   //Short Date
-  var d = new Date("03/25/1973");
-  console.log(d.toDateString());
+  var dd1 = new Date();
+  console.log(dd1.toDateString());
+
+
+
+  console.log(dd1.getDate() + "/" + (dd1.getMonth() + 1) + "/" + dd1.getFullYear());
 }
+
+// Data i hora d'ara mateix
+let dd1t = dd1.getTime()
+
+// Data d'any nou
+let dd2t = dd2.getTime();
+
+// Calcular dies entre dues dates: divideixo els milisegons per 24 hores, 60 minuts, 60 segons
+// i 1000 milímetres
+console.log((dd2t - dd1t)/1000/60/60/24)

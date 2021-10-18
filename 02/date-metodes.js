@@ -52,3 +52,4 @@ console.log(
 
 //Milisegons
 console.log(" Han passat " + d.getTime() + " ms. des del 1/1/1970");
+
