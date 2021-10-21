@@ -1,5 +1,3 @@
-// SORTING ARRAYS OF OBJECTS
-
 let arrayObjects = [
   { type: "Volvo", year: 1970 },
   { type: "Seat", year: 1950 },
@@ -7,22 +5,28 @@ let arrayObjects = [
   { type: "Wolkswagen", year: 1960 },
   { type: "Saab", year: 2000 },
   { type: "BMW", year: 1980 },
-];
+]
 
-//Sorts Objects increasingly
-let sortIncrease = function (a, b) {
-  return a.year - b.year;
-};
+// NOU! Clonam els arrays d'objectes per fer còpies
+let arrayObjects1 = JSON.parse(JSON.stringify(arrayObjects))
+let arrayObjects2 = JSON.parse(JSON.stringify(arrayObjects))
 
-//sorts Objects decreasingly
-let sortDecrease = function (a, b) {
-  return b.year - a.year;
-};
+// funció auxiliar per ordenar números de forma creixent
+let sortIncrease = function (object1, object2) {
+  return object1.year - object2.year
+}
 
-//Alerta!! Necessitam clonar els arrays d'objectes per fer una còpia
-let arrayObjects_inc = JSON.parse(JSON.stringify(arrayObjects));
-let arrayObjects_dec = JSON.parse(JSON.stringify(arrayObjects));
+// Funció auxiliar per ordenar per longitud de string
+let sortStrings = function (object1, object2) {
+  if (object1.type.toLowerCase() > object2.type.toLowerCase()) return 1
+  if (object1.type.toLowerCase() < object2.type.toLowerCase()) return -1
+  return 0
+}
 
-arrayObjects_inc.sort(sortIncrease);
-arrayObjects_dec.sort(sortDecrease);
-console.log(""); //Set a Breakpoint to see the result in the debugger.
+// Ordena array per year
+arrayObjects1.sort(sortIncrease)
+
+// Ordena array per marca
+arrayObjects2.sort(sortStrings)
+
+console.log("POSAR UN BREAKPOINT AQUI PER PODER VEURE ELS RESULTATS")

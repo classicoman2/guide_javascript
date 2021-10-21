@@ -1,78 +1,45 @@
-import {
-  createIndexesGrid,
-  createTextGrid,
-} from "./modules/modul-dibuixar-grid.js";
+console.log(`var array1 = ["Banana", "strawberry", "apple", "KIWI", "pear"]
+var array2 = [100, 25, 1, 0.78, 50, 5, 0.5]
+var array3 = ["Banana", 5, "apple", "Kiwi", 2]\n\n`)
 
-window.onload = () => {
-  var array1 = ["Banana", "Strawberry", "Apple", "Kiwi"];
-  var array2 = [100, 25, 1, 50, 5, 0.5];
-  var array3 = ["Banana", 5, "Apple", 2];
+// Declaració d'arrays
+var array1 = ["Banana", "strawberry", "apple", "KIWI", "pear"]
+var array2 = [100, 25, 1, 0.78, 50, 5, 0.5]
+var array3 = ["Banana", 5, "apple", "Kiwi", 2]
 
-  //Show in the interface
-  document.getElementById("indexes").innerHTML = createIndexesGrid(
-    array1.length
-  );
-  document.getElementById("text").innerHTML = createTextGrid(array1);
-  document.getElementById("indexes2").innerHTML = createIndexesGrid(
-    array2.length
-  );
-  document.getElementById("text2").innerHTML = createTextGrid(array2);
+// SORT SIMPLE
+{
+  console.log("array1 sort simple: " + array1.sort())
+  console.log("array2 sort simple: " + array2.sort())
+  console.log("array3 sort simple: " + array3.sort())
+}
 
-  // SORT
-  {
-    console.log("After sorting array1, the result is: '" + array1.sort());
-    console.log("After sorting array2, the result is: '" + array2.sort());
-    console.log("After sorting array3, the result is: '" + array3.sort());
-  }
 
-  // SORT WITH COMPARING FUNCTION
-  {
-    //Sorts numbers increasingly
-    let sortIncrease = function (a, b) {
-      return a - b;
-    };
+// funció auxiliar per ordenar números de forma creixent
+let sortIncrease = function (a, b) {
+  return a - b
+}
+console.log(`\narray2 ordenat de menor a major: ${array2.sort(sortIncrease)}`)
 
-    //sorts numbers decreasingly
-    let sortDecrease = function (a, b) {
-      return b - a;
-    };
+// funció auxiliar per ordenar números de forma decreixent
+let sortDecrease = function (a, b) {
+  return b - a
+}
+console.log(`array2 ordenat de major a menor: ${array2.sort(sortDecrease)}`)
 
-    //Sorts by length of the string
-    let sortByLength = function (a, b) {
-      return a.length - b.length;
-    };
+// Funció auxiliar per ordenar per longitud de string
+let sortStrings = function (string1, string2) {
+  if (string1.toLowerCase() > string2.toLowerCase()) return 1
+  if (string1.toLowerCase() < string2.toLowerCase()) return -1
+  return 0
+}
+console.log(`\narray1 ordenat alfabèticament(): ${array1.sort(sortStrings)}`)
 
-    console.log(
-      `\nSorting array2 with 'sortIncrease()' results in ${array2.sort(
-        sortIncrease
-      )}`
-    );
-    console.log(
-      `Sorting array2 with 'sortDecrease()' results in ${array2.sort(
-        sortDecrease
-      )}`
-    );
-    console.log(
-      `Sorting array2 with 'sortByLength()' results in ${array1.sort(
-        sortByLength
-      )}`
-    );
-  }
+// Funció auxiliar per ordenar per longitud de string
+let sortByLength = function (a, b) {
+  return a.length - b.length
+}
 
-  // MAX and min (only numerical values)
-  {
-    console.log(
-      "The maximum value inside array1 is: ",
-      Math.max.apply(null, array2)
-    );
-    console.log(
-      "The minimum value inside array2 is: ",
-      Math.min.apply(null, array2)
-    );
-  }
-
-  // REVERSE
-  {
-    console.log("After reversing array2, the result is: '" + array2.reverse());
-  }
-};
+console.log(
+  `array1 ordenat per longitud de string(): ${array1.sort(sortByLength)}`
+)

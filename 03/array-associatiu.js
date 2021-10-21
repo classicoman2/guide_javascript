@@ -4,9 +4,9 @@
     arrayAssoc["name"] = "Peter Green";
     arrayAssoc["age"] = 35;
     console.log(
-      "arrayAssoc is an " +
-        arrayAssoc.constructor +
-        "and its contents is: [" +
+      "arrayAssoc és un " +
+        typeof arrayAssoc +
+        ". Contingut: [" +
         arrayAssoc.name +
         ", " +
         arrayAssoc.age +

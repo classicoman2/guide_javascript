@@ -1,99 +1,63 @@
-import {
-  createIndexesGrid,
-  createTextGrid,
-} from "./modules/modul-dibuixar-grid.js";
+console.log(`var array1 = ["Banana", "strawberry", "apple", "KIWI", "pear"]
+var array2 = [100, 25, -1, 0.78, -50, 5, 0.5]\n\n`)
 
-var array1 = ["Apple", "Banana", "Kiwi"];
-var array2 = [10, 5, 2.3, -2, 0, 100000, -32.5];
+// Declaració d'arrays
+var array1 = ["Banana", "strawberry", "apple", "KIWI", "pear"]
+var array2 = [100, 25, -1, 0.78, -50, 5, 0.5]
 
-window.onload = () => {
-  //Show in the interface
-  document.getElementById("indexes").innerHTML = createIndexesGrid(
-    array1.length
-  );
-  document.getElementById("text").innerHTML = createTextGrid(array1);
-  document.getElementById("indexes2").innerHTML = createIndexesGrid(
-    array2.length
-  );
-  document.getElementById("text2").innerHTML = createTextGrid(array2);
+/** map() aplica una operació i crea un nou array resultant */
 
- 
+// Funció auxiliar per obtenir valor absolut
+function canviarSigne(value) {
+  if (value > 0) return value
+  else return -value
+}
 
-  /**
-   *  map()
-   */
+let nouArray2 = array2.map(canviarSigne)
+console.log(`map() - array2 amb valors absoluts: ${nouArray2}`)
 
-  // Exemple: convertir els elements negatius en positius
-  // Se crea un nou array
-  {
-    let nouArray2 = array2.map(canviarSigne);
-    function canviarSigne(value) {
-      if (value > 0) return value;
-      else return -value;
-    }
+// Versió comprimida amb una funció arrow i operador ternari
+let nouArray3 = array2.map((value) => (value = value > 0 ? value : -value))
+console.log(`  amb versió comprimida: ${nouArray3}`)
 
-    console.log(
-      `\nVersió sense comprimir de map(): \n  array2 = ${array2}\n  nouArray2 = ${nouArray2}`
-    );
-  }
+/**
+ * filter() filtra (elimina) elements que no compleixen una condició
+ *
+ * Exemple: Filtram els elements que no son majors que dos
+ */
+let arrayMajorsQue2 = array2.filter((value) => value > 2)
+console.log("\nfilter() - Els nombres majors que 2 són: " + arrayMajorsQue2)
 
-  // Versió comprimida amb una funció arrow i operador ternari
-  {
-    let nouArray2 = array2.map((value) => (value = value > 0 ? value : -value));
+// Exemple: filtram les paraules que no tenguin alguna 'a'
+let arrayAmbUnaA = array1.filter((value) => value.indexOf("a") != -1)
+console.log("\nfilter() - Les paraules amb alguna a són:" + arrayAmbUnaA)
 
-    console.log(
-      `\nVersió comprimida de map(): \n  array2 = ${array2}\n  nouArray2 = ${nouArray2}`
-    );
-  }
+/**
+ * reduce()
+ */
+let sumaArray2 = array2.reduce((total, value) => (total += value))
+console.log("\nreduce() - Suma de tots els numeros de array2 = " + sumaArray2)
 
-  // filter()
-  console.log("\nfilter()");
-  {
-    // Filtram i ens quedam només amb els números majors que dos
-    // Empram la funció arrow
-    let arrayMajorsQue2 = array2.filter((value) => {
-      return value > 2;
-    });
-    console.log("  Els nombres majors que 2 en array2 són: " + arrayMajorsQue2);
+/**
+ * some()
+ */
+let resultSome = array1.some((value) => value.indexOf("a") != -1)
+console.log(
+  "\nsome() - true si algun element de array1 té una b = " + resultSome
+)
 
-    // Filtram i ens quedam només amb les paraules que tenguin alguna 'a'
-    // Empram la funció arrow supercomprimida
-    let arrayAmbUnaA = array1.filter((value) => value.indexOf("a") != -1);
-    console.log(
-      "  Les paraules que tenen almanco una a minúscula són:" + arrayAmbUnaA
-    );
-  }
+array2.some((value) => value < 0)
+console.log("some() - Algun element de array2 és negatiu: " + resultSome)
 
-  // reduce()
-  console.log("\nreduce()");
-  {
-    let sumaArray1 = array1.reduce((total, value) => (total += value));
-    console.log(
-      "  La concatenació de tots els elements de array1 és: " + sumaArray1
-    );
+/**
+ * every()
+ */
+let resultEvery = array1.every((value) => value.indexOf("a") != -1)
+console.log(
+  "every()- TOTS els elements de array1 tenen una a minúscula: " + resultEvery
+)
 
-    let sumaArray2 = array2.reduce((total, value) => (total += value));
-    console.log("  La suma de tots els elements de array2 és: " + sumaArray2);
-  }
-
-  // every(), some()
-  {
-    console.log(
-      "\nsome() - ALGUN element de array1 té una a minúscula a dins? " +
-        array1.some((value) => value.indexOf("a") != -1)
-    );
-    console.log(
-      "every()- TOTS els elements de array1 tenen una a minúscula a dins? " +
-        array1.every((value) => value.indexOf("a") != -1)
-    );
-
-    console.log(
-      "some() - Algun element de array2 és negatiu: " +
-        array2.some((value) => value < 0)
-    );
-    console.log(
-      "every()- Tots els elements de array2 son menors de 1.000.000: " +
-        array2.every((value) => value < 1000000)
-    );
-  }
-};
+resultEvery = array2.every((value) => value < 1000000)
+console.log(
+  "every()- Tots els elements de array2 son < 1.000.000: " + resultEvery
+)

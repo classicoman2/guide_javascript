@@ -1,29 +1,28 @@
 // Una funció tradicional
-function funcioTradicional(a) {
-  return `la funció tradicional retorna ${a}`;
+function funcioTradicional(a, b) {
+  return a + b
 }
 
 // Una funció-variable
-funcioVariable = function (a) {
-  return `la funció variable retorna ${a}`;
-};
+funcioVariable = function (a, b) {
+  return a + b
+}
 
-// Declaració d'una Arrow function
+// Una Arrow function
 funcioArrow = (a, b) => {
-  return `funcioArrow retorna ${a + b}`;
-};
+  return a + b
+}
 
 //Arrow function en format comprimit (amb 1 sol paràmetre)
-funcioArrowComprimida = (a, b) => {
-  return `funcioArrowComprimida retorna ${a + b}`;
-};
+funcioArrowComprimida = (a, b) => a + b
 
-/**
- * Cridades
- */
+//Arrow function comprimida amb 1 sol parametre
+functioArrow1parametre = a => Math.pow(a,a)
 
-console.log(funcioTradicional(10));
-console.log(funcioVariable(10));
+console.log(`La funcio tradicional retorna ${funcioTradicional(3, 4)}`)
+console.log(`La funcio variable retorna ${funcioVariable(3, 4)}`)
 
-console.log(funcioArrow(3, 4));
-console.log(funcioArrowComprimida(3, 4));
+console.log(`La funcio arrow retorna ${funcioArrow(3, 4)}`)
+console.log(`La funcio arrow comprimida retorna ${funcioArrowComprimida(3, 4)}`)
+
+console.log(`La funcio arrow 1 parametre retorna ${functioArrow1parametre(3)}`)
