@@ -19,6 +19,12 @@ var array3 = ["Banana", 5, "apple", "Kiwi", 2]
 let sortIncrease = function (a, b) {
   return a - b
 }
+/*
+if (a>b) return 1;
+if (a<b) return -1;
+if (a==b) return 0;
+*/
+
 console.log(`\narray2 ordenat de menor a major: ${array2.sort(sortIncrease)}`)
 
 // funció auxiliar per ordenar números de forma decreixent
@@ -39,6 +45,11 @@ console.log(`\narray1 ordenat alfabèticament(): ${array1.sort(sortStrings)}`)
 let sortByLength = function (a, b) {
   return a.length - b.length
 }
+/*
+if (a.length > b.length) return 1
+if (a.length < b.length) return -1
+if (a.length == b.length) return 0
+*/
 
 console.log(
   `array1 ordenat per longitud de string(): ${array1.sort(sortByLength)}`

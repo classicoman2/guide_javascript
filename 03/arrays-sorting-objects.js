@@ -16,16 +16,15 @@ let sortIncrease = function (object1, object2) {
   return object1.year - object2.year
 }
 
+// Ordena array per year
+arrayObjects1.sort(sortIncrease)
+
 // Funció auxiliar per ordenar per longitud de string
 let sortStrings = function (object1, object2) {
   if (object1.type.toLowerCase() > object2.type.toLowerCase()) return 1
   if (object1.type.toLowerCase() < object2.type.toLowerCase()) return -1
   return 0
 }
-
-// Ordena array per year
-arrayObjects1.sort(sortIncrease)
-
 // Ordena array per marca
 arrayObjects2.sort(sortStrings)
 

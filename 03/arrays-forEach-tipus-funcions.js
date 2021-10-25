@@ -20,10 +20,10 @@ var array2 = [10, 5, 3.5, -2, 0, 100, -32]
 // 1. La mateixa operació amb .forEach() - definint una funció de forma clàssica.
 // La funció que pas x parametre té 3 parametres, pero podria bastar amb 'value'
 {
-  let suma = 0
+  let total = 0
   //funció que passam per paràmetre
   function sumaElement(value, index, array) {
-    suma += value
+    total += value
   }
 
   array2.forEach(sumaElement)
@@ -32,10 +32,10 @@ var array2 = [10, 5, 3.5, -2, 0, 100, -32]
 
 // 2. La mateixa operació amb .forEach() - definint una FUNCIO COM A EXPRESSIÓ (FUNCIO ANONIMA).
 {
-  let suma = 0
+  let total = 0
   //funció que passam per paràmetre
   let sumaElement = function (value) {
-    suma += value
+    total += value
   }
   array2.forEach(sumaElement)
   console.log("2. La suma dels elements de array2 = " + suma)
@@ -43,9 +43,10 @@ var array2 = [10, 5, 3.5, -2, 0, 100, -32]
 
 // 3. La mateixa operació amb .forEach() - definint la FUNCIÓ COM A PARÀMETRE
 {
-  let suma = 0
+  let total = 0
+                
   array2.forEach(function (value) {
-    suma += value
+    total += value
   })
   console.log("3. La suma dels elements de array2 = " + suma)
 }

@@ -8,16 +8,27 @@ var array2 = [100, 25, -1, 0.78, -50, 5, 0.5]
 /** map() aplica una operació i crea un nou array resultant */
 
 // Funció auxiliar per obtenir valor absolut
-function canviarSigne(value) {
+function numeroAbsolut(value) {
   if (value > 0) return value
   else return -value
 }
 
-let nouArray2 = array2.map(canviarSigne)
+let nouArray2 = array2.map(numeroAbsolut)
+
 console.log(`map() - array2 amb valors absoluts: ${nouArray2}`)
 
+// Versio amb funcio arrow
+/*
+let nouArray2 = array2.map(
+(value) => {
+  if (value > 0) return value
+  else return -value
+})
+*/
+
 // Versió comprimida amb una funció arrow i operador ternari
-let nouArray3 = array2.map((value) => (value = value > 0 ? value : -value))
+let nouArray3 = array2.map((value) => ((value > 0) ? value : -value))
+
 console.log(`  amb versió comprimida: ${nouArray3}`)
 
 /**
