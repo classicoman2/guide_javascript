@@ -88,6 +88,7 @@ console.log(`L'alumne número 1 es ${grup.getAlumnNomComplet(1)}`)
 /**
  *  6)- Els objectes son mutables
  */
+
 var x = { name: "John", surname: "Doe", age: 50 }
 
 var y = x

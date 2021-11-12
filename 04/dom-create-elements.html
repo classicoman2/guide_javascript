@@ -1,13 +1,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create elements with DOM functions</title>
     <style>
       .class1 {
         color: grey;
-        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-weight: bold;
       }
     </style>
@@ -21,56 +19,52 @@
     <button id="button">Canvia els paràgrafs anteriors</button>
   </body>
   <script>
-    var wrapper = document.getElementById("wrapper");
+    var wrapper = document.getElementById('wrapper')
 
-    document.getElementById("button").onclick = function () {
+    document.getElementById('button').onclick = function () {
       /**
-       * Crear un nou node amb createElement() i appendChild()
-       *
+       * createElement() i appendChild()
        **/
       {
-        //Crea un nou element
-        let p = document.createElement("p");
+        //Crea element
+        let p = document.createElement('p')
 
-        // Canvia les propietats de l'element
-        p.innerText = "He creat aquest <p>";
-        p.classList.add("class1");
+        // Canvia les propietats
+        p.innerText = 'He creat aquest <p>'
+        p.classList.add('class1')
 
         // Afegeix al pare
-        document.getElementById("wrapper").appendChild(p);
+        document.getElementById('wrapper').appendChild(p)
       }
 
       /**
-       * Substituir un node existent amb createElement() i replaceChild()
-       *
+       * createElement() i replaceChild()
        **/
       {
-        //Crea un nou element
-        let p = document.createElement("p");
+        //Crea un element
+        let p = document.createElement('p')
 
-        // Canvia les propietats de l'element
-        p.innerText = "Aquest p substitueix un p anterior";
-        p.classList.add("class1");
-        // Canvio el color del text
-        p.style.color = "red";
-        p.style.textDecoration = "underline";
+        // Canvia les propietats
+        p.innerText = 'Aquest p substitueix un p anterior'
+        p.classList.add('class1')
+        p.style.color = 'red'
+        p.style.textDecoration = 'underline'
 
         // Afegeix al pare
         document
-          .getElementById("wrapper")
-          .replaceChild(p, document.getElementById("replace_p"));
+          .getElementById('wrapper')
+          .replaceChild(p, document.getElementById('replace_p'))
       }
 
       /**
-       * Eliminar un node existent amb removeElement()
-       *
+       * removeChild()
        **/
       {
         // Obtenir el pare d'un element
-        const eliminar = document.getElementById("remove_p");
-        const parent = eliminar.parentNode;
-        parent.removeChild(eliminar);
+        const eliminar = document.getElementById('remove_p')
+        const parent = eliminar.parentNode
+        parent.removeChild(eliminar)
       }
-    };
+    }
   </script>
 </html>

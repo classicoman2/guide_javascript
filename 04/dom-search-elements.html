@@ -12,6 +12,19 @@
         border: 1px solid black;
         margin: 5px;
       }
+      button {
+        margin: 12px 2px;
+        padding: 5px 5px;
+        background-color:cornsilk;
+        border: 1px solid grey;
+        border-radius: 3px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 0.9rem;
+        cursor:pointer;
+      }
+      button:hover {
+        background-color: rgb(221, 238, 128);
+      }
     </style>
   </head>
 
@@ -29,25 +42,18 @@
       <p>And the last one</p>
     </div>
 
-    <br />
     <button id="buttonGetElementsByTagName">
       getElementsByTagName() -> Passa el text dels &lt;p&gt; a vermell
     </button>
-    <br />
     <button id="buttonGetElementsByTagName2">
       getElementsByTagName() -> Redueix la font size dels &lt;p&gt; de #wrapper1
     </button>
-    <br />
     <button id="button3">
-      getElementsByClassName() -> Canvia el background color dels elements de
-      classe .box
+      getElementsByClassName() -> Canvia el background color dels elements de classe .box
     </button>
-    <br />
     <button id="button4">
-      querySelectorAll() -> Passa el text del primer &lt;p&gt; de 'wrapper2' a blau
+      querySelectorAll() -> Escriu en blau el text dels &lt;p&gt; de 'wrapper2'
     </button>
-
-    <p>T. Amengual 2020</p>
   </body>
   <script>
     /**
@@ -56,65 +62,58 @@
     {
       /**
        *  getElementByTagName()
-       *
        *  En clicar, tots els p de la página canvien de color
        **/
-      document.getElementById(
-        "buttonGetElementsByTagName"
-      ).onclick = function () {
-        let pElements = document.getElementsByTagName("p");
+      document.getElementById('buttonGetElementsByTagName').onclick = function () {
+        let pElements = document.getElementsByTagName('p')
         for (p of pElements) {
-          p.style.color = "red";
+          p.style.color = 'red'
         }
-      };
+      }
 
       /**
        *  getElementByTagName()
-       *
-       *  En clicar, canvia la mida de tots els p de #wrapper
        **/
-      document.getElementById(
-        "buttonGetElementsByTagName2"
-      ).onclick = function () {
-        let pElements = document
-          .getElementById("wrapper1")
-          .getElementsByTagName("p");
+      document.getElementById('buttonGetElementsByTagName2').onclick = function () {
+        // Canvia la mida de la font dels &lt;p&gt; de #wrapper1
+        let pElements = document.getElementById('wrapper1').getElementsByTagName('p')
         for (p of pElements) {
-          p.style.fontSize = "0.5em";
+          p.style.fontSize = '0.5em'
         }
-      };
+
+        // Això no funcionarà --> perquè  getElementsByTagName() no torna un Array!
+        /*         pElements.forEach((p) => {
+          p.style.fontSize = '0.5em'
+        }) */
+      }
     }
 
     {
       /**
        *  getElementsByClassName()
-       *
-       *  En clicar, canvia el border de tots els elements de classe .box
        **/
-      document.getElementById("button3").onclick = function () {
-        let boxElements = document.getElementsByClassName("box");
+      document.getElementById('button3').onclick = function () {
+        // Pinta de verd el border dels elements de classe .box
+        let boxElements = document.getElementsByClassName('box')
         for (box of boxElements) {
-          box.style.border = "5px solid green";
+          box.style.border = '5px solid green'
         }
-      };
+      }
     }
 
-    /**
-    document.querySelectorAll("selectorCSS")
-    Retorna un NodeList amb tots els elements que compleixen un selector CSS (simple o compost)
-    **/
     {
       /**
        *  querySelectorAll()
-       *
-       *  En clicar, canvia el color del text del primer <p> de #wrapper
        **/
-      document.getElementById("button4").onclick = function () {
-        let list = document.querySelectorAll("#wrapper2 > p:first-child");
-        for (l of list) {
-          l.style.color = "blue";
+      document.getElementById('button4').onclick = function () {
+        // Escriu en blau el text dels <p> de #wrapper
+        let elements = document.querySelectorAll('#wrapper2 > p')
+        for (element of elements) {
+          element.style.color = 'blue'
         }
-      };
+        // Subratllo el primer p de wrapper
+        elements[0].style.textDecoration = "underline"
+      }
     }
   </script>
 </html>

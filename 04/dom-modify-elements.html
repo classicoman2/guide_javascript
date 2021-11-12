@@ -2,8 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOM - Modify Elements</title>
     <style>
       .marcNou {
         border: 5px solid blueviolet;
@@ -33,23 +31,23 @@
     />
   </body>
   <script>
-    // Event Listener
     document.getElementsByTagName("button")[0].addEventListener("click", () => {
+  
       const paragraf = document.getElementById("paragraf");
       const imatge = document.getElementById("imatge");
 
-      // paragraf.innerHTML -> Canvia el contingut
+      // .innerHTML -> Canvia el contingut
       {
         paragraf.innerHTML = "Contingut del text";
       }
 
-      // paragraf.nomAtribut -> canvia l'atribut
+      // .nomAtribut -> Modifica el valor de l'atribut
       {
         imatge.src = "assets/valley.webp";
         imatge.alt = "Imatge d'una vall";
       }
 
-      // paragraf.style.nomPropietat -> canvia les propietats CSS de l'element
+      // .style.nomPropietat -> Modifica el valor de propietats CSS
       {
         paragraf.style.fontSize = "2em";
         paragraf.style.color = "red";
@@ -69,11 +67,11 @@
         };
       }
 
-      // paragraf.setAttribute() -> permet canviar un atribut
-      // En aquest exemple: l'atribut 'id'
+      /**
+       * setAttribute() -> permet canviar un atribut
+       */
       {
         paragraf.setAttribute("id", "paragraf2");
-
         document.getElementById("paragraf2").innerHTML = "AFTER";
       }
     });

@@ -2,24 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navegant dins el DOM</title>
     <style>
       * {
         padding: 5px 10px;
       }
 
-      p,
-      a,
-      span {
+      p, a, span {
         display: block;
-        background-color: mediumpurple;
+        background-color: paleturquoise;
         margin-top: 4px;
+        padding: 5px 10px;
       }
 
       div {
         background-color: mediumaquamarine;
         margin-top: 10px;
+        padding: 5px 10px;
       }
     </style>
   </head>
@@ -28,11 +26,7 @@
     <div id="wrapper">
       <div id="div1">
         div#div1
-        <a
-          id="link1"
-          href="https://www.w3schools.com/js/js_htmldom_navigation.asp"
-          >a#link1</a
-        >
+        <a id="link1" href="https://www.w3schools.com/js/js_htmldom_navigation.asp">a#link1</a>
         <p id="p1" class="box">p#p1</p>
       </div>
     </div>
@@ -45,74 +39,58 @@
   <script>
     /** parentNode **/
     {
-      console.log(
-        "El parentNode de wrapper és: " +
-          document.getElementById("wrapper").parentNode
-      );
+      console.log('El parentNode de wrapper és: ' + document.getElementById('wrapper').parentNode)
 
-      console.log(
-        "El pare de div1 conté: " +
-          document.getElementById("div1").parentNode.innerHTML
-      );
-      console.log(
-        "El pare de div1 té el id: " +
-          document.getElementById("div1").parentNode.id
-      );
+      console.log('El pare de div1 conté: ' + document.getElementById('div1').parentNode.innerHTML)
+      console.log('El pare de div1 té el id: ' + document.getElementById('div1').parentNode.id)
     }
 
     /** childNodes[nodenumber] **/
     {
-      let div1 = document.getElementById("div1");
+      let div1 = document.getElementById('div1')
 
-      console.log(
-        "\n\nEl primer childnode de div1 conté el valor: " +
-          div1.childNodes[0].nodeValue
-      );
+      console.log('\n\nEl primer childnode de div1 conté el valor: ' + div1.childNodes[0].nodeValue)
 
-      console.log(" 2nd child node of div1 is: " + div1.childNodes[1]);
-      console.log(" 2nd child node has text: " + div1.childNodes[1].innerHTML);
-      console.log(" 2nd child node has id: " + div1.childNodes[1].id);
-      console.log(" 2nd child node has href: " + div1.childNodes[1].href);
+      console.log(' 2nd child node of div1 is: ' + div1.childNodes[1])
+      console.log(' 2nd child node has text: ' + div1.childNodes[1].innerHTML)
+      console.log(' 2nd child node has id: ' + div1.childNodes[1].id)
+      console.log(' 2nd child node has href: ' + div1.childNodes[1].href)
 
       /**
     WATCH OUT! Si entre dos elements html hi ha algun espai en blanc, llavors se crea un nou "child node"
     */
-      console.log(
-        "\n3rd child node of div1 has the value: " + div1.childNodes[2].nodeValue
-      );
+      console.log('\n3rd child node of div1 has the value: ' + div1.childNodes[2].nodeValue)
 
-      console.log("\n4rd child node of div1 is: " + div1.childNodes[3]);
-      console.log(" 4rd child node has text: " + div1.childNodes[3].innerHTML);
-      console.log(" 4rd child node has class: " + div1.childNodes[3].className);
+      console.log('\n4rd child node of div1 is: ' + div1.childNodes[3])
+      console.log(' 4rd child node has text: ' + div1.childNodes[3].innerHTML)
+      console.log(' 4rd child node has class: ' + div1.childNodes[3].className)
     }
 
     /** childNodes.length, firstChild,  lastChild  **/
     {
-      let div1 = document.getElementById("div1");
+      let div1 = document.getElementById('div1')
 
-      console.log("div1 has " + div1.childNodes.length + " children");
+      console.log('div1 has ' + div1.childNodes.length + ' children')
 
-      console.log("div1 first child contents is: " + div1.firstChild.nodeValue);
-      console.log("div1 last child contents is: " + div1.lastChild.nodeValue);
+      console.log('div1 first child contents is: ' + div1.firstChild.nodeValue)
+      console.log('div1 last child contents is: ' + div1.lastChild.nodeValue)
     }
 
     /** previousSibling, nextSibling **/
     {
-      let span1 = document.getElementById("span1");
-      let span2 = document.getElementById("span2");
+      let span1 = document.getElementById('span1')
+      let span2 = document.getElementById('span2')
 
-      console.log("");
-      console.log("The next sibling of 'span1' is: " + span1.nextSibling.id);
-      console.log(
-        "The previous sibling of 'span2' is: " + span2.previousSibling.id
-      );
+      console.log('')
+      console.log("The next sibling of 'span1' is: " + span1.nextSibling.id)
+      console.log("The previous sibling of 'span2' is: " + span2.previousSibling.id)
 
-      let wrapper2 = document.getElementById("wrapper2");
+      let wrapper2 = document.getElementById('wrapper2')
 
-      console.log("");
-      console.log("wrapper2 has " + wrapper2.childNodes.length + " children");
-      console.log("wrapper2 first child has id: " + wrapper2.firstChild.id);
-      console.log("wrapper2 last child is: " + wrapper2.lastChild.id);
+      console.log('')
+      console.log('wrapper2 has ' + wrapper2.childNodes.length + ' children')
+      console.log('wrapper2 first child has id: ' + wrapper2.firstChild.id)
+      console.log('wrapper2 last child is: ' + wrapper2.lastChild.id)
     }
   </script>
 </html>

@@ -41,7 +41,7 @@ let nestedNumbersCopy = [...nestedNumbers]
 
 nestedNumbers[0].push(300)
 console.log(nestedNumbers)
-// [[1, 300], [2]]
+// [ [1, 300] , [2]]
 console.log(nestedNumbersCopy)
 // [[1, 300], [2]]
 // L'array és igual perquè els subarrays comparteixen referències.
