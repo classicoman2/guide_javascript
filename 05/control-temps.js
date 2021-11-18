@@ -3,10 +3,10 @@ window.onload = function () {
    * SetInterval
    *   Executa la funció 'callback' (primer paràmetre) cada x milisegons (segon parametre)
    */
-  setInterval(() => {
+  const varInterval = setInterval(function() {
     const d = new Date();
-    console.log(`Son les ${d.getHours()}:${d.getMinutes()}'${d.getSeconds()}`);
-  }, 1000);
+    console.log(`Son les ${d.getHours()}:${d.getMinutes()}'${d.getSeconds()}"`);
+  }, 2000);
 
   /**
    * setTimeOut
@@ -15,6 +15,17 @@ window.onload = function () {
    */
 
   setTimeout(() => {
-    console.log("+++++HAN PASSAT 11 SEGONS!!!!!");
-  }, 11000);
+    console.log("***** HOLA ******");
+  }, 3000);
+
+
+  /**
+   * Interrompre interval
+   */
+  document.getElementById("interrompreInterval").onclick = () => {
+    window.clearInterval(varInterval)
+  }
+
+
+  // Interrompre Interval
 };

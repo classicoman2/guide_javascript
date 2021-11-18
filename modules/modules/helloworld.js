@@ -1,7 +1,11 @@
 // ALERTA! Variables and functions must be "strict use"
 
-export var message = "Hello World, Module in Javascript";
+var mensaje = "Hello World, Module in Javascript"
+
+export var message = mensaje;
 
 export function helloworld() {
     return message;
 }
+
+

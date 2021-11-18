@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set or Read a Cookie</title>
+    <style>
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        height: 100px;
+      }
+      #setcookie {
+        display: flex;
+      }
+      #cookieValue {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="setcookie">
+        <label>Name:</label>
+        <input id="name" />
+      </div>
+      <div id="setcookie">
+        <label>Valor:</label>
+        <input id="value" />
+      </div>
+      <div id="setcookie">
+        <label>Expires:</label>
+        <input id="expires" /><label>miliseconds</label>
+      </div>
+      <button id="buttonSetCookie">Set</button>
+    </main>
+  </body>
+  <script>
+    document.getElementById('buttonSetCookie').onclick = () => {
+      //Set Cookie
+      setCookie(
+        document.getElementById('name').value,
+        document.getElementById('value').value,
+        document.getElementById('expires').value
+      )
+    }
+
+    function setCookie(cname, cvalue, miliseconds) {
+      const d = new Date()
+      d.setTime(d.getTime() + Number(miliseconds))
+      let expires = 'expires=' + d.toUTCString()
+      document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/'
+    }
+  </script>
+</html>
