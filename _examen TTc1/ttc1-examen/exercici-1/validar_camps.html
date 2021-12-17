@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Validar Camps</title>
+    <style>
+      * {
+        font-size: 1.02em;
+      }
+
+      #container {
+        background-color: #fff0f0;
+      }
+
+      label {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 200px;
+        display: inline-block;
+        text-align: right;
+        margin: 8px;
+      }
+
+      input {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 3px;
+      }
+
+      button {
+        margin-left: 200px;
+        padding: 5px 8px;
+      }
+
+      #resultat {
+        border: 1px solid black;
+        color: green;
+        font-size: 1.2rem;
+        padding: 10px 5px;
+        height: 30px;
+        margin-bottom: 2px;
+      }
+      #error {
+        border: 1px solid black;
+        color: red;
+        font-size: 1.2rem;
+        padding: 10px 5px;
+        height: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <label>Username:</label>
+      <input id="username" /><br />
+      <label>Password:</label>
+      <input id="password" /><br />
+      <button id="botoValidar">Validar</button>
+    </div>
+    <br />
+    <div id="resultat"></div>
+    <div id="error"></div>
+  </body>
+
+  <script src="script.js" type="module"></script>
+</html>
