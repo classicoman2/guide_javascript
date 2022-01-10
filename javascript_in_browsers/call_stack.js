@@ -5,7 +5,7 @@
 
 function foo(z) {
   //Error
-  console.log(zzzz);
+  console.log("funció foo");
 }
 
 function baz(z) {
