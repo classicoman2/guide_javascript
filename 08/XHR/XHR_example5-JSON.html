@@ -6,8 +6,7 @@
     <title>XHR-examples</title>
   </head>
   <body>
-    <h1>Exemple 5</h1>
-    <p>Manipulació de JSON provinent de una Rest API</p>
+    <p id="descripcio"></p>
   </body>
   <script>
     //url de la API
@@ -20,6 +19,7 @@
     // Callback en canviar l'estat
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
+
         let JSONdata = this.responseText;
 
         // Aquesta variable conté dades de tipus string --> és "stringifyed JSON"
@@ -29,12 +29,10 @@
         let data = JSON.parse(JSONdata);
         console.log(typeof data);
 
-        console.info(
-          `El meu nom és "${data.name}" i el meu motto és "${data.motto}"`
-        );
+        document.getElementById("descripcio").innerHTML = "El meu nom és " + data.name + " i el meu motto és: " + data.motto
       }
     };
-    xhr.open("GET", url, true);
+    xhr.open("GET", url);
     xhr.send();
   </script>
 </html>

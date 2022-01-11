@@ -5,7 +5,7 @@
   </head>
   <body></body>
   <script>
-    const url = 'https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/1'
+    const url = 'http://localhost:3000/posts/100'
     // Crea objecte XHR
     const xhr = new XMLHttpRequest()
 
@@ -16,6 +16,7 @@
         console.info(this.responseText)
       }
     }
+
     xhr.open('GET', url, true)
     xhr.send()
   </script>
