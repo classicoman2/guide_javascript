@@ -16,6 +16,7 @@
     // Callback en canviar l'estat
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
+        // Imprimeix el text obtingut
         console.info(this.responseText);
       }
     };

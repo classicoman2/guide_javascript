@@ -11,24 +11,25 @@
   </body>
   <script>
     // Crea objecte XHR
-    var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest()
 
     // Callback en canviar l'estat
     xhr.onreadystatechange = function () {
-      
-      console.log(this);
-
       //Anem a imprimir les propietats de la Response
-      let properties = "";
+      let properties = ''
 
       for (const property in this) {
-        if (property != "onreadystatechange")
-          properties += `${property}: ${this[property]}\n`;
+        if ((property != 'onreadystatechange') & ['readyState', 'status', 'responseText'].includes(property))
+          properties += `${property}: ${this[property]}\n`
+        if (property == 'readyState') {
+          console.log(`VALUE = ${this[property]}`)
+          console.log('------------')
+        }
       }
-      console.info(properties);
-      
-    };
-    xhr.open("GET", "fitxer.txt", true);
-    xhr.send();
+
+      console.info(properties)
+    }
+    xhr.open('GET', 'fitxer.txt', true)
+    xhr.send()
   </script>
 </html>
