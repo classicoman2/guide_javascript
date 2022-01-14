@@ -7,36 +7,33 @@
   </head>
   <body>
     <h1>Promesa amb SetTimeOut</h1>
-    <p>
-      Promesa amb setTimeOut per simular un codi asíncron real.
-    </p>
+    <p>Promesa amb setTimeOut per simular un codi asíncron real.</p>
   </body>
   <script>
-//    var promesaComplida = true;
-    var promesaComplida = false;
-
     let promesa = new Promise(function (resolve, reject) {
+      //    var promesaComplida = true;
+      var promesaComplida = false
+
       setTimeout(() => {
         if (promesaComplida) {
-          resolve("Promise Resolved!");
+          resolve('Promise Resolved!')
         } else {
-          reject("Promise Rejected!");
+          reject('Promise Rejected!')
         }
-      }, 3000);
-    });
+      }, 3000)
+    })
 
-    console.log("Before Promise\n");
+    console.log('Before Promise\n')
 
     //Emprar la Promesa
     promesa
       .then(function (message) {
-        console.info(message);
+        console.info(message)
       })
       .catch(function (error) {
-        console.info(error);
-      });
+        console.info(error)
+      })
 
-    console.log("After Promise\n");
-
+    console.log('After Promise\n')
   </script>
 </html>

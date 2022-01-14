@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-  </head>
-   <script>
-    var promesaComplida = true;
-    //var promesaComplida = false;
-
+  <script>
     let promesa = new Promise(function (resolve, reject) {
+      //var promesaComplida = true
+      var promesaComplida = true;
+
       if (promesaComplida) {
-        resolve("Promise Resolved!");
+        resolve('{"id":125, "dni": "12345678T", "name": "Maria Johnson"}')
       } else {
-        reject("Promise Rejected!");
+        reject('{"codi":404}')
       }
-    });
+    })
 
-    console.log("Before Promise\n");
+    // console.log("Before Promise\n");
 
-    // Resoldre la promesa
+    // Retornar la promesa
     promesa
       .then(function (message) {
-        console.info(message);
+        console.info("Aconseguida la informació de l'usuari " + JSON.parse(message).name)
       })
       .catch(function (error) {
-        console.info(error);
-      });
+        //En cas d'error
+        console.info("S'ha produït l'error " + JSON.parse(error).codi)
+      })
 
-      console.log("After Promise\n");
+    //    console.log("After Promise\n");
 
-    //  console.log(promesa);
+    console.log(promesa)
   </script>
 </html>

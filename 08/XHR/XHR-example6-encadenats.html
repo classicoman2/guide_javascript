@@ -5,23 +5,28 @@
   </head>
   <body></body>
   <script>
-    const url = 'json1.json'
-    // Crea objecte XHR
     const xhr = new XMLHttpRequest()
 
-    // Callback
+    // Callback 1
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        // Imprimeix el text obtingut
-        
         let data = JSON.parse(this.responseText)
 
-        console.log(data.dni)
-        
+        const xhr2 = new XMLHttpRequest()
+
+        xhr2.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            let data2 = JSON.parse(this.responseText)
+
+            console.log(data2.wallet)
+          }
+        }
+        xhr2.open('GET', 'json2.json')
+        xhr2.send()
       }
     }
 
-    xhr.open('GET', url, true)
+    xhr.open('GET', 'json1.json')
     xhr.send()
   </script>
 </html>
