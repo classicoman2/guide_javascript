@@ -2,17 +2,19 @@
 <html lang="en">
   <script>
     let promesa = new Promise(function (resolve, reject) {
-      //var promesaComplida = true
-      var promesaComplida = true;
+      var operacio = true
+      //var promesaComplida = false
 
-      if (promesaComplida) {
+      if (operacio) {
         resolve('{"id":125, "dni": "12345678T", "name": "Maria Johnson"}')
       } else {
         reject('{"codi":404}')
       }
     })
 
-    // console.log("Before Promise\n");
+    console.log('ADALT\n')
+
+    // ASÍNCRON
 
     // Retornar la promesa
     promesa
@@ -24,8 +26,8 @@
         console.info("S'ha produït l'error " + JSON.parse(error).codi)
       })
 
-    //    console.log("After Promise\n");
 
-    console.log(promesa)
+
+    console.log('ABAIX\n')
   </script>
 </html>

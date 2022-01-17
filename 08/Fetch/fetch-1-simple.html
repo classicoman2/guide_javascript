@@ -2,8 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fetch simple</title>
   </head>
 
   <body>
@@ -11,15 +9,15 @@
     <p>Fetch simple</p>
   </body>
   <script>
-    
-    var myAPIurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/1";
+    var myAPIurl = 'https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/1'
 
     fetch(myAPIurl)
-      .then( response => response.json() )
-      .then( data => { console.log(data) })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+      })
       .catch(function (error) {
-        console.log("Error en el Fetch:", error)
-      });
-
+        console.log('Error en el Fetch:', error)
+      })
   </script>
 </html>

@@ -2,35 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Example 4 - Fetch an image</title>
   </head>
   <body>
-    <h1>Example 4 - Fetch an image</h1>
     <p>Get an image and embed it in the DOM</p>
-    <img id="myImage" src="" alt="Aqui anirà una imatge" />
+    <img id="myImage" src="" alt="Imatge capturada" />
   </body>
   <script>
-    //fetch("https://media.timeout.com/images/105744005/630/472/image.jpg")  //ERROR CORS
-    fetch("https://raw.githubusercontent.com/classicoman2/fakeRESTserver/master/assets/image1.jpg")
-    //fetch("./assets/logo.png")
+    let url = []
+    // cas=0 : imatge remota
+    url.push('https://raw.githubusercontent.com/classicoman2/fakeRESTserver/master/assets/image1.jpg')
+
+    // cas=1 : error de CORS
+    url.push('https://media.timeout.com/images/105744005/630/472/image.jpg')
+
+    // cas=2 : imatge local
+    url.push('./assets/logo.png')
+
+    // TRIA EL CAS QUE VOLS PROVAR
+    const cas = 2
+
+    fetch(url[cas])
       .then(function (response) {
-        if (response.ok) {
-          return response.blob();
-        } else {
-          throw new Error("En fer fetch de la imatge, error: " + response.status);
-        }
+        return response.blob()
       })
       .then(function (imatge) {
-
-        console.log( imatge )
-
-        var objectURL = URL.createObjectURL(imatge);
-        document.getElementById("myImage").src = objectURL;
+        var objectURL = URL.createObjectURL(imatge)
+        document.getElementById('myImage').src = objectURL
       })
       .catch(function (error) {
-        console.log("Error en el fetch: ", error.message);
-      });
+        console.log('Error en el fetch de la imatge: ', error.message)
+      })
   </script>
 </html>
