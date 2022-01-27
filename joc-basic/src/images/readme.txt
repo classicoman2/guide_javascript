@@ -1,1 +1,0 @@
-en aquest directori hi aniran les imatges (aquest fitxer s'ha d'eliminar)
