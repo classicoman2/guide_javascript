@@ -8,16 +8,17 @@
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+        <div v-html="contingutHTML"></div>
+      <div>
   </body>
-  <script>
+    <script>
     const app = {
       data() {
         return {
-          message: 'Hello Vue!',
+        contingutHTML: '<a href="https://vuejs.org/v2/guide/">Guia de Vue</a>',
         }
       },
     }
     Vue.createApp(app).mount('#app')
   </script>
-</html>

@@ -8,13 +8,21 @@
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+      <ol>
+        <li v-for="todo in todos" :key="todo">{{ todo.text }}</li>
+      </ol>
+    </div>
   </body>
   <script>
     const app = {
       data() {
         return {
-          message: 'Hello Vue!',
+          todos: [
+            { text: 'Learn JavaScript' },
+            { text: 'Learn Vue' },
+            { text: 'Build something awesome' },
+          ],
         }
       },
     }

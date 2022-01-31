@@ -6,15 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Vue  3  CDN -->
     <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      .fondoVerd {
+        background-color: #4fc08d;
+      }
+    </style>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+      <div v-bind:class="nomClasse">This is vue.</div>
+    </div>
   </body>
   <script>
     const app = {
       data() {
         return {
-          message: 'Hello Vue!',
+          nomClasse: 'fondoVerd',
         }
       },
     }

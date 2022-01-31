@@ -8,13 +8,15 @@
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+      <span v-if="seen">Now you see me</span>
+    </div>
   </body>
   <script>
     const app = {
       data() {
         return {
-          message: 'Hello Vue!',
+          seen: true,
         }
       },
     }

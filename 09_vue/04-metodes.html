@@ -8,14 +8,19 @@
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">{{ imprimeSaludo() }}</div>
   </body>
   <script>
     const app = {
       data() {
         return {
-          message: 'Hello Vue!',
+          saludo: 'Bon dia!',
         }
+      },
+      methods: {
+        imprimeSaludo() {
+          return this.saludo
+        },
       },
     }
     Vue.createApp(app).mount('#app')

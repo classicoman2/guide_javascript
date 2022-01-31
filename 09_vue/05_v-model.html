@@ -6,15 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Vue  3  CDN -->
     <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      .row {
+        display: flex;
+      }
+    </style>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app">
+      <div class="row">
+        <label><b>Missatge:</b><span>{{ message }}</span></label>
+      </div>
+
+      <input v-model="message" />
+    </div>
   </body>
   <script>
     const app = {
       data() {
         return {
-          message: 'Hello Vue!',
+          message: 'Maria Davis',
         }
       },
     }

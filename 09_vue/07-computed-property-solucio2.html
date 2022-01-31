@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Vue  3  CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div id="computed-basics">
+        <p>{{author.name}} ha publicat llibres?</p>
+        <span>{{ autorHaPublicatLlibres }}</span>
+      </div>
+    </div>
+  </body>
+  <script>
+    /*
+    Solució 1: emprar una computed property
+    */
+    var app = Vue.createApp({
+      data() {
+        return {
+          author: {
+            name: 'John Doe',
+            books: [
+              'Vue 2 - Advanced Guide',
+              'Vue 3 - Basic Guide',
+              'Vue 4 - The Mystery',
+            ],
+          },
+        }
+      },
+      computed: {
+        autorHaPublicatLlibres() {
+          if (this.author.books.length > 0) return 'Si'
+          else return 'No'
+        },
+      },
+    })
+    const vm = app.mount('#app')
+  </script>
+</html>
