@@ -4,30 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Vue  3  CDN -->
+    <title>Hello Vue!</title>
+    <!-- Vue CDN -->
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
-    <div id="app">{{ imprimeSaludo() + " " + imprimeNombre('Pepe') }}</div>
+    <div id="app">
+      <input v-model="contador" type="number" />
+      <button v-on:click="sumar1">Clica per a sumar 1</button>
+    </div>
   </body>
   <script>
     const app = {
       data() {
         return {
-          saludo: 'Bon dia!',
+          contador: 0,
         }
       },
       methods: {
-        imprimeSaludo() {
-          return this.saludo
-        },
-
-        imprimeNombre(name) {
-          if (name.length < 10) {
-            return name
-          } else {
-            return 'Nom massa llarg'
-          }
+        sumar1() {
+          this.contador = this.contador + 1
         },
       },
     }

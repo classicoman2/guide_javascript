@@ -8,27 +8,16 @@
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
-    <div id="app">{{ imprimeSaludo() + " " + imprimeNombre('Pepe') }}</div>
+    <div id="app">
+      <p v-for="p in perros" :key="p">{{ `Nombre: ${p.name}` }}</p>
+    </div>
   </body>
   <script>
     const app = {
       data() {
         return {
-          saludo: 'Bon dia!',
+          perros: [{ name: 'Tommy' }, { name: 'Lluna' }, { name: 'Toby' }],
         }
-      },
-      methods: {
-        imprimeSaludo() {
-          return this.saludo
-        },
-
-        imprimeNombre(name) {
-          if (name.length < 10) {
-            return name
-          } else {
-            return 'Nom massa llarg'
-          }
-        },
       },
     }
     Vue.createApp(app).mount('#app')

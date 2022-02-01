@@ -10,7 +10,7 @@
   <body>
     <div id="app">
       <ol>
-        <li v-for="todo in todos" :key="todo">{{ todo.text }}</li>
+        <li v-for="todo in todos" :key="todo">{{ todo }}</li>
       </ol>
     </div>
   </body>
@@ -18,11 +18,7 @@
     const app = {
       data() {
         return {
-          todos: [
-            { text: 'Learn JavaScript' },
-            { text: 'Learn Vue' },
-            { text: 'Build something awesome' },
-          ],
+          todos: ['Learn JavaScript', 'Learn Vue', 'Build something awesome'],
         }
       },
     }
