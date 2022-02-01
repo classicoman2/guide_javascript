@@ -6,18 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Vue  3  CDN -->
     <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      .fonsVerd {
+        background-color: green;
+      }
+      .textVermell {
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
-      <div v-html="contingutHTML"></div>
+      <span v-bind:class="{'fonsVerd': valor1, 'textVermell':valor2}"
+        >Mensaje</span
+      >
     </div>
   </body>
   <script>
     const app = {
       data() {
         return {
-          contingutHTML:
-            '<a href="https://vuejs.org/v2/guide/">Guia de Vue</a>',
+          valor1: true,
+          valor2: true,
         }
       },
     }

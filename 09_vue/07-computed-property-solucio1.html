@@ -12,6 +12,10 @@
       <div id="computed-basics">
         <p>{{author.name}} ha publicat llibres?</p>
         <span>{{ autorHaPublicatLlibres() }}</span>
+        <p>Numero de llibres: {{author.books.length}}</p>
+
+        <!-- Boto eliminar llibres -->
+        <button v-on:click="borrarLlibre">Borrar Llibre</button>
       </div>
     </div>
   </body>
@@ -36,6 +40,10 @@
         autorHaPublicatLlibres() {
           if (this.author.books.length > 0) return 'Si'
           else return 'No'
+        },
+
+        borrarLlibre() {
+          this.author.books.pop()
         },
       },
     })
