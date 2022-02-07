@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "vue-cheatsheet": "markdown-toc -i 09_vue/README.md"
+  },
+  "devDependencies": {
+    "markdown-toc": "^1.2.0"
+  }
+}
