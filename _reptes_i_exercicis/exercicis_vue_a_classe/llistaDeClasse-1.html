@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Vue  3  CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Llista de classe:</h1>
+        <div v-for="item in llista" v-bind:key="item">
+          <span v-if="item.age > 18">{{item.name}}</span>
+        </div>
+      <ul>
+        <!-- aqui van els alumnes... -->
+      </ul>
+    </div>
+  </body>
+  <script>
+    const app = {
+      data() {
+        return {
+          llista: [
+            { name: 'Tom', age: 50 },
+            { name: 'Mary', age: 15 },
+            { name: 'Pat', age: 23 },
+            { name: 'Jait', age: 65 },
+            { name: 'Josh', age: 13 },
+          ],
+        };
+      },
+    };
+    Vue.createApp(app).mount('#app');
+  </script>
+</html>
