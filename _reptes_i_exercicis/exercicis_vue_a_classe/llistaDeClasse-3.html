@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Vue  3  CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      Nom: <input id="name" type="text" v-model="nomAlumne" /> Edad
+      <input id="age" type="number" v-model="ageAlumne" />
+      <button v-on:click="guardarDades">Guardar</button>
+      <h2>Llista de classe:</h2>
+      <ol>
+        <li v-for="item in llista" v-bind:key="item.id">
+          <input v-model="item.name" /> té <input v-model="item.age" /> anys.
+          <button v-on:click="eliminarAlumne(item.id)">Borrar</button>
+          <button v-on:click="visualitzarAlumne(item)">Visualitzar</button>
+        </li>
+      </ol>
+      <ul>
+        <!-- aqui van els alumnes... -->
+      </ul>
+      <p>{{fitxaAlumne.name}} té {{fitxaAlumne.age}} anys.</p>
+    </div>
+
+  </body>
+  <script>
+    const app = {
+      data() {
+        return {
+          nomAlumne: '',
+          ageAlumne: 0,
+          llista: [
+            { id: 1, name: 'Tom', age: 50 },
+            { id: 2, name: 'Mary', age: 13 },
+            { id: 3, name: 'Josh', age: 54 }
+          ],
+          valorId: 100,
+          //Per visualitzar
+          fitxaAlumne: {}
+        }
+      },
+      methods: {
+
+        visualitzarAlumne(item) {
+          //Mostrar dades de l'alumne
+          this.fitxaAlumne = item 
+        },
+
+        //borrar alumne
+        eliminarAlumne(identificador) {
+          //Eliminar alumne
+          this.llista = this.llista.filter((element) => element.id != identificador)
+        },
+
+        //Guardar dades de l'alumne
+        guardarDades() {
+          // fer push a llista
+          this.valorId++
+          let alumn = {
+            id: this.valorId,
+            name: this.nomAlumne,
+            age: this.ageAlumne,
+          }
+          this.llista.push(alumn)
+        },
+      },
+    }
+    Vue.createApp(app).mount('#app')
+  </script>
+</html>
