@@ -23,9 +23,9 @@
   // Fetch número 1
   fetch(url)
   .then(response => response.json())
-  .then(json => {
+  .then(data => {
       //url de la imatge
-      const urlImatge = json.img
+      const urlImatge = data.img
       // Fetch número 2
       fetch(urlImatge)
       .then(response => response.blob())
