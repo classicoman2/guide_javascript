@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      #container {
+        display: flex;
+      }
+      .item {
+        border: 1px solid black;
+        padding: 10px 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Llibreria</h1>
+    <div id="container"></div>
+    <h2>Nou llibre:</h2>
+    <label>Title:</label><input id="title" /> <br /><br />
+    <label>Author:</label><input id="author" /> <br /><br />
+    <button id="saveButton">Save Book</button>
+  </body>
+  <script>
+    fetch('http://localhost:3000/books')
+      .then((response) => response.json())
+      .then((data) => {
+        pintarDatos(data)
+      })
+      .catch(function (error) {
+        console.log('Error en el Fetch:', error)
+      })
+
+    function pintarDatos(data) {
+      for (i = 0; i < data.length; i++) {
+        document.getElementById('container').innerHTML +=
+          "<div class='item'>" + '<h3>' + data[i].title + '</h3>' + '<p>' + data[i].author + '</p>' + '</div>'
+      }
+    }
+
+    document.getElementById('saveButton').onclick = function () {
+      //Recuperar dades del formulari
+      let title = document.getElementById('title').value
+      let author = document.getElementById('author').value
+
+      //Crear un objecte
+      data = {
+        title: title,
+        author: author,
+      }
+
+      fetch('http://localhost:3000/books', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json))
+    }
+  </script>
+</html>

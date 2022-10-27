@@ -17,10 +17,13 @@
 
     // Callback en canviar l'estat
     xhr.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
+
+     console.log("responseText val: " + this.responseText )
+
+     /*  if (this.readyState == 4 && this.status == 200) {
         console.info(this.responseText);
         console.info( typeof this.responseText )
-      }
+      } */
     };
     xhr.open("GET", url, true);
     xhr.send();
