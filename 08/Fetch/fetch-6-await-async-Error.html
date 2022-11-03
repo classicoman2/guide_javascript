@@ -16,24 +16,23 @@
     // Servidor incorrecte
     //    const myurl = "https://mmmmmmy-json-server.typicode.com/classicoman2/fakeRESTserver/characters/1";
     // Url correcta
-    const myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/1000";
+    const myurl = 'https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/1000'
 
     // Funció asíncrona on se concentra el codi asíncron
     // no necessit més emprar .then()
     async function getData(url) {
-      const response = await fetch(url);
+      const response = await fetch(url)
       /*** CONTROL ERRORS  ***/
       if (response.status != 200) {
-        throw new Error("Fetch ha fallat, status = " + response.status);
+        throw new Error('Fetch ha fallat, status = ' + response.status)
       }
 
-      const json = await response.json();
-      console.info("Dades obtingudes:", json);
-      return json;
+      const json = await response.json()
+      console.info('Dades obtingudes:', json)
+      return json
     }
 
     // Només necessito .catch per tractar errors
-    getData(myurl)
-    .catch((error) => console.warn("Error en Fetch:", error));
+    getData(myurl).catch((error) => console.warn('Error en Fetch:', error))
   </script>
 </html>

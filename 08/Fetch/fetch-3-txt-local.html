@@ -10,19 +10,19 @@
     <h1>Example de fetch d'un fitxer de text</h1>
   </body>
   <script>
-    fetch("./assets/fitxer.txt")
+    fetch('./assets/fitxer.txt')
       .then(function (response) {
         if (response.ok) {
-          return response.text();
+          return response.text()
         } else {
-          throw new Error(response.status);
+          throw new Error(response.status)
         }
       })
       .then(function (data) {
-        console.log("El text retornat:", data);
+        console.log('El text retornat:', data)
       })
       .catch(function (error) {
-        console.log("Error en el fetch: ", error.message);
-      });
+        console.log('Error en el fetch: ', error.message)
+      })
   </script>
 </html>

@@ -24,13 +24,13 @@
     url.push('https://cifpfbmoll.eu')
 
     // TRIA EL CAS QUE VOLS PROVAR
-    const cas = 2
+    const cas = 4
 
     fetch(url[cas])
       .then(function (response) {
-        console.log('Response.status =', response.status)
-        console.log('Response.type =', response.type)
-        console.log('Response.ok =', response.ok)
+        console.log('response.type =', response.type)
+        console.log('response.status =', response.status)
+        console.log('response.ok =', response.ok)
         //return response.text()
         return response.json()
       })
