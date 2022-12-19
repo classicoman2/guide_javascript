@@ -60,13 +60,16 @@
 <!-- tocstop -->
 
 ## INTRODUCCIÓ
-Instal·la Vue globalment en el teu ordinador.
+Instal·la Vue globalment en el teu ordinador amb:
 ```
-sudo npm install -g @vue/cli
+npm init vue@latest
 ```
-Crea una aplicació Vue.js. Tria l'opció *Manually Select Features* i la versió **3.x**
+Així es crea una aplicació Vue.js. Configura-la segons hem vist a classe.
+
+Per iniciar el servidor de desenvolupament:
+
 ```
-vue create nomprojecte
+npm run dev
 ```
 ### Docs
 >[Vue Docs](https://vuejs.org/guide/introduction.html) | [Vue CLI](https://cli.vuejs.org/guide/) | [Vue Router](https://router.vuejs.org/)
