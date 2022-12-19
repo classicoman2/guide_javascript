@@ -11,22 +11,20 @@
     let url = []
     // cas=0 : imatge remota
     url.push('https://raw.githubusercontent.com/classicoman2/fakeRESTserver/master/assets/image1.jpg')
-
     // cas=1 : error de CORS
     url.push('https://media.timeout.com/images/105744005/630/472/image.jpg')
-
     // cas=2 : imatge local
     url.push('./assets/logo.png')
 
-    // TRIA EL CAS QUE VOLS PROVAR
-    const cas = 2
+    // TRIA EL CAS
+    const cas = 1
 
     fetch(url[cas])
       .then(function (response) {
         return response.blob()
       })
-      .then(function (imatge) {
-        var objectURL = URL.createObjectURL(imatge)
+      .then(function (blob) {
+        var objectURL = URL.createObjectURL(blob)
         document.getElementById('myImage').src = objectURL
       })
       .catch(function (error) {

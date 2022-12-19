@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <p>Get an image and embed it in the DOM</p>
+    <img id="myImage" src="" alt="Imatge capturada" />
+  </body>
+  <script>
+    let url = []
+    // cas=0 : imatge remota
+    const myurl = 'https://raw.githubusercontent.com/classicoman2/fakeRESTserver/master/assets/image1.jpg'
+
+    async function getImageBlob(myurl) {
+      //Get image
+      const response = await fetch(myurl)
+      //Get Blob
+      const blob = await response.blob()
+      const text = await blob.text()
+
+      // Post blob
+      postBlob(text)
+    }
+
+    async function postBlob(blob) {
+      //POST THE BLOB
+      const response = await fetch('http://localhost:3000/images', {
+        method: 'POST',
+        body: JSON.stringify({
+          blob: blob,
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+
+      const retornat = await response.json()
+
+      //Recupera la imatge
+      const response2 = await fetch(`http://localhost:3000/images/${retornat.id}`)
+      const dades = await response2.json()
+
+      console.log(dades.blob)
+
+      var myblob = new Blob(dades.blob, {
+        type: 'text/plain',
+      })
+      //pinta imatge
+      var objectURL = URL.createObjectURL(myblob)
+      document.getElementById('myImage').src = objectURL
+    }
+
+    getImageBlob(myurl)
+  </script>
+</html>

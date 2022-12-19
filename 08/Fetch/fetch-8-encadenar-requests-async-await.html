@@ -17,12 +17,12 @@
    2on Fetch: Descarrego BLOB de la imatge
   */
 
-    async function getImage(url) {
-      // Fetch número 1
+    async function getData(url) {
+      // Fetch número 1: GET del registre
       const response1 = await fetch(url);
-      const json = await response1.json();
-      // Fetch número 2
-      const response2 = await fetch(json.img);
+      const data = await response1.json();
+      // Fetch número 2: GET de la imatge
+      const response2 = await fetch(data.img);
       const imatge = await response2.blob();
 
       var objectURL = URL.createObjectURL(imatge);
@@ -31,7 +31,7 @@
 
     const myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/2";
 
-    getImage(myurl)
+    getData(myurl)
     .catch(error => console.log("Error en codi asíncron", error))
 
     /*

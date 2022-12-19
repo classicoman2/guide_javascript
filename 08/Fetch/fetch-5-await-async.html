@@ -14,6 +14,17 @@
     //const myurl = "https://my-json-server.typicode.com/classicoman2/fakeRESTserver/characters/1";
     const myurl = "http://localhost:3000/posts/1";
 
+/*
+    fetch(myurl)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+      })
+      .catch(function (error) {
+        console.log('Error en el Fetch:', error)
+      })
+*/
+
     // Funció asíncrona on se concentra el codi asíncron
     // no necessit més emprar .then()
     async function getData(url) {
@@ -25,5 +36,7 @@
     // Només necessito .catch per tractar errors
     getData(myurl)
     .catch((error) => console.error("Error en Fetch:", error));
+
+    
   </script>
 </html>
