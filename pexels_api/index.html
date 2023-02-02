@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemple d'us API de Pexels</title>
+  </head>
+  <body>
+    <img id="imatge" src="" />
+  </body>
+  <script>
+    const api = '563492ad6f91700001000001303bcd1a2cb8415ba26f3ac9296fe3dc'
+ 
+    fetch(`https://api.pexels.com/v1/photos/1108099`, {
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + api,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.src)
+        //Proporciona la url a la imatge
+        document.getElementById("imatge").src = data.src.large
+      })
+  </script>
+</html>

@@ -15,17 +15,19 @@
   <body>
     <div id="app">
       <div class="row">
-        <label><b>Missatge:</b><span>{{ message }}</span></label>
+        <label><b>Missatge:</b><span>{{ formulari.mensaje }}</span></label>
       </div>
 
-      <input v-model="message" />
+      <input v-model="formulari.mensaje" />
     </div>
   </body>
   <script>
     const app = {
       data() {
         return {
-          message: '',
+          formulari: {
+            mensaje: '',
+          },
         }
       },
     }

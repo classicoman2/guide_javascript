@@ -75,8 +75,8 @@ npm run dev
 >[Vue Docs](https://vuejs.org/guide/introduction.html) | [Vue CLI](https://cli.vuejs.org/guide/) | [Vue Router](https://router.vuejs.org/)
 
 ### Extensions per VSC
-* [__Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
-* __Vue.js Devtools__ for [Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en) and [Mozilla](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+Es recomana [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar). No emprar conjuntament amb l'extensió _Vetur_
+
 
 ## VUE BASIC
 
